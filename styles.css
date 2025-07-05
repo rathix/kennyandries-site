@@ -1,0 +1,109 @@
+* {
+    color: #cdd6f4;
+    font-size: 19px;
+    font-family: monospace;
+}
+
+body {
+    background-color: #313244;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 30px;
+}
+
+.social-link {
+    color: #eba0ac;
+}
+
+/* Navigation Bar */
+.navbar {
+    list-style-type: none;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #45475a;
+}
+
+.navbar a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 17px;
+    margin: 10px;
+}
+
+.navbar a:hover {
+    color: #bac2de;
+}
+
+.navbar a.active {
+    color: #89b4fa;
+}
+
+.navbar-right {
+    float: right;
+}
+
+/* Home page */
+.home-about-me {
+    margin-top: 20px;
+    margin-left: 5%;
+}
+
+.home-info-box {
+    background-color: #6c7086;
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: 30%;
+    margin-top: 20px;
+}
+
+.home-links-box {
+    margin-top: 60px;
+}
+
+/* About page */
+.experience-row {
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    /* background-color: #6c7086;
+    border-radius: 10px; */
+    padding: 15px;
+}
+
+.experience-column-left {
+    width: 25%;
+    border-right-color: #cba6f7;
+    border-right-style: solid;
+    border-right-width: 2px;
+    padding-right: 30px;
+}
+
+.experience-column-right {
+    width: 75%;
+    margin-left: 30px;
+}
+
+.skills-row {
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.skills-column {
+    width: 25%;
+}
+
+.skills-column-category {
+    width: 25%;
+    color: #a6e3a1;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-left: 5%;
+    margin-right: 5%;
+}
