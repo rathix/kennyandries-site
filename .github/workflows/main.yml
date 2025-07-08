@@ -12,7 +12,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: www250.your-server.de
-        server_dir: public_html/
+        server-dir: public_html/
         protocol: ftps
         username: kennyaa
         password: ${{ secrets.ftp_password }}
