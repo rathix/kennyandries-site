@@ -1,0 +1,22 @@
+<div class="navbar">
+    <ul id="navbarItems">
+        <li><a href="/index.html" id="navbarHome">Home</a></li>
+        <li><a href="/about.html" id="navbarAbout">About</a></li>
+        <li><a href="/projects.html" id="navbarProjects">Projects</a></li>
+        <li><a style="float: right;" href="/contact.html" id="navbarContact">Contact</a></li>
+    </ul>
+</div>
+
+<!-- Set the active tag based on page location -->
+<script>
+    $(function () {
+        var current = location.pathname;
+        $('#navbarItems li a').each(function () {
+            var $this = $(this);
+            // if the current path is like this link, make it active
+            if ($this.attr('href').indexOf(current) !== -1) {
+                $this.addClass('active');
+            }
+        })
+    })
+</script>
