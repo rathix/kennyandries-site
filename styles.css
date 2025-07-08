@@ -39,8 +39,7 @@ h3 {
     text-decoration: none;
     text-align: center;
     font-size: 17px;
-    margin: 10px;
-    display: block;
+    margin: 0.5rem;
     float: left;
 }
 
@@ -50,6 +49,10 @@ h3 {
 
 .navbar ul li a.active {
     color: #89b4fa;
+}
+
+.navbar ul li img {
+    float: left;
 }
 
 /* Home page */
