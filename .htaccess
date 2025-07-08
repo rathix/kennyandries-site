@@ -1,6 +1,5 @@
 # Index page
 DirectoryIndex index.html
-Redirect permanent / https://kennyandries.com/index
 
 RewriteEngine On
 

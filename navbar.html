@@ -1,6 +1,6 @@
 <div class="navbar">
     <ul id="navbarItems">
-        <li><a href="/index.html" id="navbarHome">Home</a></li>
+        <li><a href="/" id="navbarHome">Home</a></li>
         <li><a href="/about.html" id="navbarAbout">About</a></li>
         <li><a href="/projects.html" id="navbarProjects">Projects</a></li>
         <li><a style="float: right;" href="/contact.html" id="navbarContact">Contact</a></li>
@@ -9,14 +9,10 @@
 
 <!-- Set the active tag based on page location -->
 <script>
-    $(function () {
-        var current = location.pathname;
-        $('#navbarItems li a').each(function () {
-            var $this = $(this);
-            // if the current path is like this link, make it active
-            if ($this.attr('href').indexOf(current) !== -1) {
-                $this.addClass('active');
-            }
-        })
-    })
+    document.querySelectorAll("#navbarItems li a").forEach((link) => {
+        if (link.href === window.location.href) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+        }
+    });
 </script>
