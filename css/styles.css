@@ -106,6 +106,22 @@ h1 {
     margin: 0;
 }
 
+/* Homelab page */
+.homelab-intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.homelab-text {
+    flex: 1 1 300px;
+}
+
+.homelab-image {
+    flex: 0 1 300px;
+}
+
 /* Footer */
 footer {
     margin-left: 5%;
