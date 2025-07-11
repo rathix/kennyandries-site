@@ -106,6 +106,32 @@ h1 {
     margin: 0;
 }
 
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-image {
+    flex: 1 1 250px;
+    max-width: 250px;
+    margin-right: 2rem;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 50px;
+    border-color: #89b4fa;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.about-text {
+    flex: 2 1 500px;
+}
+
 /* Homelab page */
 .homelab-intro {
     display: flex;
