@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore how I use a Proxmox-based homelab to run self-hosted services like Nextcloud, Jellyfin, Home Assistant, and more—built with real-world IT infrastructure principles." />
+    <meta name="keywords"
+        content="System Engineer, IT Consultant, Homelab, Proxmox, Nextcloud, Jellyfin, Home Assistant, Self-hosted, Virtualization, Infrastructure" />
+    <meta name="author" content="Kenny Andries" />
+    <title>Kenny Andries</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body itemscope itemtype="https://schema.org/Article">
+    <!--Navigation bar-->
+    <div id="navbar-placeholder"></div>
+    <script>
+        $(function () {
+            $("#navbar-placeholder").load("components/navbar.html");
+        });
+    </script>
+    <!--End of Navigation bar-->
+
+    <div class="content-container">
+        <article>
+            <header>
+                <h1 itemprop="headline">My Homelab: Real-World Infrastructure, Built from the Ground Up</h1>
+                <meta itemprop="datePublished" content="2025-07-11" />
+            </header>
+
+            <section itemprop="articleBody">
+                <p>
+                    As a <strong>System Engineer and IT Consultant</strong>, I believe deeply in mastering the
+                    technologies
+                    I recommend. That's why I've built and maintain a production-grade homelab that mirrors the
+                    standards,
+                    scalability, and resilience expected in professional environments.
+                </p>
+                <p>
+                    This infrastructure is more than just a playground - it's a self-hosted, continuously evolving
+                    platform
+                    where I design, deploy, and maintain real services with enterprise-grade principles.
+                </p>
+
+                <h3>⚙️ Core Stack: Proxmox VE Cluster</h3>
+                <ul>
+                    <li>High Availability (HA)</li>
+                    <li>Live Migration</li>
+                    <li>Centralized Management</li>
+                    <li>ZFS-backed storage</li>
+                </ul>
+                <p>
+                    This setup allows me to simulate and manage real infrastructure scenarios, including rolling
+                    upgrades,
+                    service migrations, and performance optimization.
+                </p>
+
+                <h3>🛡️ Resilient Backup Strategy</h3>
+                <p>
+                    I've implemented both <strong>on-site and remote Proxmox Backup Servers</strong>, providing secure,
+                    deduplicated, and encrypted backups across my environment.
+                </p>
+                <ul>
+                    <li>Disaster recovery across physical locations</li>
+                    <li>Fast, incremental restores</li>
+                    <li>Snapshot-based protection for VMs and containers</li>
+                </ul>
+
+                <h3>🔧 Actively Managed Services</h3>
+                <p>My homelab runs a suite of interconnected, production-grade applications, all self-hosted:</p>
+                <ul>
+                    <li><strong>Nextcloud</strong> - Private file storage, calendar, and contact syncing</li>
+                    <li><strong>Jellyfin</strong> - Media server for streaming content locally and remotely</li>
+                    <li><strong>Vaultwarden</strong> - Self-hosted password management (Bitwarden-compatible)</li>
+                    <li><strong>Pocket ID</strong> - Self-hosted identity provider for SSO across services</li>
+                    <li><strong>Home Assistant</strong> - Full-stack smart home automation and control</li>
+                    <li><strong>Immich</strong> - AI-based photo backup and management</li>
+                    <li><strong>Servarr Stack</strong> - Media acquisition automation (Sonarr, Radarr, Lidarr, etc.)
+                    </li>
+                </ul>
+                <p>
+                    These services are reverse proxied, monitored, and secured as they would be in production,
+                    demonstrating
+                    my end-to-end understanding of deployment, orchestration, and lifecycle management.
+                </p>
+
+                <h3>🔒 Network & Security Architecture</h3>
+                <ul>
+                    <li>Reverse proxy with HTTPS and strict access control</li>
+                    <li>Identity-based authentication (via my own IdP)</li>
+                    <li>Internal network segmentation and firewall policies</li>
+                    <li>Site-to-site VPN for remote access and replication</li>
+                    <li>Real-time monitoring and alerting</li>
+                </ul>
+                <p>Security is treated as a first-class citizen in every layer of the stack.</p>
+
+                <h3>🧠 Why This Matters</h3>
+                <p>My homelab is a reflection of how I work in production environments:</p>
+                <ul>
+                    <li>I <strong>prototype fast</strong>, iterate safely, and deploy with confidence.</li>
+                    <li>I maintain <strong>high availability and backups</strong> as a default, not an afterthought.
+                    </li>
+                    <li>I understand <strong>self-hosted alternatives</strong> and where they can replace or supplement
+                        SaaS.</li>
+                    <li>I evaluate and implement open-source tools with a focus on long-term maintainability and
+                        security.
+                    </li>
+                </ul>
+
+                <h3>💬 Let's Work Together</h3>
+                <p>
+                    Whether you're a company looking to modernize legacy systems, optimize infrastructure, or improve
+                    resilience and security - I bring proven, practical experience from both the field and my own
+                    infrastructure.
+                </p>
+                <p>
+                    🔗 <a href="/contact" title="Contact me for IT consulting or system engineering">Get in touch</a>
+                </p>
+            </section>
+        </article>
+    </div>
+
+    <!--Footer-->
+    <div id="footer-placeholder"></div>
+    <script>
+        $(function () {
+            $("#footer-placeholder").load("components/footer.html");
+        });
+    </script>
+    <!--End of Footer-->
+</body>
+
+</html>
