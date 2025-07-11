@@ -148,6 +148,14 @@ h1 {
     flex: 0 1 300px;
 }
 
+.homelab-image img {
+    width: 100%;
+    border-radius: 20px;
+    border-color: #89b4fa;
+    border-width: 5px;
+    border-style: solid;
+}
+
 /* Footer */
 footer {
     margin-left: 5%;
