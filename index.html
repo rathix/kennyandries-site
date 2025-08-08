@@ -2,48 +2,94 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Kenny Andries</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta name="description"
+        content="Kenny Andries is a senior system engineer and IT consultant in Belgium. Expert in Microsoft 365, Azure, Exchange, Intune, Linux infrastructure, automation, and security." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://kennyandries.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kenny Andries | Senior System Engineer and IT Consultant" />
+    <meta property="og:description"
+        content="Senior system engineer in Belgium. MDM, Microsoft 365, Azure, Exchange, Intune, Linux, and automation." />
+    <meta property="og:url" content="https://kennyandries.com/" />
+    <meta property="og:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
+
+    <!-- Structured Data: Person -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kenny Andries",
+    "jobTitle": "Senior System Engineer and IT Consultant",
+    "image": "https://kennyandries.com/assets/images/portrait.jpg",
+    "url": "https://kennyandries.com/",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "NMBS/SNCB"
+    },
+    "knowsAbout": [
+      "Microsoft Intune", "Microsoft 365", "Azure", "Exchange", "Entra ID",
+      "Linux", "Automation", "PowerShell", "Ansible", "Terraform", "Docker", "Podman", "Security"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "BE"
+    },
+    "sameAs": [
+      "https://github.com/rathix",
+      "https://www.linkedin.com/in/kenny-a-0a7055310/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
     <!--Navigation bar-->
-    <div id="navbar-placeholder"></div>
+    <nav id="navbar-placeholder" aria-label="Primary"></nav>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#navbar-placeholder").load("components/navbar.html");
         });
     </script>
     <!--End of Navigation bar-->
 
-    <div class="content-container">
-        <h1>Kenny Andries</h1>
-        <h3>> Senior System Engineer</h3>
-        <div class="home-info-box">
-            Infrastructure Engineer with 5+ years of experience building and securing hybrid environments across
-            Microsoft (Azure, Exchange, Intune, Windows) and Linux ecosystems. Passionate about bridging the gap between
-            operations and development through automation, CI/CD, and security-first practices.<br>
-        </div>
-        <div class="home-links-box">
-            <h4>Quick Links</h4>
+    <main class="content-container" id="main-content">
+        <header>
+            <h1>Kenny Andries</h1>
+            <h2>> Senior System Engineer and IT Consultant</h2>
+            <p class="home-info-box">
+                Infrastructure engineer with over 5 years of experience building and securing hybrid environments across
+                Microsoft (Azure, Exchange, Intune, Windows) and Linux ecosystems. Focused on bridging the gap between
+                operations and development through automation, CI/CD, and security-first practices.
+            </p>
+        </header>
+
+        <section class="home-links-box" aria-labelledby="quick-links-title">
+            <h2 id="quick-links-title">> Quick Links</h2>
             <ul>
-                <li><a class="link" href="https://github.com/rathix">GitHub</a></li>
-                <li><a class="link" href="https://www.linkedin.com/in/kenny-a-0a7055310/">LinkedIn</a></li>
+                <li><a class="link" href="https://github.com/rathix" rel="me">GitHub</a></li>
+                <li><a class="link" href="https://www.linkedin.com/in/kenny-a-0a7055310/" rel="me">LinkedIn</a></li>
             </ul>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <!--Footer-->
-    <div id="footer-placeholder"></div>
+    <footer id="footer-placeholder" aria-label="Footer"></footer>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#footer-placeholder").load("components/footer.html");
         });
     </script>
-    <!--End of Footer-->
 </body>
 
 </html>

@@ -2,36 +2,102 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenny Andries</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contact | Kenny Andries</title>
+    <meta name="description"
+        content="Contact Kenny Andries, a system engineer and IT consultant in Belgium. Email hello@kennyandries.com to discuss projects around Intune, Microsoft 365, Entra ID, Exchange, automation, and Linux." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://kennyandries.com/contact" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact | Kenny Andries" />
+    <meta property="og:description" content="Email hello@kennyandries.com to start a project." />
+    <meta property="og:url" content="https://kennyandries.com/contact" />
+    <meta property="og:image" content="https://kennyandries.com/assets/images/portrait-og.jpg" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
+
+    <!-- Structured Data: ContactPage + Person with contactPoint -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://kennyandries.com/contact",
+        "name": "Contact",
+        "url": "https://kennyandries.com/contact",
+        "about": {
+          "@type": "Person",
+          "name": "Kenny Andries",
+          "url": "https://kennyandries.com/"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://kennyandries.com/#kenny-andries",
+        "name": "Kenny Andries",
+        "jobTitle": "System Engineer and IT Consultant",
+        "url": "https://kennyandries.com/",
+        "email": "mailto:hello@kennyandries.com",
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "contactType": "business",
+          "email": "mailto:hello@kennyandries.com",
+          "areaServed": "BE",
+          "availableLanguage": ["en", "nl", "fr"]
+        }],
+        "sameAs": [
+          "https://github.com/rathix",
+          "https://www.linkedin.com/in/kenny-a-0a7055310/"
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
-    <!--Navigation bar-->
-    <div id="navbar-placeholder"></div>
+    <!-- Navigation -->
+    <nav id="navbar-placeholder" aria-label="Primary"></nav>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#navbar-placeholder").load("components/navbar.html");
         });
     </script>
-    <!--End of Navigation bar-->
 
-    <div class="content-container">
-        <h3>> Contact Me</h3>
-        <p>via Email: <a class="link" href="mailto:hello@kennyandries.com">hello@kennyandries.com</a></p>
-    </div>
+    <main class="content-container" id="main-content">
+        <header>
+            <h1>Contact</h1>
+            <p class="page-intro">Tell me a bit about your project and timeline. I focus on Intune, Microsoft 365, Entra
+                ID, Exchange, automation, and Linux platforms.</p>
+        </header>
 
-    <!--Footer-->
-    <div id="footer-placeholder"></div>
+        <section aria-labelledby="email-title">
+            <h2 id="email-title">> Email</h2>
+            <p>
+                <a class="link"
+                    href="mailto:hello@kennyandries.com?subject=Project%20inquiry%20from%20website">hello@kennyandries.com</a>
+            </p>
+            <p class="muted">Typical reply time is one to two business days.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder" aria-label="Footer"></footer>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#footer-placeholder").load("components/footer.html");
         });
     </script>
-    <!--End of Footer-->
+
+    <noscript>This page loads small navigation and footer includes.</noscript>
 </body>
 
 </html>

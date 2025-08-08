@@ -2,43 +2,127 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenny Andries</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Projects | Kenny Andries</title>
+    <meta name="description"
+        content="Projects by Kenny Andries. Homelab on Proxmox with automation and security best practices, plus other experiments across Microsoft 365, Intune, Azure, Linux, and DevOps." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://kennyandries.com/projects" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Projects | Kenny Andries" />
+    <meta property="og:description"
+        content="Selected work. Homelab on Proxmox with automation and security, plus Microsoft and Linux focused projects." />
+    <meta property="og:url" content="https://kennyandries.com/projects" />
+    <meta property="og:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
+
+    <!-- Structured Data: CollectionPage + ItemList of Projects + Breadcrumbs -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://kennyandries.com/projects",
+        "name": "Projects",
+        "url": "https://kennyandries.com/projects",
+        "about": {
+          "@type": "Person",
+          "name": "Kenny Andries",
+          "url": "https://kennyandries.com/"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Project list",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Project",
+                "name": "Homelab",
+                "url": "https://kennyandries.com/homelab",
+                "description": "Self hosted Proxmox based homelab with automation, monitoring, security hardening, and production grade services.",
+                "keywords": "Proxmox, Intune, Ansible, Terraform, Docker, Podman, NixOS, Fedora Atomic, monitoring, security",
+                "creator": {
+                  "@type": "Person",
+                  "name": "Kenny Andries"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kennyandries.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://kennyandries.com/projects" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
     <!--Navigation bar-->
-    <div id="navbar-placeholder"></div>
+    <nav id="navbar-placeholder" aria-label="Primary"></nav>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#navbar-placeholder").load("components/navbar.html");
         });
     </script>
     <!--End of Navigation bar-->
 
-    <div class="content-container">
-        <h3>> My Projects</h3>
-        <ul>
-            <li><a href="/homelab" class="link">Homelab</a> -> This project showcases my self-hosted Proxmox-based
-                homelab, highlighting how I apply enterprise-grade infrastructure, automation, and security principles
-                to
-                run production-grade services - demonstrating the practical expertise I bring as a system engineer and
-                IT
-                consultant.</li>
-        </ul>
-    </div>
+    <main class="content-container" id="main-content">
+        <header>
+            <h1>Projects</h1>
+            <p class="page-intro">Hands on work across Microsoft and Linux. Focus on automation, reliability, and
+                security.</p>
+        </header>
+
+        <section aria-labelledby="project-list-title">
+            <h2 id="project-list-title">> Selected work</h2>
+
+            <ul class="project-list">
+                <li class="project-item">
+                    <article itemscope itemtype="https://schema.org/Project">
+                        <h3 itemprop="name">
+                            <a class="link" href="homelab" itemprop="url">Homelab</a>
+                        </h3>
+                        <p itemprop="description">
+                            Self hosted Proxmox based homelab that mirrors enterprise patterns. I use Ansible,
+                            Terraform, and CI/CD to
+                            build and harden services like Nextcloud, Jellyfin, Vaultwarden, Immich, the Servarr stack,
+                            and Home Assistant
+                            on Linux with OCI containers. The goal is reliable, observable, and secure operations.
+                        </p>
+                        <p class="project-tags">
+                            <span>Proxmox</span> • <span>Ansible</span> • <span>Terraform</span> • <span>Docker</span> •
+                            <span>Podman</span> • <span>NixOS</span> • <span>Fedora Atomic</span>
+                        </p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
 
     <!--Footer-->
-    <div id="footer-placeholder"></div>
+    <footer id="footer-placeholder" aria-label="Footer"></footer>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#footer-placeholder").load("components/footer.html");
         });
     </script>
-    <!--End of Footer-->
 </body>
 
 </html>

@@ -9,7 +9,7 @@
     <meta name="keywords"
         content="Homelab, Proxmox VE, Zero Trust, NetBird, MikroTik, TrueNAS SCALE, Self-hosted services, System Engineer, IT Consultant, Nextcloud, Jellyfin, Home Assistant, Virtualization, ZFS, Backup Strategy" />
     <meta name="author" content="Kenny Andries" />
-    <title>Homelab Project Showcase | Kenny Andries</title>
+    <title>Homelab | Kenny Andries</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
@@ -72,89 +72,98 @@
                     </div>
                 </div>
 
-                <h3>> Core Infrastructure: Proxmox VE Cluster</h3>
-                <ul>
-                    <li>High Availability (HA) to keep services online</li>
-                    <li>Live migration between nodes for maintenance and upgrades</li>
-                    <li>Centralized cluster management</li>
-                    <li>ZFS-backed storage for speed and data protection</li>
-                </ul>
-                <p>
-                    This cluster setup makes it possible to run complex workloads and test advanced scenarios such as
-                    rolling upgrades, service migrations, and load balancing.
-                </p>
+                <h2>> Core Infrastructure: Proxmox VE Cluster</h3>
+                    <ul>
+                        <li>High Availability (HA) to keep services online</li>
+                        <li>Live migration between nodes for maintenance and upgrades</li>
+                        <li>Centralized cluster management</li>
+                        <li>ZFS-backed storage for speed and data protection</li>
+                    </ul>
+                    <p>
+                        This cluster setup makes it possible to run complex workloads and test advanced scenarios such
+                        as
+                        rolling upgrades, service migrations, and load balancing.
+                    </p>
 
-                <h3>> Storage: Dual TrueNAS SCALE NAS Servers</h3>
-                <ul>
-                    <li>Two TrueNAS SCALE systems for redundancy and scalability</li>
-                    <li>ZFS-based storage with snapshots and replication</li>
-                    <li>Separate storage pools for different workloads</li>
-                    <li>Integration with Proxmox VE for shared storage</li>
-                </ul>
-                <p>
-                    By using two TrueNAS SCALE servers, I can replicate data between sites and maintain consistent,
-                    high-performance storage for all virtual machines and containers.
-                </p>
+                    <h2>> Storage: Dual TrueNAS SCALE NAS Servers</h3>
+                        <ul>
+                            <li>Two TrueNAS SCALE systems for redundancy and scalability</li>
+                            <li>ZFS-based storage with snapshots and replication</li>
+                            <li>Separate storage pools for different workloads</li>
+                            <li>Integration with Proxmox VE for shared storage</li>
+                        </ul>
+                        <p>
+                            By using two TrueNAS SCALE servers, I can replicate data between sites and maintain
+                            consistent,
+                            high-performance storage for all virtual machines and containers.
+                        </p>
 
-                <h3>> Reliable Backup and Disaster Recovery</h3>
-                <p>
-                    My backup strategy uses both <strong>on-site</strong> and <strong>remote Proxmox Backup
-                        Servers</strong> for secure, deduplicated, and encrypted backups.
-                </p>
-                <ul>
-                    <li>Disaster recovery across different locations</li>
-                    <li>Fast incremental restores</li>
-                    <li>Snapshot-based backups for virtual machines and containers</li>
-                </ul>
+                        <h2>> Reliable Backup and Disaster Recovery</h3>
+                            <p>
+                                My backup strategy uses both <strong>on-site</strong> and <strong>remote Proxmox Backup
+                                    Servers</strong> for secure, deduplicated, and encrypted backups.
+                            </p>
+                            <ul>
+                                <li>Disaster recovery across different locations</li>
+                                <li>Fast incremental restores</li>
+                                <li>Snapshot-based backups for virtual machines and containers</li>
+                            </ul>
 
-                <h3>> Networking and Zero Trust Security</h3>
-                <ul>
-                    <li>Zero Trust Network Access powered by <strong>NetBird</strong></li>
-                    <li>MikroTik routers and switches for reliable, flexible networking</li>
-                    <li>Reverse proxy with HTTPS</li>
-                    <li>Identity-based authentication via a self-hosted IdP</li>
-                    <li>Network segmentation with VLANs and firewalls</li>
-                    <li>Site-to-site VPN for secure remote access</li>
-                    <li>Continuous monitoring and alerting</li>
-                </ul>
-                <p>
-                    Security is part of the design from the ground up, ensuring every service and device is protected.
-                </p>
+                            <h2>> Networking and Zero Trust Security</h3>
+                                <ul>
+                                    <li>Zero Trust Network Access powered by <strong>NetBird</strong></li>
+                                    <li>MikroTik routers and switches for reliable, flexible networking</li>
+                                    <li>Reverse proxy with HTTPS</li>
+                                    <li>Identity-based authentication via a self-hosted IdP</li>
+                                    <li>Network segmentation with VLANs and firewalls</li>
+                                    <li>Site-to-site VPN for secure remote access</li>
+                                    <li>Continuous monitoring and alerting</li>
+                                </ul>
+                                <p>
+                                    Security is part of the design from the ground up, ensuring every service and device
+                                    is protected.
+                                </p>
 
-                <h3>> Production-Ready Self-Hosted Services</h3>
-                <p>
-                    These services are fully integrated, monitored, and secured, following the same standards I apply in
-                    client environments.
-                </p>
-                <ul>
-                    <li><strong>Nextcloud</strong> – File sync, calendar, and contact management</li>
-                    <li><strong>Jellyfin</strong> – Private media streaming platform</li>
-                    <li><strong>Vaultwarden</strong> – Self-hosted password manager</li>
-                    <li><strong>Pocket ID</strong> – Identity provider for single sign-on</li>
-                    <li><strong>Home Assistant</strong> – Smart home automation</li>
-                    <li><strong>Immich</strong> – AI-based photo backup and organization</li>
-                    <li><strong>Servarr Stack</strong> – Automated media library management</li>
-                </ul>
+                                <h2>> Production-Ready Self-Hosted Services</h3>
+                                    <p>
+                                        These services are fully integrated, monitored, and secured, following the same
+                                        standards I apply in
+                                        client environments.
+                                    </p>
+                                    <ul>
+                                        <li><strong>Nextcloud</strong> – File sync, calendar, and contact management
+                                        </li>
+                                        <li><strong>Jellyfin</strong> – Private media streaming platform</li>
+                                        <li><strong>Vaultwarden</strong> – Self-hosted password manager</li>
+                                        <li><strong>Pocket ID</strong> – Identity provider for single sign-on</li>
+                                        <li><strong>Home Assistant</strong> – Smart home automation</li>
+                                        <li><strong>Immich</strong> – AI-based photo backup and organization</li>
+                                        <li><strong>Servarr Stack</strong> – Automated media library management</li>
+                                    </ul>
 
-                <h3>> Why I Maintain This Homelab</h3>
-                <ul>
-                    <li>Test and refine solutions before deploying them for clients</li>
-                    <li>Maintain high availability and disaster recovery as standard practice</li>
-                    <li>Compare self-hosted options to cloud-based services</li>
-                    <li>Use and evaluate open-source tools for long-term reliability</li>
-                </ul>
+                                    <h2>> Why I Maintain This Homelab</h3>
+                                        <ul>
+                                            <li>Test and refine solutions before deploying them for clients</li>
+                                            <li>Maintain high availability and disaster recovery as standard practice
+                                            </li>
+                                            <li>Compare self-hosted options to cloud-based services</li>
+                                            <li>Use and evaluate open-source tools for long-term reliability</li>
+                                        </ul>
 
-                <h3>> Work With Me</h3>
-                <p>
-                    If you are looking to upgrade systems, improve infrastructure efficiency, or strengthen resilience,
-                    I can help. My homelab is a constant source of practical, tested experience that I bring into every
-                    project.
-                </p>
-                <p>
-                    <a href="/contact" class="link"
-                        title="Contact Kenny Andries for IT consulting or system engineering">Get in touch</a> to start
-                    a conversation.
-                </p>
+                                        <h2>> Work With Me</h3>
+                                            <p>
+                                                If you are looking to upgrade systems, improve infrastructure
+                                                efficiency, or strengthen resilience,
+                                                I can help. My homelab is a constant source of practical, tested
+                                                experience that I bring into every
+                                                project.
+                                            </p>
+                                            <p>
+                                                <a href="/contact" class="link"
+                                                    title="Contact Kenny Andries for IT consulting or system engineering">Get
+                                                    in touch</a> to start
+                                                a conversation.
+                                            </p>
             </section>
         </article>
     </main>
