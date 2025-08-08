@@ -1,3 +1,4 @@
+/* ===== Global Styles ===== */
 * {
     color: #cdd6f4;
     font-size: 19px;
@@ -6,9 +7,12 @@
 
 body {
     background-color: #313244;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 30px;
+    margin: 30px 10%;
+}
+
+/* Headings */
+h1 {
+    font-size: 25px;
 }
 
 h3 {
@@ -16,36 +20,30 @@ h3 {
     color: #89b4fa;
 }
 
-h1 {
-    font-size: 25px;
-}
-
 .content-container {
-    margin-top: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 20px 5%;
 }
 
-/* Navigation Bar */
+/* ===== Navigation Bar ===== */
 .navbar {
+    background-color: #45475a;
     padding: 15px;
     border-radius: 20px;
-    background-color: #45475a;
     overflow: hidden;
 }
 
 .navbar ul {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
     margin: 0;
+    padding: 0;
 }
 
 .navbar ul li a {
-    text-decoration: none;
-    text-align: center;
-    font-size: 17px;
-    margin: 0.5rem;
     float: left;
+    margin: 0.5rem;
+    font-size: 17px;
+    text-align: center;
+    text-decoration: none;
 }
 
 .navbar ul li a:hover {
@@ -58,19 +56,18 @@ h1 {
 
 .navbar ul li img {
     float: left;
-    background-size: contain;
     width: 60px;
     height: 40px;
     margin-right: 1em;
+    background-size: contain;
 }
 
-/* Home page */
+/* ===== Home Page ===== */
 .home-info-box {
     background-color: #6c7086;
     border-radius: 10px;
     padding: 15px;
-    margin-right: 30%;
-    margin-top: 20px;
+    margin: 20px 30% 0 0;
 }
 
 .home-links-box {
@@ -81,17 +78,17 @@ h1 {
     color: #eba0ac;
 }
 
-/* About page */
+/* ===== About Page ===== */
 .experience-grid {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-gap: 1rem;
+    gap: 1rem;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 1rem;
+    gap: 1rem;
 }
 
 .skills-category {
@@ -102,8 +99,8 @@ h1 {
 
 .skills-list {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 .about-container {
@@ -122,22 +119,20 @@ h1 {
 
 .about-image img {
     width: 100%;
+    border: 5px solid #89b4fa;
     border-radius: 50px;
-    border-color: #89b4fa;
-    border-width: 5px;
-    border-style: solid;
 }
 
 .about-text {
     flex: 2 1 500px;
 }
 
-/* Homelab page */
+/* ===== Homelab Page ===== */
 .homelab-intro {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
     align-items: flex-start;
+    gap: 1rem;
 }
 
 .homelab-text {
@@ -150,14 +145,11 @@ h1 {
 
 .homelab-image img {
     width: 100%;
+    border: 5px solid #89b4fa;
     border-radius: 20px;
-    border-color: #89b4fa;
-    border-width: 5px;
-    border-style: solid;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 0 5%;
 }
