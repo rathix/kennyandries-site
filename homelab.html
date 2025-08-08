@@ -11,7 +11,7 @@
     <meta name="author" content="Kenny Andries" />
     <title>Homelab | Kenny Andries</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -37,14 +37,14 @@
 
 <body itemscope itemtype="https://schema.org/Article">
     <!-- Navigation -->
-    <div id="navbar-placeholder"></div>
+    <nav id="navbar-placeholder" aria-label="Primary"></nav>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#navbar-placeholder").load("components/navbar.html");
         });
     </script>
 
-    <main class="content-container">
+    <main class="content-container" id="main-content">
         <article>
             <header>
                 <h1 itemprop="headline">My Proxmox Homelab: A Professional-Grade IT Environment</h1>
@@ -169,12 +169,13 @@
     </main>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
+    <footer id="footer-placeholder" aria-label="Footer"></footer>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#footer-placeholder").load("components/footer.html");
         });
     </script>
+    <noscript>This page uses small JavaScript snippets for navigation includes.</noscript>
 </body>
 
 </html>
