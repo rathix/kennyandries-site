@@ -11,7 +11,7 @@
     <meta name="author" content="Kenny Andries" />
     <title>Homelab | Kenny Andries</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -37,14 +37,14 @@
 
 <body itemscope itemtype="https://schema.org/Article">
     <!-- Navigation -->
-    <div id="navbar-placeholder"></div>
+    <nav id="navbar-placeholder" aria-label="Primary"></nav>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#navbar-placeholder").load("components/navbar.html");
         });
     </script>
 
-    <main class="content-container">
+    <main class="content-container" id="main-content">
         <article>
             <header>
                 <h1 itemprop="headline">My Proxmox Homelab: A Professional-Grade IT Environment</h1>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
 
-                <h2>> Core Infrastructure: Proxmox VE Cluster</h3>
+                <h2>&gt; Core Infrastructure: Proxmox VE Cluster</h2>
                     <ul>
                         <li>High Availability (HA) to keep services online</li>
                         <li>Live migration between nodes for maintenance and upgrades</li>
@@ -85,7 +85,7 @@
                         rolling upgrades, service migrations, and load balancing.
                     </p>
 
-                    <h2>> Storage: Dual TrueNAS SCALE NAS Servers</h3>
+                    <h2>&gt; Storage: Dual TrueNAS SCALE NAS Servers</h2>
                         <ul>
                             <li>Two TrueNAS SCALE systems for redundancy and scalability</li>
                             <li>ZFS-based storage with snapshots and replication</li>
@@ -98,7 +98,7 @@
                             high-performance storage for all virtual machines and containers.
                         </p>
 
-                        <h2>> Reliable Backup and Disaster Recovery</h3>
+                        <h2>&gt; Reliable Backup and Disaster Recovery</h2>
                             <p>
                                 My backup strategy uses both <strong>on-site</strong> and <strong>remote Proxmox Backup
                                     Servers</strong> for secure, deduplicated, and encrypted backups.
@@ -109,7 +109,7 @@
                                 <li>Snapshot-based backups for virtual machines and containers</li>
                             </ul>
 
-                            <h2>> Networking and Zero Trust Security</h3>
+                            <h2>&gt; Networking and Zero Trust Security</h2>
                                 <ul>
                                     <li>Zero Trust Network Access powered by <strong>NetBird</strong></li>
                                     <li>MikroTik routers and switches for reliable, flexible networking</li>
@@ -124,7 +124,7 @@
                                     is protected.
                                 </p>
 
-                                <h2>> Production-Ready Self-Hosted Services</h3>
+                                <h2>&gt; Production-Ready Self-Hosted Services</h2>
                                     <p>
                                         These services are fully integrated, monitored, and secured, following the same
                                         standards I apply in
@@ -141,7 +141,7 @@
                                         <li><strong>Servarr Stack</strong> – Automated media library management</li>
                                     </ul>
 
-                                    <h2>> Why I Maintain This Homelab</h3>
+                                    <h2>&gt; Why I Maintain This Homelab</h2>
                                         <ul>
                                             <li>Test and refine solutions before deploying them for clients</li>
                                             <li>Maintain high availability and disaster recovery as standard practice
@@ -150,7 +150,7 @@
                                             <li>Use and evaluate open-source tools for long-term reliability</li>
                                         </ul>
 
-                                        <h2>> Work With Me</h3>
+                                        <h2>&gt; Work With Me</h2>
                                             <p>
                                                 If you are looking to upgrade systems, improve infrastructure
                                                 efficiency, or strengthen resilience,
@@ -169,12 +169,13 @@
     </main>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
+    <footer id="footer-placeholder" aria-label="Footer"></footer>
     <script>
-        $(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             $("#footer-placeholder").load("components/footer.html");
         });
     </script>
+    <noscript>This page uses small JavaScript snippets for navigation includes.</noscript>
 </body>
 
 </html>
