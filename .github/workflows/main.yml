@@ -12,7 +12,7 @@ jobs:
         run: npx htmlhint "**/*.html"
 
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: https://github.com/SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: www250.your-server.de
           server-dir: public_html/
