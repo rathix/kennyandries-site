@@ -5,17 +5,17 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v4
+      - name: 🚚 Get latest code
+        uses: https://data.forgejo.org/actions/checkout@v4
 
-    - name: 🔍 Lint HTML
-      run: npx htmlhint "**/*.html"
+      - name: 🔍 Lint HTML
+        run: npx htmlhint "**/*.html"
 
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: www250.your-server.de
-        server-dir: public_html/
-        protocol: ftps
-        username: kennyaa
-        password: ${{ secrets.ftp_password }}
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: www250.your-server.de
+          server-dir: public_html/
+          protocol: ftps
+          username: kennyaa
+          password: ${{ secrets.ftp_password }}
