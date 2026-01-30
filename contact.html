@@ -7,7 +7,7 @@
 
     <title>Contact | Kenny Andries</title>
     <meta name="description"
-        content="Contact Kenny Andries, a system engineer and IT consultant in Belgium. Email hello@kennyandries.com to discuss projects around Intune, Microsoft 365, Entra ID, Exchange, automation, and Linux." />
+        content="Contact Kenny Andries, a system engineer and IT consultant in Belgium. Get in touch to discuss projects around Intune, Microsoft 365, Entra ID, Exchange, automation, and Linux." />
     <meta name="robots" content="index, follow" />
 
     <!-- Canonical -->
@@ -16,14 +16,14 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Contact | Kenny Andries" />
-    <meta property="og:description" content="Email hello@kennyandries.com to start a project." />
+    <meta property="og:description" content="Get in touch to start a project." />
     <meta property="og:url" content="https://kennyandries.com/contact" />
     <meta property="og:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Contact | Kenny Andries" />
-    <meta name="twitter:description" content="Email hello@kennyandries.com to start a project." />
+    <meta name="twitter:description" content="Get in touch to start a project." />
     <meta name="twitter:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
 
     <link rel="stylesheet" href="css/styles.css" />
@@ -51,11 +51,9 @@
         "name": "Kenny Andries",
         "jobTitle": "System Engineer and IT Consultant",
         "url": "https://kennyandries.com/",
-        "email": "mailto:hello@kennyandries.com",
         "contactPoint": [{
           "@type": "ContactPoint",
           "contactType": "business",
-          "email": "mailto:hello@kennyandries.com",
           "areaServed": "BE",
           "availableLanguage": ["en", "nl", "fr"]
         }],
@@ -81,10 +79,27 @@
         <section aria-labelledby="email-title">
             <h2 id="email-title">Email</h2>
             <p>
-                <a class="contact-email" href="mailto:hello@kennyandries.com?subject=Project%20inquiry%20from%20website">hello@kennyandries.com</a>
+                <a class="contact-email" id="email-link" href="#" data-u="hello" data-d="kennyandries.com">
+                    <span class="email-placeholder">[Enable JavaScript to see email]</span>
+                </a>
             </p>
             <p class="muted text-sm">Typical reply time is one to two business days.</p>
         </section>
+
+        <script>
+            (function() {
+                var link = document.getElementById('email-link');
+                if (link) {
+                    var u = link.getAttribute('data-u');
+                    var d = link.getAttribute('data-d');
+                    var email = u + '@' + d;
+                    link.href = 'mail' + 'to:' + email + '?subject=Project%20inquiry%20from%20website';
+                    link.textContent = email;
+                    link.removeAttribute('data-u');
+                    link.removeAttribute('data-d');
+                }
+            })();
+        </script>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
