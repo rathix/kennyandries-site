@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Contact | Kenny Andries</title>
     <meta name="description"
@@ -18,10 +18,16 @@
     <meta property="og:title" content="Contact | Kenny Andries" />
     <meta property="og:description" content="Email hello@kennyandries.com to start a project." />
     <meta property="og:url" content="https://kennyandries.com/contact" />
-    <meta property="og:image" content="https://kennyandries.com/assets/images/portrait-og.jpg" />
+    <meta property="og:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Contact | Kenny Andries" />
+    <meta name="twitter:description" content="Email hello@kennyandries.com to start a project." />
+    <meta name="twitter:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
 
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
+    <script src="js/components-loader.js" defer></script>
 
     <!-- Structured Data: ContactPage + Person with contactPoint -->
     <script type="application/ld+json">
@@ -64,13 +70,7 @@
 </head>
 
 <body>
-    <!-- Navigation -->
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            $("#navbar-placeholder").load("components/navbar.html");
-        });
-    </script>
 
     <main class="content-container" id="main-content">
         <header>
@@ -87,15 +87,8 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer id="footer-placeholder" aria-label="Footer"></footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            $("#footer-placeholder").load("components/footer.html");
-        });
-    </script>
-
-    <noscript>This page loads small navigation and footer includes.</noscript>
+    <noscript>This site uses JavaScript to load navigation.</noscript>
 </body>
 
 </html>
