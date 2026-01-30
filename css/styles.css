@@ -539,21 +539,37 @@ details p {
     display: inline-block;
 }
 
-/* ===== Article Image ===== */
-.article-image {
-    margin: 0 0 var(--space-lg);
+/* ===== Homelab Page ===== */
+.homelab-intro {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: flex-start;
+    margin-bottom: var(--space-lg);
 }
 
-.article-image img {
+.homelab-text {
+    flex: 1;
+}
+
+.homelab-text p {
+    font-size: var(--fs-sm);
+    margin: 0;
+}
+
+.homelab-image {
+    flex-shrink: 0;
+    width: 180px;
+}
+
+.homelab-image img {
     width: 100%;
-    max-width: 400px;
     border-radius: var(--radius);
     border: 1px solid var(--surface);
     filter: grayscale(20%);
     transition: filter 0.3s ease;
 }
 
-.article-image img:hover {
+.homelab-image img:hover {
     filter: grayscale(0%);
 }
 
@@ -738,6 +754,16 @@ code {
     .about-image img {
         width: 100px;
         height: 100px;
+    }
+
+    .homelab-intro {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
+    .homelab-image {
+        order: -1;
+        width: 160px;
     }
 
     .home-links ul {
