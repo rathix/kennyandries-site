@@ -579,6 +579,23 @@ details p {
     color: var(--muted);
 }
 
+/* Service list with icons */
+.service-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.service-icon {
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
 /* ===== Contact Page ===== */
 .contact-email {
     font-size: var(--fs-lg);
