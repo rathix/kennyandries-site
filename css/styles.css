@@ -583,12 +583,13 @@ details p {
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-lg);
-    margin: var(--space-xl) 0;
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
 }
 
 .tech-card {
     display: flex;
+    align-items: flex-start;
     gap: var(--space-md);
     padding: var(--space-md);
     background: var(--surface);
@@ -596,21 +597,29 @@ details p {
 }
 
 .tech-card-icon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     flex-shrink: 0;
     opacity: 0.9;
+    margin-top: 2px;
 }
 
 .tech-card-content h2 {
-    font-size: var(--fs-base);
-    margin-bottom: var(--space-xs);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--text);
+    margin: 0 0 var(--space-xs);
+}
+
+.tech-card-content h2::before {
+    content: none;
 }
 
 .tech-card-content p {
     font-size: var(--fs-sm);
     color: var(--subtext);
     margin: 0;
+    line-height: var(--lh-normal);
 }
 
 /* Service list with icons */
