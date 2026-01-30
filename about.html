@@ -2,30 +2,30 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>About | Kenny Andries</title>
-  <meta name="description"
-    content="About Kenny Andries, a Belgium based system engineer and IT consultant. Focus on MDM, Microsoft 365, Entra ID, Exchange, automation with PowerShell, Ansible, Terraform, and Linux infrastructure." />
-  <meta name="robots" content="index, follow" />
+    <title>About | Kenny Andries</title>
+    <meta name="description"
+        content="About Kenny Andries, a Belgium based system engineer and IT consultant. Focus on MDM, Microsoft 365, Entra ID, Exchange, automation with PowerShell, Ansible, Terraform, and Linux infrastructure." />
+    <meta name="robots" content="index, follow" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://kennyandries.com/about" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://kennyandries.com/about" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="profile" />
-  <meta property="og:title" content="About Kenny Andries | System Engineer and IT Consultant" />
-  <meta property="og:description"
-    content="System engineer in Belgium. MDM, Microsoft 365, Entra ID, Exchange, automation, and Linux." />
-  <meta property="og:url" content="https://kennyandries.com/about" />
-  <meta property="og:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="About Kenny Andries | System Engineer and IT Consultant" />
+    <meta property="og:description"
+        content="System engineer in Belgium. MDM, Microsoft 365, Entra ID, Exchange, automation, and Linux." />
+    <meta property="og:url" content="https://kennyandries.com/about" />
+    <meta property="og:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
 
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
 
-  <!-- Structured Data: Person + Breadcrumbs -->
-  <script type="application/ld+json">
+    <!-- Structured Data: Person + Breadcrumbs -->
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
@@ -77,8 +77,8 @@
   }
   </script>
 
-  <!-- Optional FAQ schema for rich results -->
-  <script type="application/ld+json">
+    <!-- Optional FAQ schema for rich results -->
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -105,171 +105,161 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav id="navbar-placeholder" aria-label="Primary"></nav>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      $("#navbar-placeholder").load("components/navbar.html");
-    });
-  </script>
+    <!-- Navigation -->
+    <nav id="navbar-placeholder" aria-label="Primary"></nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#navbar-placeholder").load("components/navbar.html");
+        });
+    </script>
 
-  <main class="content-container" id="main-content">
-    <!-- About -->
-    <section id="about" aria-labelledby="about-title">
-      <div class="about-container">
-        <div class="about-image">
-          <img src="assets/images/portrait.jpg" alt="Kenny Andries portrait" loading="lazy" width="800" height="1000"
-            style="width:100%;height:auto" />
-        </div>
+    <main class="content-container" id="main-content">
+        <!-- About -->
+        <section id="about" aria-labelledby="about-title">
+            <div class="about-header">
+                <div class="about-image">
+                    <img src="assets/images/portrait.jpg" alt="Kenny Andries" loading="lazy" width="120" height="120" />
+                </div>
 
-        <div class="about-text">
-          <h2 id="about-title">&gt; About me</h2>
-          <p>
-            I am a system engineer from Belgium with a focus on secure, automated, and reliable IT
-            infrastructure.
-            At <strong>NMBS/SNCB</strong> I manage large scale mobile device deployments with
-            <strong>Microsoft Intune</strong>, <strong>Samsung Knox</strong>, and <strong>SureMDM</strong>,
-            and I run core cloud services such as <strong>Microsoft Exchange</strong> and <strong>Entra
-              ID</strong>.
-          </p>
-          <p>
-            My path moved from hands on support to system administration to senior engineering. I know the
-            <strong>Microsoft enterprise stack</strong> well and I put a lot of effort into automation with
-            <strong>PowerShell</strong>, <strong>Ansible</strong>, and <strong>Terraform</strong>. I work
-            with <strong>Docker</strong> and <strong>Podman</strong> for container deployments and I enjoy
-            <strong>Linux</strong>, <strong>immutable infrastructure</strong>, and <strong>server
-              hardening</strong>. NixOS and Fedora Atomic are favorites.
-          </p>
-          <p>
-            Outside of work I run a <a class="link" href="/homelab">personal homelab</a> where I test
-            new ideas, refine automation workflows, and look for ways to improve performance and security.
-            I also offer <a class="link" href="https://rathix.be">consulting services</a> for teams that
-            want to
-            improve MDM, Microsoft 365, and DevOps practices.
-            If you want to talk about a project, <a class="link" href="/contact" rel="author">get in
-              touch</a>.
-          </p>
-        </div>
-      </div>
-    </section>
+                <div class="about-text">
+                    <h1>About</h1>
+                    <p>
+                        System engineer from Belgium focused on secure, automated, and reliable IT infrastructure.
+                        At <strong>NMBS/SNCB</strong> I manage large-scale mobile deployments with
+                        <strong>Microsoft Intune</strong>, <strong>Samsung Knox</strong>, and <strong>SureMDM</strong>,
+                        plus core cloud services like <strong>Exchange</strong> and <strong>Entra ID</strong>.
+                    </p>
+                </div>
+            </div>
 
-    <!-- Experience -->
-    <section id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">&gt; Experience</h2>
-      <div class="experience-grid" itemscope itemtype="https://schema.org/ItemList">
-        <div>
-          <b itemprop="name">System Engineer</b><br />
-          @ NMBS/SNCB<br />
-          2023 to present
-        </div>
-        <div itemprop="description">
-          I manage the full lifecycle of mobile devices for thousands of staff with Microsoft Intune, Samsung
-          Knox, and SureMDM.
-          I oversee Microsoft Exchange and Entra ID, keep compliance in check, and design automation to speed
-          up device provisioning and cloud administration.
-        </div>
+            <p class="about-text">
+                My path moved from support to system administration to senior engineering. I know the
+                <strong>Microsoft enterprise stack</strong> well and put effort into automation with
+                <strong>PowerShell</strong>, <strong>Ansible</strong>, and <strong>Terraform</strong>. I work
+                with <strong>Docker</strong> and <strong>Podman</strong>, and enjoy <strong>Linux</strong>,
+                immutable infrastructure, and server hardening. NixOS and Fedora Atomic are favorites.
+            </p>
 
-        <div>
-          <b>System Administrator</b><br />
-          @ NMBS/SNCB<br />
-          2020 to 2023
-        </div>
-        <div>
-          I ran Active Directory, Microsoft 365, SCCM, and Windows devices. I handled 2nd line support, solved
-          complex incidents, and led upgrades. I built scripts and tools to cut repeat work and improve
-          onboarding.
-        </div>
+            <p class="about-text">
+                Outside work I run a <a href="/homelab">homelab</a> to test ideas and refine workflows.
+                I also offer <a href="https://rathix.be">consulting</a> for teams improving MDM, Microsoft 365,
+                and DevOps practices. <a href="/contact">Get in touch</a> to discuss a project.
+            </p>
+        </section>
 
-        <div>
-          <b>Support Engineer</b><br />
-          @ NMBS/SNCB<br />
-          2020
-        </div>
-        <div>
-          I worked on the helpdesk, did incident triage, guided users through fixes, and escalated when
-          needed.
-        </div>
+        <!-- Experience -->
+        <section id="experience" aria-labelledby="experience-title">
+            <h2 id="experience-title">Experience</h2>
 
-        <div>
-          <b>Digital Marketing Advisor</b><br />
-          @ Google<br />
-          2019 to 2020
-        </div>
-        <div>
-          I advised B2B clients on Google Ads strategy and optimization and improved campaign results while
-          building strong customer facing skills.
-        </div>
-      </div>
-    </section>
+            <div class="experience-item">
+                <div class="experience-role">System Engineer</div>
+                <div class="experience-meta">NMBS/SNCB &middot; 2023 - present</div>
+                <p class="experience-desc">
+                    Managing full lifecycle of mobile devices for thousands of staff with Intune, Knox, and SureMDM.
+                    Overseeing Exchange and Entra ID, maintaining compliance, and designing automation for provisioning.
+                </p>
+            </div>
 
-    <!-- Skills -->
-    <section id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title">&gt; Skills</h2>
-      <div class="skills-grid">
-        <ul class="skills-list" aria-label="Microsoft Stack">
-          <li class="skills-category">Microsoft Stack</li>
-          <li>Intune</li>
-          <li>Exchange</li>
-          <li>Entra ID</li>
-          <li>Azure</li>
-          <li>Windows Server</li>
-          <li>SCCM</li>
-          <li>Active Directory</li>
-          <li>Microsoft 365</li>
-          <li>PowerShell and Graph</li>
-        </ul>
+            <div class="experience-item">
+                <div class="experience-role">System Administrator</div>
+                <div class="experience-meta">NMBS/SNCB &middot; 2020 - 2023</div>
+                <p class="experience-desc">
+                    Ran Active Directory, Microsoft 365, SCCM, and Windows devices. Handled 2nd line support,
+                    solved complex incidents, and built scripts to reduce repeat work.
+                </p>
+            </div>
 
-        <ul class="skills-list" aria-label="Mobile Devices">
-          <li class="skills-category">Mobile Devices</li>
-          <li>Knox Suite</li>
-          <li>Knox Configure</li>
-          <li>SureMDM</li>
-        </ul>
+            <div class="experience-item">
+                <div class="experience-role">Support Engineer</div>
+                <div class="experience-meta">NMBS/SNCB &middot; 2020</div>
+                <p class="experience-desc">
+                    Helpdesk work, incident triage, user guidance, and escalation.
+                </p>
+            </div>
 
-        <ul class="skills-list" aria-label="DevOps and Automation">
-          <li class="skills-category">DevOps and Automation</li>
-          <li>Ansible</li>
-          <li>Terraform</li>
-          <li>CI/CD and GitOps</li>
-          <li>OCI with Docker and Podman</li>
-        </ul>
+            <div class="experience-item">
+                <div class="experience-role">Digital Marketing Advisor</div>
+                <div class="experience-meta">Google &middot; 2019 - 2020</div>
+                <p class="experience-desc">
+                    Advised B2B clients on Google Ads strategy and optimization.
+                </p>
+            </div>
+        </section>
 
-        <ul class="skills-list" aria-label="Linux">
-          <li class="skills-category">Linux</li>
-          <li>NixOS</li>
-          <li>Bash</li>
-          <li>Immutable infra</li>
-          <li>Server hardening</li>
-          <li>RHEL and Fedora Atomic</li>
-          <li>Debian</li>
-        </ul>
-      </div>
-    </section>
+        <!-- Skills -->
+        <section id="skills" aria-labelledby="skills-title">
+            <h2 id="skills-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <div class="skills-category-title">Microsoft</div>
+                    <ul class="skills-list">
+                        <li>Intune</li>
+                        <li>Exchange</li>
+                        <li>Entra ID</li>
+                        <li>Azure</li>
+                        <li>Windows Server</li>
+                        <li>SCCM</li>
+                        <li>Active Directory</li>
+                        <li>Microsoft 365</li>
+                        <li>PowerShell & Graph</li>
+                    </ul>
+                </div>
 
-    <!-- Optional FAQ section that matches the FAQ schema -->
-    <section id="faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">&gt; FAQ</h2>
-      <details>
-        <summary>What services do you offer?</summary>
-        <p>MDM with Intune and Knox, Microsoft 365 and Entra ID, Exchange, and automation with PowerShell,
-          Ansible, and Terraform.</p>
-      </details>
-      <details>
-        <summary>Do you take freelance work?</summary>
-        <p>Yes for select projects. Reach out on the contact page with scope and timeline.</p>
-      </details>
-    </section>
-  </main>
+                <div class="skills-category">
+                    <div class="skills-category-title">Mobile</div>
+                    <ul class="skills-list">
+                        <li>Knox Suite</li>
+                        <li>Knox Configure</li>
+                        <li>SureMDM</li>
+                    </ul>
+                </div>
 
+                <div class="skills-category">
+                    <div class="skills-category-title">DevOps</div>
+                    <ul class="skills-list">
+                        <li>Ansible</li>
+                        <li>Terraform</li>
+                        <li>CI/CD & GitOps</li>
+                        <li>Docker & Podman</li>
+                    </ul>
+                </div>
 
-  <!-- Footer -->
-  <footer id="footer-placeholder" aria-label="Footer"></footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      $("#footer-placeholder").load("components/footer.html");
-    });
-  </script>
-  <noscript>This site uses small JavaScript snippets for navigation includes.</noscript>
+                <div class="skills-category">
+                    <div class="skills-category-title">Linux</div>
+                    <ul class="skills-list">
+                        <li>NixOS</li>
+                        <li>Bash</li>
+                        <li>Immutable infra</li>
+                        <li>Server hardening</li>
+                        <li>RHEL & Fedora Atomic</li>
+                        <li>Debian</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" aria-labelledby="faq-title">
+            <h2 id="faq-title">FAQ</h2>
+            <details>
+                <summary>What services do you offer?</summary>
+                <p>MDM with Intune and Knox, Microsoft 365 and Entra ID, Exchange, and automation with PowerShell, Ansible, and Terraform.</p>
+            </details>
+            <details>
+                <summary>Do you take freelance work?</summary>
+                <p>Yes for select projects. Reach out on the contact page with scope and timeline.</p>
+            </details>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder" aria-label="Footer"></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#footer-placeholder").load("components/footer.html");
+        });
+    </script>
+    <noscript>This site uses small JavaScript snippets for navigation includes.</noscript>
 </body>
 
 </html>
