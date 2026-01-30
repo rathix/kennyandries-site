@@ -7,7 +7,7 @@
 
     <title>Projects | Kenny Andries</title>
     <meta name="description"
-        content="Projects by Kenny Andries. Homelab on Proxmox with automation and security best practices, plus other experiments across Microsoft 365, Intune, Azure, Linux, and DevOps." />
+        content="Projects by Kenny Andries. Kubernetes on Talos OS, Proxmox homelab, and experiments across Microsoft 365, Intune, Azure, Linux, and DevOps." />
     <meta name="robots" content="index, follow" />
 
     <!-- Canonical -->
@@ -17,7 +17,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Projects | Kenny Andries" />
     <meta property="og:description"
-        content="Selected work. Homelab on Proxmox with automation and security, plus Microsoft and Linux focused projects." />
+        content="Selected work. Kubernetes on Talos OS, Proxmox homelab, and Microsoft/Linux focused projects." />
     <meta property="og:url" content="https://kennyandries.com/projects" />
     <meta property="og:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
 
@@ -46,6 +46,21 @@
             {
               "@type": "ListItem",
               "position": 1,
+              "item": {
+                "@type": "Project",
+                "name": "Kubernetes Homelab",
+                "url": "https://kennyandries.com/kubernetes",
+                "description": "Bare metal Kubernetes on Talos OS with kube-vip, Longhorn, Traefik, cert-manager, and FluxCD.",
+                "keywords": "Kubernetes, Talos OS, kube-vip, Longhorn, Traefik, cert-manager, FluxCD, GitOps",
+                "creator": {
+                  "@type": "Person",
+                  "name": "Kenny Andries"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
               "item": {
                 "@type": "Project",
                 "name": "Homelab",
@@ -96,16 +111,30 @@
                 <li class="project-item">
                     <article itemscope itemtype="https://schema.org/Project">
                         <h3 itemprop="name">
+                            <a href="kubernetes" itemprop="url">Kubernetes Homelab</a>
+                        </h3>
+                        <p itemprop="description">
+                            Bare metal Kubernetes running on Talos OS. GitOps-driven with FluxCD, using
+                            kube-vip for load balancing, Longhorn for storage, Traefik for ingress, and
+                            cert-manager for TLS. Self-hosted services without the managed Kubernetes training wheels.
+                        </p>
+                        <p class="project-tags">
+                            Kubernetes &middot; Talos OS &middot; FluxCD &middot; Longhorn &middot;
+                            Traefik &middot; kube-vip
+                        </p>
+                    </article>
+                </li>
+                <li class="project-item">
+                    <article itemscope itemtype="https://schema.org/Project">
+                        <h3 itemprop="name">
                             <a href="homelab" itemprop="url">Homelab</a>
                         </h3>
                         <p itemprop="description">
-                            Self-hosted Proxmox-based homelab mirroring enterprise patterns. Using Ansible,
-                            Terraform, and CI/CD to build and harden services like Nextcloud, Jellyfin, Vaultwarden,
-                            Immich, Servarr, and Home Assistant on Linux with OCI containers.
+                            Self-hosted Proxmox-based homelab. TrueNAS for storage, MikroTik networking,
+                            and services like Nextcloud, Jellyfin, Vaultwarden, Immich, and Home Assistant.
                         </p>
                         <p class="project-tags">
-                            Proxmox &middot; Ansible &middot; Terraform &middot; Docker &middot;
-                            Podman &middot; NixOS &middot; Fedora Atomic
+                            Proxmox &middot; TrueNAS &middot; MikroTik &middot; Docker &middot; Podman
                         </p>
                     </article>
                 </li>

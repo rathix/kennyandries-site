@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="My Kubernetes homelab running on Talos OS with kube-vip, Longhorn, Traefik, cert-manager, and FluxCD. GitOps-driven, self-hosted services on bare metal." />
+    <meta name="author" content="Kenny Andries" />
+    <title>Kubernetes Homelab | Kenny Andries</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Kubernetes Homelab",
+      "author": {
+        "@type": "Person",
+        "name": "Kenny Andries",
+        "url": "https://kennyandries.com"
+      },
+      "datePublished": "2026-01-30",
+      "publisher": {
+        "@type": "Person",
+        "name": "Kenny Andries"
+      },
+      "description": "My Kubernetes homelab running on Talos OS with kube-vip, Longhorn, Traefik, cert-manager, and FluxCD."
+    }
+    </script>
+</head>
+
+<body itemscope itemtype="https://schema.org/Article">
+    <!-- Navigation -->
+    <nav id="navbar-placeholder" aria-label="Primary"></nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#navbar-placeholder").load("components/navbar.html");
+        });
+    </script>
+
+    <main class="content-container" id="main-content">
+        <article>
+            <header>
+                <h1 itemprop="headline">Kubernetes Homelab</h1>
+                <meta itemprop="datePublished" content="2026-01-30" />
+            </header>
+
+            <section itemprop="articleBody">
+                <p>
+                    After running everything on Proxmox for a while, I wanted to learn Kubernetes properly.
+                    Not managed Kubernetes where the hard parts are hidden, but the real thing on bare metal.
+                    So I built a cluster from scratch using Talos OS.
+                </p>
+
+                <h2>Why Talos</h2>
+                <p>
+                    <strong>Talos OS</strong> is a minimal, immutable Linux distribution built specifically
+                    for Kubernetes. No SSH, no shell, no package manager. You manage everything through an
+                    API. It sounds limiting until you realize how much less can go wrong. The OS is
+                    declarative and versioned, just like the workloads running on it.
+                </p>
+
+                <h2>Networking</h2>
+                <p>
+                    <strong>kube-vip</strong> handles the control plane VIP and load balancer services.
+                    No need for an external load balancer or MetalLB. It runs as a static pod on the
+                    control plane nodes and uses ARP or BGP depending on your setup.
+                </p>
+                <p>
+                    <strong>Traefik</strong> as the ingress controller. It handles routing, TLS termination,
+                    and integrates well with cert-manager for automatic certificates.
+                </p>
+
+                <h2>Storage</h2>
+                <p>
+                    <strong>Longhorn</strong> for distributed block storage. It replicates data across
+                    nodes, handles snapshots and backups, and has a decent UI for when you need to see
+                    what's going on. Not the fastest option, but reliable and easy to manage.
+                </p>
+
+                <h2>Certificates</h2>
+                <p>
+                    <strong>cert-manager</strong> handles TLS certificates automatically. Point it at
+                    Let's Encrypt (or your own CA), define some issuers, and it takes care of the rest.
+                    No more manual certificate renewal.
+                </p>
+
+                <h2>GitOps</h2>
+                <p>
+                    Everything is deployed through <strong>FluxCD</strong>. The cluster state lives in a
+                    Git repo. Push a change, Flux picks it up and applies it. No more kubectl apply from
+                    my laptop. If I mess something up, I can see exactly what changed and roll it back.
+                </p>
+
+                <h2>Services</h2>
+                <p>Same stuff I was running on Proxmox, now in containers on Kubernetes:</p>
+                <ul>
+                    <li><strong>Nextcloud</strong> for files, calendar, contacts</li>
+                    <li><strong>Jellyfin</strong> for media</li>
+                    <li><strong>Vaultwarden</strong> for passwords</li>
+                    <li><strong>Pocket ID</strong> for SSO</li>
+                    <li><strong>Home Assistant</strong> for home automation</li>
+                    <li><strong>Immich</strong> for photo backups</li>
+                    <li><strong>Servarr stack</strong> for media management</li>
+                </ul>
+
+                <h2>What I learned</h2>
+                <p>
+                    Running Kubernetes at home is a lot of work upfront. But once it's set up, the GitOps
+                    workflow is hard to beat. I can rebuild the entire cluster from the repo if I need to.
+                    Upgrades are less scary when you can just spin up a new node and drain the old one.
+                </p>
+                <p>
+                    If you're thinking about doing something similar, <a href="/contact">reach out</a>.
+                    Happy to share what worked and what didn't.
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-placeholder" aria-label="Footer"></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#footer-placeholder").load("components/footer.html");
+        });
+    </script>
+    <noscript>This page uses small JavaScript snippets for navigation includes.</noscript>
+</body>
+
+</html>
