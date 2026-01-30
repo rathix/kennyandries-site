@@ -5,11 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) {
             fetch(path)
                 .then(r => r.text())
-                .then(html => { el.innerHTML = html; })
+                .then(html => {
+                    el.innerHTML = html;
+                    // Scripts inserted via innerHTML don't execute, so re-create them
+                    el.querySelectorAll('script').forEach(oldScript => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = oldScript.textContent;
+                        oldScript.parentNode.replaceChild(newScript, oldScript);
+                    });
+                })
                 .catch(err => console.error(`Failed to load ${path}:`, err));
         }
     };
 
-    load('navbar-placeholder', 'components/navbar.html');
-    load('footer-placeholder', 'components/footer.html');
+    // No .html extension - server rewrites URLs
+    load('navbar-placeholder', 'components/navbar');
+    load('footer-placeholder', 'components/footer');
 });
