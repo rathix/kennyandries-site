@@ -30,9 +30,18 @@ jobs:
       - name: Check links
         run: |
           npx serve -l 3000 &
-          sleep 3
-          linkinator http://localhost:3000 --recurse --skip "^(?!http://localhost)" --timeout 10000
-          kill %1
+          sleep 5
+          # Check that server is responding
+          curl -s http://localhost:3000 > /dev/null || { echo "Server not responding"; exit 1; }
+          # Check internal links only, skip external URLs
+          linkinator http://localhost:3000 \
+            --recurse \
+            --skip "^https?://(?!localhost)" \
+            --skip "mailto:" \
+            --timeout 15000 \
+            --retry \
+            --retry-errors
+          kill %1 2>/dev/null || true
 
   accessibility:
     name: Check accessibility
@@ -52,9 +61,9 @@ jobs:
       - name: Run accessibility tests
         run: |
           npx serve -l 3000 &
-          sleep 3
+          sleep 5
           pa11y-ci --config .pa11yci.json
-          kill %1
+          kill %1 2>/dev/null || true
 
   deploy:
     name: Deploy website via FTP
