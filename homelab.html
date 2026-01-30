@@ -5,9 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Explore my enterprise-grade Proxmox homelab with Zero Trust networking via NetBird, MikroTik networking gear, dual TrueNAS SCALE NAS servers, and self-hosted services like Nextcloud, Jellyfin, and Home Assistant." />
-    <meta name="keywords"
-        content="Homelab, Proxmox VE, Zero Trust, NetBird, MikroTik, TrueNAS SCALE, Self-hosted services, System Engineer, IT Consultant, Nextcloud, Jellyfin, Home Assistant, Virtualization, ZFS, Backup Strategy" />
+        content="My Proxmox homelab setup with TrueNAS storage, MikroTik networking, and self-hosted services like Nextcloud, Jellyfin, and Home Assistant. Where I test ideas and break things on purpose." />
     <meta name="author" content="Kenny Andries" />
     <title>Homelab | Kenny Andries</title>
     <link rel="stylesheet" href="css/styles.css" />
@@ -18,7 +16,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "My Proxmox Homelab: A Professional-Grade IT Environment",
+      "headline": "Homelab",
       "author": {
         "@type": "Person",
         "name": "Kenny Andries",
@@ -30,7 +28,7 @@
         "@type": "Person",
         "name": "Kenny Andries"
       },
-      "description": "An enterprise-grade Proxmox homelab with Zero Trust networking using NetBird, MikroTik equipment, dual TrueNAS SCALE NAS servers, and production-ready self-hosted services."
+      "description": "My Proxmox homelab with TrueNAS storage, MikroTik networking, and self-hosted services. Where I test ideas and break things on purpose."
     }
     </script>
 </head>
@@ -55,10 +53,9 @@
                 <div class="homelab-intro">
                     <div class="homelab-text">
                         <p>
-                            As a <strong>System Engineer</strong> and <strong>IT Consultant</strong>, I keep skills
-                            sharp by working hands-on with the technologies I recommend. This homelab is built to
-                            reflect professional infrastructure standards with a focus on scalability, uptime, and
-                            security.
+                            This is where I break things on purpose. I use my homelab to test ideas, try out
+                            tools before recommending them, and generally mess around with infrastructure in
+                            ways I can't do at work. It's overkill for home use, but that's the point.
                         </p>
                     </div>
                     <div class="homelab-image">
@@ -66,69 +63,54 @@
                     </div>
                 </div>
 
-                <h2>Core Infrastructure</h2>
-                <p>Proxmox VE cluster providing:</p>
-                <ul>
-                    <li>High Availability to keep services online</li>
-                    <li>Live migration between nodes for maintenance</li>
-                    <li>Centralized cluster management</li>
-                    <li>ZFS-backed storage for speed and data protection</li>
-                </ul>
+                <h2>Compute</h2>
+                <p>
+                    Everything runs on a <strong>Proxmox VE</strong> cluster. High availability, live migration
+                    between nodes, ZFS for storage. I can take a node offline for maintenance without anything
+                    going down.
+                </p>
 
                 <h2>Storage</h2>
-                <p>Dual TrueNAS SCALE NAS servers:</p>
-                <ul>
-                    <li>ZFS-based storage with snapshots and replication</li>
-                    <li>Separate storage pools for different workloads</li>
-                    <li>Integration with Proxmox VE for shared storage</li>
-                </ul>
-
-                <h2>Backup & Recovery</h2>
-                <p>Using on-site and remote Proxmox Backup Servers for secure, deduplicated, encrypted backups:</p>
-                <ul>
-                    <li>Disaster recovery across locations</li>
-                    <li>Fast incremental restores</li>
-                    <li>Snapshot-based VM and container backups</li>
-                </ul>
-
-                <h2>Networking & Security</h2>
-                <ul>
-                    <li>Zero Trust Network Access via <strong>NetBird</strong></li>
-                    <li>MikroTik routers and switches</li>
-                    <li>Reverse proxy with HTTPS</li>
-                    <li>Self-hosted IdP for identity-based auth</li>
-                    <li>Network segmentation with VLANs and firewalls</li>
-                    <li>Site-to-site VPN for secure remote access</li>
-                    <li>Continuous monitoring and alerting</li>
-                </ul>
-
-                <h2>Self-Hosted Services</h2>
-                <p>Fully integrated, monitored, and secured:</p>
-                <ul>
-                    <li><strong>Nextcloud</strong> - File sync, calendar, contacts</li>
-                    <li><strong>Jellyfin</strong> - Private media streaming</li>
-                    <li><strong>Vaultwarden</strong> - Password management</li>
-                    <li><strong>Pocket ID</strong> - Single sign-on</li>
-                    <li><strong>Home Assistant</strong> - Smart home automation</li>
-                    <li><strong>Immich</strong> - AI photo backup</li>
-                    <li><strong>Servarr Stack</strong> - Media library management</li>
-                </ul>
-
-                <h2>Why This Homelab</h2>
-                <ul>
-                    <li>Test and refine solutions before client deployment</li>
-                    <li>Practice high availability and disaster recovery</li>
-                    <li>Compare self-hosted vs cloud options</li>
-                    <li>Evaluate open-source tools for reliability</li>
-                </ul>
-
-                <h2>Work With Me</h2>
                 <p>
-                    Looking to upgrade systems, improve infrastructure, or strengthen resilience?
-                    This homelab is a constant source of practical experience I bring to every project.
+                    Two <strong>TrueNAS SCALE</strong> boxes with ZFS. Snapshots, replication, separate pools
+                    for different workloads. They feed into Proxmox as shared storage.
+                </p>
+
+                <h2>Backups</h2>
+                <p>
+                    <strong>Proxmox Backup Server</strong> running both on-site and at a remote location.
+                    Deduplicated, encrypted, incremental. If something goes wrong I can restore VMs and
+                    containers quickly.
+                </p>
+
+                <h2>Networking</h2>
+                <p>
+                    <strong>MikroTik</strong> gear for routing and switching. VLANs to segment traffic,
+                    firewall rules between zones. Remote access through <strong>NetBird</strong> (Zero Trust)
+                    and site-to-site VPN. Reverse proxy with HTTPS for anything exposed. Self-hosted identity
+                    provider for SSO.
+                </p>
+
+                <h2>Services</h2>
+                <p>Some of the stuff I run:</p>
+                <ul>
+                    <li><strong>Nextcloud</strong> for files, calendar, contacts</li>
+                    <li><strong>Jellyfin</strong> for media</li>
+                    <li><strong>Vaultwarden</strong> for passwords</li>
+                    <li><strong>Pocket ID</strong> for SSO</li>
+                    <li><strong>Home Assistant</strong> for home automation</li>
+                    <li><strong>Immich</strong> for photo backups</li>
+                    <li><strong>Servarr stack</strong> for media management</li>
+                </ul>
+
+                <h2>Why bother</h2>
+                <p>
+                    Mostly because I enjoy it. But it's also useful. I get to test things before suggesting
+                    them to clients, practice disaster recovery when nothing is actually on fire, and figure
+                    out what works and what doesn't without any pressure.
                 </p>
                 <p>
-                    <a href="/contact">Get in touch</a> to start a conversation.
+                    If you want to chat about any of this, <a href="/contact">reach out</a>.
                 </p>
             </section>
         </article>
