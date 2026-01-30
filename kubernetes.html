@@ -66,56 +66,73 @@
                     So I built a cluster from scratch using Talos OS.
                 </p>
 
-                <h2>Why Talos</h2>
-                <p>
-                    <strong>Talos OS</strong> is a minimal, immutable Linux distribution built specifically
-                    for Kubernetes. No SSH, no shell, no package manager. You manage everything through an
-                    API. It sounds limiting until you realize how much less can go wrong. The OS is
-                    declarative and versioned, just like the workloads running on it.
-                </p>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/talos.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Talos OS</h2>
+                            <p>
+                                Minimal, immutable Linux built for Kubernetes. No SSH, no shell, no package manager.
+                                Everything managed through an API. Declarative and versioned, just like the workloads.
+                            </p>
+                        </div>
+                    </div>
 
-                <h2>Networking</h2>
-                <p>
-                    <strong>kube-vip</strong> handles the control plane VIP and load balancer services.
-                    No need for an external load balancer or MetalLB. It runs as a static pod on the
-                    control plane nodes and uses ARP or BGP depending on your setup.
-                </p>
-                <p>
-                    <strong>Traefik</strong> as the ingress controller. It handles routing, TLS termination,
-                    and integrates well with cert-manager for automatic certificates.
-                </p>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/traefik.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Networking</h2>
+                            <p>
+                                <strong>kube-vip</strong> for control plane VIP and load balancing.
+                                <strong>Traefik</strong> as ingress controller for routing and TLS termination.
+                            </p>
+                        </div>
+                    </div>
 
-                <h2>Storage</h2>
-                <p>
-                    <strong>Longhorn</strong> for distributed block storage. It replicates data across
-                    nodes, handles snapshots and backups, and has a decent UI for when you need to see
-                    what's going on. Not the fastest option, but reliable and easy to manage.
-                </p>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/longhorn.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Storage</h2>
+                            <p>
+                                <strong>Longhorn</strong> for distributed block storage. Replicates across nodes,
+                                handles snapshots and backups. Reliable and easy to manage.
+                            </p>
+                        </div>
+                    </div>
 
-                <h2>Certificates</h2>
-                <p>
-                    <strong>cert-manager</strong> handles TLS certificates automatically. Point it at
-                    Let's Encrypt (or your own CA), define some issuers, and it takes care of the rest.
-                    No more manual certificate renewal.
-                </p>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cert-manager.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Certificates</h2>
+                            <p>
+                                <strong>cert-manager</strong> handles TLS automatically. Point it at Let's Encrypt,
+                                define issuers, and forget about manual renewal.
+                            </p>
+                        </div>
+                    </div>
 
-                <h2>GitOps</h2>
-                <p>
-                    Everything is deployed through <strong>FluxCD</strong>. The cluster state lives in a
-                    Git repo. Push a change, Flux picks it up and applies it. No more kubectl apply from
-                    my laptop. If I mess something up, I can see exactly what changed and roll it back.
-                </p>
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/flux-cd.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>GitOps</h2>
+                            <p>
+                                Everything deployed through <strong>FluxCD</strong>. Cluster state lives in Git.
+                                Push a change, Flux applies it. Easy rollbacks when things go wrong.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 <h2>Services</h2>
                 <p>Same stuff I was running on Proxmox, now in containers on Kubernetes:</p>
-                <ul>
-                    <li><strong>Nextcloud</strong> for files, calendar, contacts</li>
-                    <li><strong>Jellyfin</strong> for media</li>
-                    <li><strong>Vaultwarden</strong> for passwords</li>
-                    <li><strong>Pocket ID</strong> for SSO</li>
-                    <li><strong>Home Assistant</strong> for home automation</li>
-                    <li><strong>Immich</strong> for photo backups</li>
-                    <li><strong>Servarr stack</strong> for media management</li>
+                <ul class="service-list">
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nextcloud.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Nextcloud</strong> for files, calendar, contacts</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyfin.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Jellyfin</strong> for media</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/vaultwarden.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Vaultwarden</strong> for passwords</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/authentik.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Pocket ID</strong> for SSO</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/home-assistant.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Home Assistant</strong> for home automation</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Immich</strong> for photo backups</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Servarr stack</strong> for media management</li>
                 </ul>
 
                 <h2>What I learned</h2>

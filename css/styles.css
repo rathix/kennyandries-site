@@ -579,6 +579,66 @@ details p {
     color: var(--muted);
 }
 
+/* Tech grid with icons */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.tech-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--surface);
+    border-radius: var(--radius);
+}
+
+.tech-card-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    opacity: 0.9;
+    margin-top: 2px;
+}
+
+.tech-card-content h2 {
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--text);
+    margin: 0 0 var(--space-xs);
+}
+
+.tech-card-content h2::before {
+    content: none;
+}
+
+.tech-card-content p {
+    font-size: var(--fs-sm);
+    color: var(--subtext);
+    margin: 0;
+    line-height: var(--lh-normal);
+}
+
+/* Service list with icons */
+.service-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.service-icon {
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
 /* ===== Contact Page ===== */
 .contact-email {
     font-size: var(--fs-lg);
