@@ -61,46 +61,57 @@
             </header>
 
             <section itemprop="articleBody">
-                <div class="homelab-intro">
-                    <div class="homelab-text">
-                        <p>
-                            This is where I break things on purpose. I use my homelab to test ideas, try out
-                            tools before recommending them, and generally mess around with infrastructure in
-                            ways I can't do at work. It's overkill for home use, but that's the point.
-                        </p>
+                <p>
+                    This is where I break things on purpose. I use my homelab to test ideas, try out
+                    tools before recommending them, and generally mess around with infrastructure in
+                    ways I can't do at work. It's overkill for home use, but that's the point.
+                </p>
+
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/proxmox.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Compute</h2>
+                            <p>
+                                <strong>Proxmox VE</strong> cluster with high availability and live migration.
+                                ZFS for storage. Take a node offline without anything going down.
+                            </p>
+                        </div>
                     </div>
-                    <div class="homelab-image">
-                        <img src="/assets/images/homelab.jpg" alt="Proxmox homelab setup" loading="lazy" width="400" height="400" />
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/truenas.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Storage</h2>
+                            <p>
+                                Two <strong>TrueNAS SCALE</strong> boxes with ZFS. Snapshots, replication,
+                                separate pools. Shared storage for Proxmox.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/proxmox.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Backups</h2>
+                            <p>
+                                <strong>Proxmox Backup Server</strong> on-site and remote. Deduplicated,
+                                encrypted, incremental. Fast VM and container restores.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/mikrotik.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Networking</h2>
+                            <p>
+                                <strong>MikroTik</strong> for routing and switching. VLANs, firewall rules,
+                                <strong>NetBird</strong> for Zero Trust access, site-to-site VPN.
+                            </p>
+                        </div>
                     </div>
                 </div>
-
-                <h2>Compute</h2>
-                <p>
-                    Everything runs on a <strong>Proxmox VE</strong> cluster. High availability, live migration
-                    between nodes, ZFS for storage. I can take a node offline for maintenance without anything
-                    going down.
-                </p>
-
-                <h2>Storage</h2>
-                <p>
-                    Two <strong>TrueNAS SCALE</strong> boxes with ZFS. Snapshots, replication, separate pools
-                    for different workloads. They feed into Proxmox as shared storage.
-                </p>
-
-                <h2>Backups</h2>
-                <p>
-                    <strong>Proxmox Backup Server</strong> running both on-site and at a remote location.
-                    Deduplicated, encrypted, incremental. If something goes wrong I can restore VMs and
-                    containers quickly.
-                </p>
-
-                <h2>Networking</h2>
-                <p>
-                    <strong>MikroTik</strong> gear for routing and switching. VLANs to segment traffic,
-                    firewall rules between zones. Remote access through <strong>NetBird</strong> (Zero Trust)
-                    and site-to-site VPN. Reverse proxy with HTTPS for anything exposed. Self-hosted identity
-                    provider for SSO.
-                </p>
 
                 <h2>Services</h2>
                 <p>Some of the stuff I run:</p>

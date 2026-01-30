@@ -579,6 +579,40 @@ details p {
     color: var(--muted);
 }
 
+/* Tech grid with icons */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.tech-card {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--surface);
+    border-radius: var(--radius);
+}
+
+.tech-card-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.tech-card-content h2 {
+    font-size: var(--fs-base);
+    margin-bottom: var(--space-xs);
+}
+
+.tech-card-content p {
+    font-size: var(--fs-sm);
+    color: var(--subtext);
+    margin: 0;
+}
+
 /* Service list with icons */
 .service-list {
     list-style: none;
