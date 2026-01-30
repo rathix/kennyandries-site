@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Projects | Kenny Andries</title>
     <meta name="description"
@@ -21,8 +21,14 @@
     <meta property="og:url" content="https://kennyandries.com/projects" />
     <meta property="og:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Projects | Kenny Andries" />
+    <meta name="twitter:description" content="Kubernetes on Talos OS, Proxmox homelab, and Microsoft/Linux focused projects." />
+    <meta name="twitter:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
+
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="https://code.jquery.com/jquery-1.10.2.js" defer></script>
+    <script src="js/components-loader.js" defer></script>
 
     <!-- Structured Data: CollectionPage + ItemList of Projects + Breadcrumbs -->
     <script type="application/ld+json">
@@ -89,14 +95,7 @@
 </head>
 
 <body>
-    <!--Navigation bar-->
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            $("#navbar-placeholder").load("components/navbar.html");
-        });
-    </script>
-    <!--End of Navigation bar-->
 
     <main class="content-container" id="main-content">
         <header>
@@ -142,14 +141,8 @@
         </section>
     </main>
 
-    <!--Footer-->
     <footer id="footer-placeholder" aria-label="Footer"></footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            $("#footer-placeholder").load("components/footer.html");
-        });
-    </script>
-    <noscript>This site uses small JavaScript snippets for navigation includes.</noscript>
+    <noscript>This site uses JavaScript to load navigation.</noscript>
 </body>
 
 </html>

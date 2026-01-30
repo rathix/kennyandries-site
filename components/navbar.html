@@ -24,9 +24,11 @@
 </nav>
 
 <script>
-    // highlight active link
+    // highlight active link (handles trailing slashes and index pages)
+    const path = window.location.pathname.replace(/\/$/, '') || '/';
     document.querySelectorAll("#navbarItems a").forEach((link) => {
-        if (link.href === window.location.href) {
+        const linkPath = new URL(link.href).pathname.replace(/\/$/, '') || '/';
+        if (path === linkPath) {
             link.classList.add("active");
             link.setAttribute("aria-current", "page");
         }
