@@ -1,6 +1,9 @@
 # Index page
 DirectoryIndex index.html
 
+# Custom 404 error page
+ErrorDocument 404 /404.html
+
 RewriteEngine On
 
 # Redirect .html URLs to clean URLs (for SEO)
