@@ -1,0 +1,6 @@
+# Robots.txt for Kenny Andries
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://kennyandries.be/sitemap.xml
