@@ -1,29 +1,72 @@
-# Index page
+# =============================================================================
+# Kenny Andries - Apache Configuration
+# =============================================================================
+#
+# This file configures:
+# - Clean URLs (removes .html extension)
+# - Custom 404 error page
+# - Gzip compression
+# - Browser caching
+# - Security headers
+#
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Basic Settings
+# -----------------------------------------------------------------------------
+
+# Default document for directory requests
 DirectoryIndex index.html
 
 # Custom 404 error page
 ErrorDocument 404 /404.html
 
+# -----------------------------------------------------------------------------
+# URL Rewriting (Clean URLs)
+# -----------------------------------------------------------------------------
+#
+# Enables URLs like /about instead of /about.html
+# Components are NOT excluded here because they use clean URLs too
+#
+
 RewriteEngine On
 
-# Redirect .html URLs to clean URLs (for SEO)
+# Redirect .html URLs to clean URLs (301 permanent redirect for SEO)
+# Example: /about.html -> /about
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html\sHTTP [NC]
 RewriteRule ^ %1 [R=301,L]
 
-# Serve .html files without typing .html
+# Internally serve .html files for clean URLs
+# Example: Request for /about serves /about.html
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
 
-# Enable compression
+# -----------------------------------------------------------------------------
+# Performance: Compression
+# -----------------------------------------------------------------------------
+#
+# Enables gzip compression for text-based files
+# Reduces bandwidth by 60-70% for supported browsers
+#
+
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
 </IfModule>
 
-# Browser caching
+# -----------------------------------------------------------------------------
+# Performance: Browser Caching
+# -----------------------------------------------------------------------------
+#
+# Sets cache expiration headers to reduce repeat downloads
+# - Images: 1 month (they rarely change)
+# - CSS/JS: 1 week (update periodically)
+# - HTML: 1 hour (may change frequently)
+#
+
 <IfModule mod_expires.c>
     ExpiresActive On
 
-    # Images
+    # Images - cache for 1 month
     ExpiresByType image/png "access plus 1 month"
     ExpiresByType image/jpeg "access plus 1 month"
     ExpiresByType image/gif "access plus 1 month"
@@ -31,15 +74,24 @@ RewriteRule ^(.*)$ $1.html [NC,L]
     ExpiresByType image/svg+xml "access plus 1 month"
     ExpiresByType image/x-icon "access plus 1 year"
 
-    # CSS and JavaScript
+    # CSS and JavaScript - cache for 1 week
     ExpiresByType text/css "access plus 1 week"
     ExpiresByType application/javascript "access plus 1 week"
 
-    # HTML
+    # HTML - cache for 1 hour
     ExpiresByType text/html "access plus 1 hour"
 </IfModule>
 
-# Security headers
+# -----------------------------------------------------------------------------
+# Security Headers
+# -----------------------------------------------------------------------------
+#
+# X-Content-Type-Options: Prevents MIME type sniffing
+# X-Frame-Options: Prevents clickjacking by disabling iframes
+# X-XSS-Protection: Enables browser XSS filtering
+# Referrer-Policy: Controls referrer information sent with requests
+#
+
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
