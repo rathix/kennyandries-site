@@ -51,6 +51,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
     <main class="content-container" id="main-content">
@@ -70,7 +71,10 @@
                         </p>
                     </div>
                     <div class="homelab-image">
-                        <img src="assets/images/homelab.jpg" alt="Homelab server rack" itemprop="image" />
+                        <picture>
+                            <source srcset="assets/images/homelab.webp" type="image/webp" />
+                            <img src="assets/images/homelab.jpg" alt="Homelab server rack" itemprop="image" />
+                        </picture>
                     </div>
                 </div>
 

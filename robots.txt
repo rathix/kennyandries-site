@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://kennyandries.be/sitemap.xml
+Sitemap: https://kennyandries.com/sitemap.xml

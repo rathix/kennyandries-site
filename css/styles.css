@@ -294,6 +294,23 @@ h2::before {
     border: 0;
 }
 
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--accent);
+    color: var(--bg);
+    font-size: var(--fs-sm);
+    z-index: 1000;
+    transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: none;
+}
+
 /* ===== Home Page ===== */
 .home-header {
     margin-bottom: var(--space-2xl);
