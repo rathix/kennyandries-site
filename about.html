@@ -111,6 +111,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
     <main class="content-container" id="main-content">
@@ -118,7 +119,10 @@
         <section id="about" aria-labelledby="about-title">
             <div class="about-header">
                 <div class="about-image">
-                    <img src="assets/images/portrait.jpg" alt="Kenny Andries" loading="lazy" width="120" height="120" />
+                    <picture>
+                        <source srcset="assets/images/portrait.webp" type="image/webp" />
+                        <img src="assets/images/portrait.jpg" alt="Kenny Andries" loading="lazy" width="120" height="120" />
+                    </picture>
                 </div>
 
                 <div class="about-text">
