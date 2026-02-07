@@ -1,5 +1,7 @@
 # Kenny Andries - Personal Website
 
+![Validate](https://github.com/rathix/kennyandries-site/actions/workflows/deploy.yaml/badge.svg)
+
 Personal portfolio website showcasing my experience as a System Engineer specializing in Microsoft technologies, device management, and infrastructure automation.
 
 **Live site:** [kennyandries.com](https://kennyandries.com)
