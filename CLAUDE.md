@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static personal portfolio website for Kenny Andries (kennyandries.be). Built with vanilla HTML, CSS, and JavaScript — no frameworks, no build tools, no package.json.
+Static personal portfolio website for Kenny Andries (kennyandries.com). Built with vanilla HTML, CSS, and JavaScript — no frameworks, no build tools, no package.json.
 
 ## Commands
 

@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing my experience as a System Engineer specializing in Microsoft technologies, device management, and infrastructure automation.
 
-**Live site:** [kennyandries.be](https://kennyandries.be)
+**Live site:** [kennyandries.com](https://kennyandries.com)
 
 ## Tech Stack
 
