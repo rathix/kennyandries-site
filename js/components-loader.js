@@ -45,6 +45,8 @@ function loadComponent(elementId, componentPath) {
         .then(html => {
             element.innerHTML = html;
             executeScripts(element);
+            const yearEl = document.getElementById('copyright-year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
         })
         .catch(error => console.error(`Failed to load ${componentPath}:`, error));
 }
