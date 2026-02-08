@@ -803,6 +803,27 @@ code {
     }
 }
 
+/* ===== Large screens ===== */
+@media (min-width: 1800px) {
+    html {
+        font-size: 118.75%; /* 19px base */
+    }
+
+    :root {
+        --max-w: 860px;
+    }
+}
+
+@media (min-width: 2560px) {
+    html {
+        font-size: 137.5%; /* 22px base */
+    }
+
+    :root {
+        --max-w: 980px;
+    }
+}
+
 /* ===== Motion ===== */
 @media (prefers-reduced-motion: reduce) {
     *,
