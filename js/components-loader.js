@@ -16,8 +16,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('navbar-placeholder', 'components/navbar');
-    loadComponent('footer-placeholder', 'components/footer');
+    loadComponent('navbar-placeholder', '/components/navbar');
+    loadComponent('footer-placeholder', '/components/footer');
 });
 
 /**
