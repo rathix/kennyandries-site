@@ -57,6 +57,7 @@
         <article itemscope itemtype="https://schema.org/Article">
             <header>
                 <h1 itemprop="headline">Enterprise MDM Transformation</h1>
+                <p class="project-meta">20,000 devices &middot; 4 enrollment tracks &middot; NIS2 &amp; ISO 27001</p>
                 <meta itemprop="datePublished" content="2026-02-08" />
             </header>
 
@@ -80,31 +81,55 @@
                     Different roles have fundamentally different needs, so we designed four
                     enrollment tracks instead of one:
                 </p>
-                <ul>
-                    <li>
-                        <strong>COSU</strong> &mdash; single-purpose, kiosk-style devices locked to
-                        a specific set of apps. Used in workshops for maintenance tooling, in
-                        realtime dispatching centers for traffic control, and as urgent swap
-                        devices that train managers and drivers can grab and go when their
-                        primary device fails.
-                    </li>
-                    <li>
-                        <strong>COBO</strong> &mdash; fully managed corporate devices for
-                        operational staff. Complete control over the device, no personal use.
-                        Hardened baselines enforced from enrollment.
-                    </li>
-                    <li>
-                        <strong>COPE</strong> &mdash; corporate-owned devices with a personal
-                        profile for white collar workers. Work data stays containerized and
-                        policy-managed while users keep a personal side for their own apps.
-                    </li>
-                    <li>
-                        <strong>MAM</strong> &mdash; app-level protection without device
-                        enrollment. Conditional access and data loss prevention policies applied
-                        directly to managed apps for users on personal devices who only need
-                        access to email, Teams, or a handful of corporate apps.
-                    </li>
-                </ul>
+
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-card-label" style="color: var(--accent)">COSU</div>
+                        <div class="tech-card-content">
+                            <h2>Single-purpose devices</h2>
+                            <p>
+                                Kiosk-style devices locked to a specific set of apps. Used in workshops
+                                for maintenance tooling, in realtime dispatching centers for traffic
+                                control, and as urgent swap devices that train managers and drivers can
+                                grab and go when their primary device fails.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-card-label" style="color: var(--green)">COBO</div>
+                        <div class="tech-card-content">
+                            <h2>Fully managed corporate</h2>
+                            <p>
+                                Fully managed corporate devices for operational staff. Complete control
+                                over the device, no personal use. Hardened baselines enforced from
+                                enrollment.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-card-label" style="color: var(--yellow)">COPE</div>
+                        <div class="tech-card-content">
+                            <h2>Corporate with personal</h2>
+                            <p>
+                                Corporate-owned devices with a personal profile for white collar workers.
+                                Work data stays containerized and policy-managed while users keep a
+                                personal side for their own apps.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-card-label" style="color: var(--link)">MAM</div>
+                        <div class="tech-card-content">
+                            <h2>App-level protection</h2>
+                            <p>
+                                App-level protection without device enrollment. Conditional access and
+                                data loss prevention policies applied directly to managed apps for users
+                                on personal devices who only need email, Teams, or a handful of
+                                corporate apps.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 <h2>Security hardening</h2>
                 <p>
@@ -167,15 +192,32 @@
                 </p>
 
                 <h2>Impact</h2>
-                <ul>
-                    <li><strong>20,000 devices</strong> migrated across COSU, COBO, COPE, and MAM</li>
-                    <li><strong>NIS2 and ISO 27001</strong> compliance through enforced, auditable baselines</li>
-                    <li><strong>Defender for Endpoint</strong> deployed fleet-wide with risk-based conditional access</li>
-                    <li><strong>User setup under 5 minutes</strong> &mdash; down from well over 40</li>
-                    <li><strong>Zero-touch provisioning</strong> through staging profiles and vendor coordination</li>
-                    <li><strong>Knox Configure to KSP</strong> migration with E-FOTA and KAI fleet-wide</li>
-                    <li><strong>Lifecycle processes</strong> overhauled from request through retirement</li>
-                    <li><strong>&euro;200k+ annual savings</strong> from license and tooling consolidation</li>
+
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <span class="stat-value">20K</span>
+                        <span class="stat-label">devices migrated</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">&lt;5m</span>
+                        <span class="stat-label">user setup time</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">&euro;200K+</span>
+                        <span class="stat-label">annual savings</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">4</span>
+                        <span class="stat-label">enrollment tracks</span>
+                    </div>
+                </div>
+
+                <ul class="impact-list">
+                    <li>NIS2 and ISO 27001 compliance through enforced, auditable baselines</li>
+                    <li>Defender for Endpoint deployed fleet-wide with risk-based conditional access</li>
+                    <li>Zero-touch provisioning through staging profiles and vendor coordination</li>
+                    <li>Knox Configure to KSP migration with E-FOTA and KAI fleet-wide</li>
+                    <li>Lifecycle processes overhauled from request through retirement</li>
                 </ul>
 
                 <p>

@@ -648,6 +648,75 @@ details p {
     line-height: var(--lh-normal);
 }
 
+/* Tech card label (colored acronym) */
+.tech-card-label {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    flex-shrink: 0;
+    width: 56px;
+    text-align: center;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+/* Project meta subtitle */
+.project-meta {
+    color: var(--muted);
+    font-size: var(--fs-sm);
+    margin-bottom: var(--space-xl);
+}
+
+/* Stat grid */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.stat-item {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: var(--lh-tight);
+    margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Impact list */
+.impact-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.impact-list li {
+    position: relative;
+    padding-left: var(--space-lg);
+}
+
+.impact-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 600;
+}
+
 /* Service list with icons */
 .service-list {
     list-style: none;
