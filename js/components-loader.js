@@ -1,35 +1,9 @@
-/**
- * Components Loader for Kenny Andries Website
- *
- * Dynamically loads reusable HTML components (navbar, footer) into placeholder
- * elements. This approach allows for consistent navigation across all pages
- * without server-side includes or a build step.
- *
- * Features:
- * - Automatic script execution within loaded components
- * - Error handling with console logging
- * - Works with Apache URL rewriting (no .html extension needed)
- *
- * @requires Placeholder elements with IDs: navbar-placeholder, footer-placeholder
- * @see /components/navbar.html - Contains navigation and mobile menu logic
- * @see /components/footer.html - Contains dynamic year display
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('navbar-placeholder', '/components/navbar.html');
-    loadComponent('footer-placeholder', '/components/footer.html');
+    loadComponent('navbar-placeholder', '/components/navbar.html', initNavbar);
+    loadComponent('footer-placeholder', '/components/footer.html', initFooter);
 });
 
-/**
- * Loads an HTML component into a placeholder element.
- *
- * Note: Scripts inserted via innerHTML don't execute automatically.
- * This function re-creates script elements to ensure they run.
- *
- * @param {string} elementId - ID of the placeholder element
- * @param {string} componentPath - Path to the component (without .html extension)
- */
-function loadComponent(elementId, componentPath) {
+function loadComponent(elementId, componentPath, callback) {
     const element = document.getElementById(elementId);
 
     if (!element) {
@@ -44,35 +18,51 @@ function loadComponent(elementId, componentPath) {
         })
         .then(html => {
             element.innerHTML = html;
-            executeScripts(element);
-            const yearEl = document.getElementById('copyright-year');
-            if (yearEl) yearEl.textContent = new Date().getFullYear();
+            if (callback) callback();
         })
         .catch(error => console.error(`Failed to load ${componentPath}:`, error));
 }
 
-/**
- * Re-creates and executes script elements within a container.
- *
- * When HTML is inserted via innerHTML, script tags are parsed but not executed.
- * This function creates new script elements with the same content, which
- * triggers execution.
- *
- * @param {HTMLElement} container - Element containing scripts to execute
- */
-function executeScripts(container) {
-    container.querySelectorAll('script').forEach(oldScript => {
-        const newScript = document.createElement('script');
-
-        // Copy attributes (src, type, etc.)
-        Array.from(oldScript.attributes).forEach(attr => {
-            newScript.setAttribute(attr.name, attr.value);
-        });
-
-        // Copy inline script content
-        newScript.textContent = oldScript.textContent;
-
-        // Replace old script with new one (triggers execution)
-        oldScript.parentNode.replaceChild(newScript, oldScript);
+function initNavbar() {
+    // Highlight active link
+    const normalizePath = (p) => p.replace(/\/$/, '').replace(/\.html$/, '').replace(/\/index$/, '') || '/';
+    const currentPath = normalizePath(window.location.pathname);
+    document.querySelectorAll('#navbarItems a').forEach((link) => {
+        const linkPath = normalizePath(new URL(link.href).pathname);
+        if (currentPath === linkPath) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        }
     });
+
+    // Toggle mobile menu
+    const btn = document.getElementById('navbarToggle');
+    const menu = document.getElementById('navbarItems');
+
+    btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('is-open');
+    });
+
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            btn.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('is-open');
+        }
+    });
+
+    // Close when clicking a link
+    menu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            btn.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('is-open');
+        }
+    });
+}
+
+function initFooter() {
+    const yearEl = document.getElementById('copyright-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 }

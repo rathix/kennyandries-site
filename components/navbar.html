@@ -25,39 +25,3 @@
         </ul>
     </div>
 </nav>
-
-<script>
-    // highlight active link (handles .html extensions, trailing slashes, index pages)
-    const normalizePath = (p) => p.replace(/\/$/, '').replace(/\.html$/, '').replace(/\/index$/, '') || '/';
-    const currentPath = normalizePath(window.location.pathname);
-    document.querySelectorAll("#navbarItems a").forEach((link) => {
-        const linkPath = normalizePath(new URL(link.href).pathname);
-        if (currentPath === linkPath) {
-            link.classList.add("active");
-            link.setAttribute("aria-current", "page");
-        }
-    });
-
-    // toggle menu
-    const btn = document.getElementById("navbarToggle");
-    const menu = document.getElementById("navbarItems");
-    btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-        menu.classList.toggle("is-open");
-    });
-
-    // close on escape and when clicking a link
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            btn.setAttribute("aria-expanded", "false");
-            menu.classList.remove("is-open");
-        }
-    });
-    menu.addEventListener("click", (e) => {
-        if (e.target.tagName === "A") {
-            btn.setAttribute("aria-expanded", "false");
-            menu.classList.remove("is-open");
-        }
-    });
-</script>
