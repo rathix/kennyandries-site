@@ -705,16 +705,13 @@ details p {
 }
 
 .impact-list li {
-    position: relative;
-    padding-left: var(--space-xl);
+    padding-left: 0;
 }
 
 .impact-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
+    content: '—';
     color: var(--green);
-    font-weight: 600;
+    margin-right: var(--space-sm);
 }
 
 /* Service list with icons */
