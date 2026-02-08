@@ -706,7 +706,7 @@ details p {
 
 .impact-list li {
     position: relative;
-    padding-left: var(--space-lg);
+    padding-left: var(--space-xl);
 }
 
 .impact-list li::before {
