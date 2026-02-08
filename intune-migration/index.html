@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Intune migration of 20k devices from COPE and BYOD to COBO and COSU. Security hardening for NIS2 and ISO 27001 compliance with Defender for Endpoint rollout." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://kennyandries.com/intune-migration" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Intune COBO Migration &amp; Security Hardening | Kenny Andries" />
+    <meta property="og:description" content="Migration of 20k devices to COBO and COSU with NIS2 and ISO 27001 security hardening through Intune." />
+    <meta property="og:url" content="https://kennyandries.com/intune-migration" />
+    <meta property="og:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Intune COBO Migration &amp; Security Hardening | Kenny Andries" />
+    <meta name="twitter:description" content="Migration of 20k devices to COBO and COSU with NIS2 and ISO 27001 security hardening through Intune." />
+    <meta name="twitter:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
+
+    <title>Intune COBO Migration &amp; Security Hardening | Kenny Andries</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/components-loader.js" defer></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Intune COBO Migration & Security Hardening",
+      "author": {
+        "@type": "Person",
+        "name": "Kenny Andries",
+        "url": "https://kennyandries.com"
+      },
+      "datePublished": "2026-02-08",
+      "publisher": {
+        "@type": "Person",
+        "name": "Kenny Andries"
+      },
+      "description": "Migration of 20k COPE and BYOD devices to COBO and COSU with security hardening aligned to NIS2 and ISO 27001."
+    }
+    </script>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav id="navbar-placeholder" aria-label="Primary"></nav>
+
+    <main class="content-container" id="main-content">
+        <article itemscope itemtype="https://schema.org/Article">
+            <header>
+                <h1 itemprop="headline">Intune COBO Migration &amp; Security Hardening</h1>
+                <meta itemprop="datePublished" content="2026-02-08" />
+            </header>
+
+            <section itemprop="articleBody">
+                <p>
+                    The existing mobile fleet was a patchwork of COPE and BYOD enrollments that had
+                    grown organically over the years. Different teams ran different policies, security
+                    baselines varied wildly, and onboarding a single device took nearly 40 minutes of
+                    manual work. With NIS2 and ISO 27001 compliance deadlines approaching, the
+                    organization needed a complete overhaul of its mobile device strategy.
+                </p>
+                <p>
+                    I owned the end-to-end redesign: from enrollment architecture and security
+                    baselines to provisioning automation and vendor coordination. A fleet of 20,000
+                    devices across rail operations, dispatching, workshops, and corporate offices,
+                    each user group getting the management model that matched their actual workflow
+                    instead of a one-size-fits-all policy.
+                </p>
+
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/microsoft-intune.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Enrollment Strategy</h2>
+                            <p>
+                                <strong>COSU</strong> for single-purpose devices in workshops, realtime
+                                dispatching centers, and as urgent swap devices for train managers and
+                                drivers. Locked to specific apps, no user interaction needed beyond the
+                                task at hand. <strong>COBO</strong> for operational staff who need a
+                                fully managed corporate device. <strong>COPE</strong> for white collar
+                                workers who get a work profile alongside personal use. <strong>MAM</strong>
+                                for scenarios where app-level protection and conditional access are enough
+                                without enrolling the device itself.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/microsoft-intune.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Security Hardening</h2>
+                            <p>
+                                Built standardized security baselines through <strong>Intune</strong>
+                                and <strong>Knox Service Plugin</strong>, aligned to <strong>NIS2</strong>
+                                and <strong>ISO 27001</strong>. Consistent policies across the entire
+                                fleet: device compliance rules, configuration profiles, conditional
+                                access policies, and app protection. No more exceptions or one-off
+                                configurations drifting out of compliance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/microsoft-defender.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Defender for Endpoint</h2>
+                            <p>
+                                Rolled out <strong>Microsoft Defender for Endpoint</strong> across the
+                                entire managed fleet. Threat detection, EDR, vulnerability management,
+                                and risk-based conditional access all feeding into a single pane of
+                                glass. Devices that fall out of compliance get flagged and blocked
+                                automatically.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/microsoft-intune.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Provisioning &amp; Delivery</h2>
+                            <p>
+                                Designed fully automated and white glove provisioning flows using
+                                <strong>staging profiles</strong> coordinated with external logistics
+                                vendors. Devices arrive pre-configured and ready to use. What used
+                                to take 40 minutes of manual setup now takes <strong>under 5
+                                minutes</strong> with zero IT intervention.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/samsung.svg" alt="" class="tech-card-icon" />
+                        <div class="tech-card-content">
+                            <h2>Knox Migration</h2>
+                            <p>
+                                Migrated from <strong>Knox Configure</strong> to <strong>Knox Service
+                                Plugin</strong>, consolidating Samsung device management into the Intune
+                                stack. Cleaned up legacy licensing, optimized the device lifecycle from
+                                procurement to retirement, and cut more than <strong>&euro;200k in
+                                annual costs</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Impact</h2>
+                <ul class="service-list">
+                    <li><strong>20,000 devices</strong> migrated across COSU, COBO, COPE, and MAM</li>
+                    <li><strong>NIS2 and ISO 27001</strong> compliance through enforced, auditable security baselines</li>
+                    <li><strong>Defender for Endpoint</strong> deployed fleet-wide with risk-based conditional access</li>
+                    <li><strong>87% faster onboarding</strong> &mdash; from 40 minutes down to under 5</li>
+                    <li><strong>Zero-touch provisioning</strong> through staging profiles and external vendor coordination</li>
+                    <li><strong>Knox Configure to KSP</strong> migration with consolidated device lifecycle management</li>
+                    <li><strong>&euro;200k+ annual savings</strong> from license cleanup and lifecycle optimization</li>
+                </ul>
+
+                <p>
+                    If you're tackling a similar migration or compliance challenge,
+                    <a href="/contact">let's talk</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <footer id="footer-placeholder" aria-label="Footer"></footer>
+    <noscript>This site uses JavaScript to load navigation.</noscript>
+</body>
+
+</html>

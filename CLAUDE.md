@@ -8,7 +8,7 @@ Static personal portfolio website for Kenny Andries (kennyandries.com). Built wi
 
 ## Commands
 
-**Run locally** (clean URLs won't work without Apache; use `.html` extensions):
+**Run locally:**
 ```bash
 python -m http.server 8000
 # or: npx serve
@@ -16,7 +16,7 @@ python -m http.server 8000
 
 **Validate HTML:**
 ```bash
-npx html-validate "*.html" --config .htmlvalidate.json
+npx html-validate "**/*.html" --config .htmlvalidate.json
 ```
 
 There are no test suites, linters, or build steps beyond HTML validation.
@@ -29,7 +29,7 @@ There are no test suites, linters, or build steps beyond HTML validation.
 
 **Styling:** Single stylesheet `css/styles.css` using CSS custom properties based on the Catppuccin Mocha color palette. Terminal/CLI-inspired aesthetic with JetBrains Mono font. Mobile-first responsive design with breakpoints at 480px and 768px.
 
-**Clean URLs:** `.htaccess` rewrites `/about` to `/about.html` with 301 redirects. The navbar component handles path normalization for active link detection across both clean and extension-based URLs.
+**Clean URLs:** Each page lives in a directory as `index.html` (e.g. `about/index.html` serves as `/about/`). This works with any web server including VS Code Live Server. `.htaccess` only handles 301 redirects from old `.html` URLs for SEO. The navbar component handles path normalization for active link detection.
 
 ## Code Conventions
 
