@@ -24,7 +24,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="About Kenny Andries | System Engineer" />
-    <meta name="twitter:description" content="System engineer managing 30k+ devices for operational railway staff. MDM, Microsoft 365, Entra ID, Exchange, automation." />
+    <meta name="twitter:description"
+        content="System engineer managing 30k+ devices for operational railway staff. MDM, Microsoft 365, Entra ID, Exchange, automation." />
     <meta name="twitter:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
 
     <link rel="stylesheet" href="/css/styles.css" />
@@ -42,16 +43,33 @@
         "jobTitle": "System Engineer and IT Consultant",
         "image": "https://kennyandries.com/assets/images/portrait.jpg",
         "url": "https://kennyandries.com/",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "NMBS/SNCB"
-        },
+        "worksFor": [
+          {
+            "@type": "Organization",
+            "name": "Rathix Consulting"
+          },
+          {
+            "@type": "Organization",
+            "name": "NMBS/SNCB"
+          }
+        ],
         "knowsAbout": [
           "Microsoft Intune", "Samsung Knox", "SureMDM",
-          "Microsoft 365", "Entra ID", "Exchange",
-          "PowerShell", "Ansible", "Terraform",
-          "Docker", "Podman", "Linux", "NixOS", "Fedora Atomic",
-          "Immutable infrastructure", "Server hardening", "Azure", "Active Directory", "SCCM"
+          "Microsoft 365", "Entra ID", "Exchange", "Graph API",
+          "PowerShell", "Ansible", "Terraform", "Kubernetes", "FluxCD",
+          "Docker", "Podman", "Linux", "NixOS", "Talos OS", "Fedora Atomic",
+          "IaC", "Server hardening", "Azure", "Active Directory", "SCCM",
+          "Android Enterprise", "Zero-touch", "iOS MDM", "Knox E-FOTA"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Open Universiteit"
+        },
+        "knowsLanguage": [
+          {"@type": "Language", "name": "Dutch"},
+          {"@type": "Language", "name": "French"},
+          {"@type": "Language", "name": "English"},
+          {"@type": "Language", "name": "Portuguese"}
         ],
         "address": {
           "@type": "PostalAddress",
@@ -121,7 +139,8 @@
                 <div class="about-image">
                     <picture>
                         <source srcset="/assets/images/portrait.webp" type="image/webp" />
-                        <img src="/assets/images/portrait.jpg" alt="Kenny Andries" loading="lazy" width="120" height="120" />
+                        <img src="/assets/images/portrait.jpg" alt="Kenny Andries" loading="lazy" width="120"
+                            height="120" />
                     </picture>
                 </div>
 
@@ -150,6 +169,18 @@
                 the side too.
             </p>
 
+            <h2>Technical experience</h2>
+
+            <p class="about-text">
+                I work across the full <strong>Microsoft</strong> stack (<strong>Intune</strong>,
+                <strong>Exchange</strong>, <strong>Entra ID</strong>, <strong>Azure</strong>) and
+                <strong>Linux</strong> ecosystems, with deep expertise in enterprise mobility management,
+                zero-touch device provisioning, and infrastructure automation. My day-to-day involves
+                solving operational problems at scale, from deploying Knox Suite across thousands of
+                Samsung devices to managing Android Enterprise and iOS deployments for complex
+                operational environments.
+            </p>
+
             <h2>What I do now</h2>
 
             <p class="about-text">
@@ -166,6 +197,20 @@
                 <strong>Entra ID</strong>. If you're looking for someone who's dealt with large-scale
                 device management in a mission-critical environment, <a href="/contact">let's talk</a>.
             </p>
+
+            <h2>What drives me</h2>
+
+            <p class="about-text">
+                Building systems that scale securely with minimal manual intervention. I believe good
+                infrastructure should be automated, reproducible, and built with security as a
+                foundation, not an afterthought.
+            </p>
+
+            <p class="about-text">
+                Actively deepening my <strong>DevOps/DevSecOps</strong> skills with
+                <strong>Kubernetes</strong>, security automation, and observability tooling while helping
+                organizations solve complex IT challenges through <a href="https://rathix.be">consulting</a>.
+            </p>
         </section>
 
         <!-- Experience -->
@@ -174,38 +219,87 @@
 
             <div class="experience-item">
                 <div class="experience-role">System Engineer</div>
-                <div class="experience-meta">NMBS/SNCB &middot; 2023 - present</div>
+                <div class="experience-meta">Rathix Consulting &middot; Jan 2026 - present</div>
                 <p class="experience-desc">
-                    Own the full lifecycle of 30,000+ mobile devices (smartphones, tablets, smartwatches, Zebra scanners)
-                    across 20,000+ users including train drivers, train managers, and operational staff. Run MDM with
-                    Intune, Knox, and SureMDM. Also responsible for Exchange and Entra ID administration. Build
-                    automation to speed up provisioning and reduce manual work.
+                    IT consulting focused on enterprise device management and cloud infrastructure. Helping
+                    organizations design and implement scalable MDM solutions, Microsoft 365 environments, and
+                    automation workflows.
                 </p>
+                <ul class="experience-bullets">
+                    <li>Specializing in Android Enterprise, Samsung Knox, Intune deployments, and hybrid cloud
+                        infrastructure</li>
+                    <li>Designing scalable device management architectures for enterprise clients</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-role">System Engineer</div>
+                <div class="experience-meta">Ypto (NMBS/SNCB) &middot; Jan 2023 - present</div>
+                <p class="experience-desc">
+                    Managing enterprise mobility infrastructure for 30,000+ devices across Android, iOS, and
+                    Windows platforms for mission-critical rail operations.
+                </p>
+                <ul class="experience-bullets">
+                    <li>Architecting MDM solutions with Microsoft Intune, Samsung Knox Suite (KSP, E-FOTA, KAI), and
+                        SureMDM</li>
+                    <li>Deploying zero-touch provisioning across COSU, COBO, COPE, and MAM enrollment models</li>
+                    <li>Managing Samsung Knox Suite migration from Knox Configure to Knox Service Plugin, implementing
+                        E-FOTA for controlled firmware updates and KAI for fleet intelligence</li>
+                    <li>Administering M365 cloud services: Exchange Online/Hybrid, Entra ID, Azure Security, Conditional
+                        Access</li>
+                    <li>Implementing security baselines aligned with NIS2 and ISO 27001 requirements</li>
+                    <li>Supporting critical operational users including train drivers and train managers with
+                        specialized device configurations and workflows</li>
+                    <li>Automating deployment and configuration with PowerShell, Graph API, and custom scripting</li>
+                    <li>Coordinating with external vendors for device logistics, provisioning, and lifecycle management
+                    </li>
+                </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-role">System Administrator</div>
-                <div class="experience-meta">NMBS/SNCB &middot; 2020 - 2023</div>
+                <div class="experience-meta">NMBS/SNCB &middot; Sep 2020 - Jan 2023</div>
                 <p class="experience-desc">
-                    Ran Active Directory, Microsoft 365, SCCM, and Windows devices. Handled 2nd line support,
-                    solved complex incidents, and built scripts to reduce repeat work.
+                    Supported enterprise IT infrastructure serving thousands of users across hybrid on-premises and
+                    cloud environments. Worked with Active Directory, Office 365, SCCM, and Windows devices while
+                    providing 2nd line technical support for critical business systems.
                 </p>
+                <ul class="experience-bullets">
+                    <li>Administered Office 365 tenant including Exchange Online, SharePoint, Teams, and user
+                        provisioning</li>
+                    <li>Worked with SCCM for Windows device management, application deployment, and patch coordination
+                    </li>
+                    <li>Maintained security policies and compliance configurations across Windows endpoints</li>
+                    <li>Automated routine administrative tasks using PowerShell scripting</li>
+                </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-role">Support Engineer</div>
-                <div class="experience-meta">NMBS/SNCB &middot; 2020</div>
+                <div class="experience-meta">NMBS/SNCB &middot; Jan 2020 - Sep 2020</div>
                 <p class="experience-desc">
-                    Helpdesk work, incident triage, user guidance, and escalation.
+                    Provided 1st line technical support for enterprise IT infrastructure, handling incident management
+                    and user support through ServiceNow ticketing system. Gained foundational experience in enterprise
+                    IT systems and support processes.
                 </p>
+                <ul class="experience-bullets">
+                    <li>Troubleshot common user issues including authentication, email, network connectivity, and
+                        application access</li>
+                    <li>Maintained hardware inventory and coordinated device replacements and repairs</li>
+                </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-role">Digital Marketing Advisor</div>
-                <div class="experience-meta">Google &middot; 2019 - 2020</div>
-                <p class="experience-desc">
-                    Advised B2B clients on Google Ads strategy and optimization.
-                </p>
+                <div class="experience-meta">Google &middot; Sep 2019 - Jan 2020</div>
+                <p class="experience-desc">Advised B2B customers on Google Ads campaign optimization and digital
+                    marketing strategy. Developed client-facing communication skills and analytical capabilities while
+                    working in a fast-paced, metrics-driven environment.</p>
+                <ul class="experience-bullets">
+                    <li>Analyzed campaign metrics and provided data-driven recommendations to improve ROI</li>
+                    <li>Educated clients on best practices for search, display, and video advertising</li>
+                    <li>Maintained high customer satisfaction scores while meeting performance targets</li>
+                </ul>
             </div>
         </section>
 
@@ -225,6 +319,7 @@
                         <li>Active Directory</li>
                         <li>Microsoft 365</li>
                         <li>PowerShell &amp; Graph</li>
+                        <li>Graph API</li>
                     </ul>
                 </div>
 
@@ -232,18 +327,23 @@
                     <div class="skills-category-title">Mobile</div>
                     <ul class="skills-list">
                         <li>Knox Suite</li>
-                        <li>Knox Configure</li>
+                        <li>Knox E-FOTA</li>
+                        <li>Android Enterprise</li>
                         <li>SureMDM</li>
+                        <li>Zero-touch</li>
+                        <li>iOS MDM</li>
                     </ul>
                 </div>
 
                 <div class="skills-category">
                     <div class="skills-category-title">DevOps</div>
                     <ul class="skills-list">
+                        <li>Kubernetes</li>
                         <li>Ansible</li>
                         <li>Terraform</li>
                         <li>CI/CD &amp; GitOps</li>
                         <li>Docker &amp; Podman</li>
+                        <li>FluxCD</li>
                     </ul>
                 </div>
 
@@ -251,13 +351,46 @@
                     <div class="skills-category-title">Linux</div>
                     <ul class="skills-list">
                         <li>NixOS</li>
+                        <li>Talos OS</li>
                         <li>Bash</li>
-                        <li>Immutable infra</li>
                         <li>Server hardening</li>
                         <li>RHEL &amp; Fedora Atomic</li>
                         <li>Debian</li>
+                        <li>IaC</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section id="languages" aria-labelledby="languages-title">
+            <h2 id="languages-title">Languages</h2>
+            <div class="languages-grid">
+                <div class="language-item">
+                    <div class="language-name">Dutch</div>
+                    <div class="language-level">Native</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">French</div>
+                    <div class="language-level">Native</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">English</div>
+                    <div class="language-level">Full Professional</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Portuguese</div>
+                    <div class="language-level">Limited Working</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" aria-labelledby="education-title">
+            <h2 id="education-title">Education</h2>
+            <div class="education-item">
+                <div class="education-degree">BSc Computer Science</div>
+                <div class="education-meta">Open Universiteit &middot; 2021</div>
             </div>
         </section>
 
@@ -266,7 +399,8 @@
             <h2 id="faq-title">FAQ</h2>
             <details>
                 <summary>What services do you offer?</summary>
-                <p>MDM with Intune and Knox, Microsoft 365 and Entra ID, Exchange, and automation with PowerShell, Ansible, and Terraform.</p>
+                <p>MDM with Intune and Knox, Microsoft 365 and Entra ID, Exchange, and automation with PowerShell,
+                    Ansible, and Terraform.</p>
             </details>
             <details>
                 <summary>Do you take freelance work?</summary>
