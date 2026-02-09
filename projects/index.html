@@ -7,7 +7,7 @@
 
     <title>Projects | Kenny Andries</title>
     <meta name="description"
-        content="Projects by Kenny Andries. Kubernetes on Talos OS, Proxmox homelab, and experiments across Microsoft 365, Intune, Azure, Linux, and DevOps." />
+        content="Projects by Kenny Andries. Kubernetes on Talos OS, Proxmox homelab, enterprise Android apps, and experiments across Microsoft 365, Intune, Azure, Linux, and DevOps." />
     <meta name="robots" content="index, follow" />
 
     <!-- Canonical -->
@@ -84,6 +84,21 @@
               "position": 3,
               "item": {
                 "@type": "Project",
+                "name": "Ringtone Setter",
+                "url": "https://kennyandries.com/ringtone-setter",
+                "description": "Custom Android app replacing Knox Configure for automated ringtone provisioning and contact assignment on train driver devices, saving 80k per year.",
+                "keywords": "Android, Kotlin, Intune, Knox Configure, Azure Blob Storage, Jetpack Compose",
+                "creator": {
+                  "@type": "Person",
+                  "name": "Kenny Andries"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "Project",
                 "name": "Homelab",
                 "url": "https://kennyandries.com/homelab",
                 "description": "Self hosted Proxmox based homelab with automation, monitoring, security hardening, and production grade services.",
@@ -153,6 +168,21 @@
                         <p class="project-tags">
                             Intune &middot; COBO &middot; COSU &middot; COPE &middot; MAM &middot;
                             NIS2 &middot; ISO 27001 &middot; Defender &middot; Knox &middot; E-FOTA &middot; KAI
+                        </p>
+                    </article>
+                </li>
+                <li class="project-item">
+                    <article itemscope itemtype="https://schema.org/Project">
+                        <h3 itemprop="name">
+                            <a href="/ringtone-setter" itemprop="url">Ringtone Setter</a>
+                        </h3>
+                        <p itemprop="description">
+                            Custom Android app that replaced Knox Configure for train driver devices.
+                            Automates ringtone download from Azure and contact assignment via Intune,
+                            eliminating manual steps and saving &euro;80k per year in licenses.
+                        </p>
+                        <p class="project-tags">
+                            Android &middot; Kotlin &middot; Intune &middot; Azure &middot; Jetpack Compose
                         </p>
                     </article>
                 </li>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Custom Android app that replaces Knox Configure for ringtone provisioning on train driver devices. Fully automated contact assignment via Intune, saving 80k per year in licenses." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://kennyandries.com/ringtone-setter" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Ringtone Setter | Kenny Andries" />
+    <meta property="og:description" content="Custom Android app replacing Knox Configure for automated ringtone and contact assignment on train driver devices." />
+    <meta property="og:url" content="https://kennyandries.com/ringtone-setter" />
+    <meta property="og:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ringtone Setter | Kenny Andries" />
+    <meta name="twitter:description" content="Custom Android app replacing Knox Configure for automated ringtone and contact assignment on train driver devices." />
+    <meta name="twitter:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
+
+    <title>Ringtone Setter | Kenny Andries</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/components-loader.js" defer></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Ringtone Setter",
+      "author": {
+        "@type": "Person",
+        "name": "Kenny Andries",
+        "url": "https://kennyandries.com"
+      },
+      "datePublished": "2026-02-09",
+      "publisher": {
+        "@type": "Person",
+        "name": "Kenny Andries"
+      },
+      "description": "Custom Android app that replaces Knox Configure for automated ringtone provisioning and contact assignment on train driver devices, saving 80k per year in licenses."
+    }
+    </script>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav id="navbar-placeholder" aria-label="Primary"></nav>
+
+    <main class="content-container" id="main-content">
+        <article itemscope itemtype="https://schema.org/Article">
+            <header>
+                <h1 itemprop="headline">Ringtone Setter</h1>
+                <p class="project-meta">Android &middot; Kotlin &middot; Intune &middot; Knox Configure replacement</p>
+                <meta itemprop="datePublished" content="2026-02-09" />
+            </header>
+
+            <section itemprop="articleBody">
+                <p>
+                    Train drivers can only answer their phone when a specific alarm ringtone
+                    plays. It's the same sound used in the train alarm system, so they
+                    recognize it immediately even in a noisy cab. This is a safety
+                    requirement: if a driver misses a call because the ringtone didn't
+                    stand out, it can directly impact train operations. Getting this
+                    ringtone on every driver device and assigning it to the right contacts
+                    is critical.
+                </p>
+                <p>
+                    The company was using Samsung Knox Configure to push the ringtone to
+                    devices. Changing the ringtone file itself was straightforward through
+                    Knox, but the real problem was contact assignment. Knox had no way to
+                    assign a ringtone to specific contacts. That part was entirely manual.
+                    Someone had to touch every device, open the contacts app, and configure
+                    the right ringtone for each number by hand. Every device swap, every
+                    new hire, every contact list change meant repeating the process.
+                </p>
+                <p>
+                    I built a custom Android app that automates the full workflow.
+                    Configuration is pushed through Intune managed app config, the ringtone
+                    is downloaded from Azure Blob Storage, and contact assignments happen
+                    automatically. No manual steps, no human error.
+                </p>
+
+                <h2>How it works</h2>
+
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-card-label" style="color: var(--accent)">1</div>
+                        <div class="tech-card-content">
+                            <h2>Config push</h2>
+                            <p>
+                                An Intune app configuration policy delivers the ringtone URL
+                                (Azure Blob Storage SAS), the list of contact phone numbers in
+                                E.164 format, and an optional display name. The app reads this
+                                via Android's RestrictionsManager.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-card-label" style="color: var(--green)">2</div>
+                        <div class="tech-card-content">
+                            <h2>Download</h2>
+                            <p>
+                                The ringtone file is streamed from Azure Blob Storage directly
+                                into the device's MediaStore in 8 KB chunks. On Android 10+, the
+                                IS_PENDING pattern keeps the file hidden until the download
+                                completes.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-card-label" style="color: var(--yellow)">3</div>
+                        <div class="tech-card-content">
+                            <h2>Register</h2>
+                            <p>
+                                The file is registered as a system ringtone via MediaStore.
+                                Existing entries with the same name are cleaned up first, making
+                                the whole process idempotent across repeated runs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-card-label" style="color: var(--link)">4</div>
+                        <div class="tech-card-content">
+                            <h2>Assign</h2>
+                            <p>
+                                Each contact is looked up by phone number via ContactsContract
+                                and assigned the custom ringtone URI. Each assignment is
+                                independent, so one failure doesn't block the rest.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Why not Knox Configure</h2>
+                <p>
+                    Knox Configure could push a ringtone file onto a device without issues.
+                    Changing the alarm sound itself was never the problem. The gap was
+                    contact assignment. Knox had no mechanism to assign a ringtone to
+                    specific contacts, so that step remained entirely manual. Every time a
+                    device was provisioned, swapped, or a contact list changed, someone had
+                    to configure the ringtone per contact by hand. At scale, this created a
+                    steady stream of support tickets and misconfigured devices where drivers
+                    didn't hear the alarm.
+                </p>
+                <p>
+                    On top of that, Knox Configure licenses added up across the fleet. With
+                    the custom app, all of that is replaced by an Intune config policy
+                    update that takes effect on the next app sync.
+                </p>
+
+                <h2>Flexibility</h2>
+                <p>
+                    Everything is driven by Intune managed configurations, which means
+                    changes are dynamic and granular. Need to add a new contact number?
+                    Update the config policy. Need a different ringtone for a different
+                    group? Create a second policy targeting that device group. The ringtone
+                    URL, the contact list, and the display name can all be changed without
+                    touching a single device. Different teams or regions can get different
+                    configurations through Intune's existing group targeting. No repackaging,
+                    no reprovisioning, no Knox portal.
+                </p>
+
+                <h2>Impact</h2>
+
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <span class="stat-value">&euro;80K</span>
+                        <span class="stat-label">annual savings</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">manual steps</span>
+                    </div>
+                </div>
+
+                <ul class="impact-list">
+                    <li>Eliminated Knox Configure licenses, saving roughly &euro;80k per year</li>
+                    <li>Fully automated end-to-end: ringtone download, registration, and contact assignment</li>
+                    <li>Removed manual contact configuration that caused misconfigured devices and support tickets</li>
+                    <li>Dynamic configuration through Intune, changes propagate without touching devices</li>
+                    <li>Granular targeting per team or region through Intune group policies</li>
+                </ul>
+
+                <h2>Tech stack</h2>
+
+                <p>
+                    Built in Kotlin with Jetpack Compose and Material 3. OkHttp handles the
+                    streaming download from Azure. No DI framework since the app is small
+                    enough that dependencies are wired manually. Configuration comes in
+                    through Android's RestrictionsManager, ringtones go into MediaStore, and
+                    contacts are updated via ContactsContract.
+                </p>
+
+                <p>
+                    The source is in a
+                    <a href="https://github.com/rathix/ringtone-setter">private repository</a>.
+                    If you're dealing with a similar device provisioning challenge,
+                    <a href="/contact/">let's talk</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <footer id="footer-placeholder" aria-label="Footer"></footer>
+    <noscript>This site uses JavaScript to load navigation.</noscript>
+</body>
+
+</html>
