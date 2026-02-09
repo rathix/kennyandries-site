@@ -124,17 +124,54 @@
                     </div>
                 </div>
 
+                <h2>Deployment flow</h2>
+                <p>
+                    Flux uses a layered dependency chain so things come up in the right order.
+                    <strong>Repositories</strong> register Helm chart sources first. Then
+                    <strong>infrastructure controllers</strong> (cert-manager, Traefik, Longhorn,
+                    Sealed Secrets, kube-vip, Reloader, Metrics Server) deploy with health checks.
+                    <strong>Infrastructure configs</strong> (ClusterIssuers, middlewares, network
+                    policies) come next. Finally, <strong>applications</strong> deploy once everything
+                    they depend on is healthy.
+                </p>
+
+                <h2>Security</h2>
+                <p>
+                    <strong>Sealed Secrets</strong> encrypts all credentials at rest in Git with
+                    asymmetric cryptography. <strong>Traefik OIDC middleware</strong> protects ingresses
+                    with Pocket ID as the identity provider. Per-namespace <strong>network policies</strong>
+                    restrict traffic to Traefik ingress and DNS only. Containers run as non-root with
+                    read-only filesystems where possible.
+                </p>
+
+                <h2>Storage strategy</h2>
+                <p>
+                    <strong>Longhorn</strong> distributes replicas across nodes for durability.
+                    Automated backups go to a TrueNAS NFS target. Some workloads like the Servarr
+                    stack share existing PVCs for media volumes instead of provisioning new storage.
+                </p>
+
                 <h2>Services</h2>
-                <p>Same stuff I was running on Proxmox, now in containers on Kubernetes:</p>
+                <p>What's running on the cluster:</p>
                 <ul class="service-list">
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nextcloud.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Nextcloud</strong> for files, calendar, contacts</li>
                     <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyfin.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Jellyfin</strong> for media</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/vaultwarden.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Vaultwarden</strong> for passwords</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/authentik.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Pocket ID</strong> for SSO</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/home-assistant.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Home Assistant</strong> for home automation</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Immich</strong> for photo backups</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Servarr stack</strong> for media management</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Servarr stack</strong> (Sonarr, Radarr, Lidarr, Prowlarr, Bazarr, Jellyseerr, qBittorrent, SABnzbd)</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/authentik.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Pocket ID</strong> for OIDC / SSO</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Uptime Kuma</strong> for status monitoring</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/beszel.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Beszel</strong> for system monitoring (hub + DaemonSet agents)</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/homepage.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Homepage</strong> for dashboard with Kubernetes service discovery</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/trilium.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Trilium</strong> for notes</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/actual-budget.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Actual Budget</strong> for personal finance</li>
                 </ul>
+
+                <h2>Automation</h2>
+                <p>
+                    <strong>Renovate</strong> keeps Helm chart versions up to date. Minor and patch
+                    updates auto-merge; major updates create PRs for review. <strong>Reloader</strong>
+                    watches for ConfigMap and Secret changes and restarts the affected pods
+                    automatically. Flux has drift detection on all HelmReleases with automatic
+                    remediation and retries.
+                </p>
 
                 <h2>What I learned</h2>
                 <p>
