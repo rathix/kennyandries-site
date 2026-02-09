@@ -435,6 +435,28 @@ h2::before {
     margin-bottom: 0;
 }
 
+/* Experience bullets */
+.experience-bullets {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-sm) 0 0;
+}
+
+.experience-bullets li {
+    color: var(--subtext);
+    font-size: var(--fs-sm);
+    padding: var(--space-xs) 0;
+    padding-left: var(--space-lg);
+    position: relative;
+}
+
+.experience-bullets li::before {
+    content: '\2192';
+    color: var(--green);
+    position: absolute;
+    left: 0;
+}
+
 /* Skills */
 .skills-grid {
     display: grid;
@@ -465,6 +487,46 @@ h2::before {
     color: var(--subtext);
     font-size: var(--fs-sm);
     padding: var(--space-xs) 0;
+}
+
+/* Languages */
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-md);
+}
+
+.language-item {
+    padding: var(--space-md);
+    background: var(--surface);
+    border-radius: var(--radius);
+}
+
+.language-name {
+    color: var(--text);
+    font-weight: 500;
+    font-size: var(--fs-sm);
+    margin-bottom: var(--space-xs);
+}
+
+.language-level {
+    color: var(--muted);
+    font-size: var(--fs-xs);
+}
+
+/* Education */
+.education-item {
+    padding: var(--space-md) 0;
+}
+
+.education-degree {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.education-meta {
+    color: var(--muted);
+    font-size: var(--fs-sm);
 }
 
 /* FAQ */
