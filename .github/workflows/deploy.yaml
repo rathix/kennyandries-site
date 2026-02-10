@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    name: Validate HTML
+    name: Validate Site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,12 +20,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: npm
 
-      - name: Install html-validate
-        run: npm install -g html-validate
+      - name: Install dependencies
+        run: npm ci
 
       - name: Validate HTML
-        run: html-validate "**/*.html" --config .htmlvalidate.json
+        run: npm run validate:html
+
+      - name: Validate internal links
+        run: npm run validate:links
+
+      - name: Validate sitemap
+        run: npm run validate:sitemap
 
   deploy:
     name: Deploy website via FTP

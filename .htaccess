@@ -33,8 +33,6 @@ RewriteEngine On
 
 # Redirect old .html URLs to clean URLs (301 permanent redirect for SEO)
 # Example: /about.html -> /about
-# Skip components directory — these are fetched directly by JS
-RewriteCond %{REQUEST_URI} !^/components/
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html\sHTTP [NC]
 RewriteRule ^ %1 [R=301,L]
 
@@ -85,14 +83,14 @@ RewriteRule ^ %1 [R=301,L]
 #
 # X-Content-Type-Options: Prevents MIME type sniffing
 # X-Frame-Options: Prevents clickjacking by disabling iframes
-# X-XSS-Protection: Enables browser XSS filtering
 # Referrer-Policy: Controls referrer information sent with requests
 #
 
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
-    Header set Content-Security-Policy "default-src 'self'; img-src 'self' https://cdn.jsdelivr.net; style-src 'self'; script-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
+    Header set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+    Header set Content-Security-Policy "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
 </IfModule>

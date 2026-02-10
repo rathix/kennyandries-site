@@ -19,25 +19,24 @@ Personal portfolio website showcasing my experience as a System Engineer special
 ```
 kennyandries-site/
 ├── index.html              # Home page
-├── about.html              # About/experience page
-├── projects.html           # Project showcase
-├── homelab.html            # Homelab documentation
-├── kubernetes.html         # Kubernetes setup details
-├── contact.html            # Contact page
+├── about/index.html        # About/experience page
+├── projects/index.html     # Project showcase
+├── homelab/index.html      # Homelab documentation
+├── kubernetes/index.html   # Kubernetes setup details
+├── contact/index.html      # Contact page
+├── intune-migration/index.html # Enterprise MDM case study
 ├── 404.html                # Custom error page
 ├── css/
 │   └── styles.css          # Main stylesheet
 ├── js/
-│   └── components-loader.js # Dynamic component loading
-├── components/
-│   ├── navbar.html         # Reusable navigation with mobile menu
-│   └── footer.html         # Reusable footer
+│   └── site.js # Navbar behavior and active link highlighting
 ├── assets/
-│   └── images/
-│       ├── logo.png        # Logo (fallback)
-│       ├── logo.webp       # Logo (optimized)
-│       ├── portrait.jpg    # Profile photo
-│       └── homelab.jpg     # Homelab photo
+│   ├── images/
+│   │   ├── logo.png        # Logo (fallback)
+│   │   ├── logo.webp       # Logo (optimized)
+│   │   ├── portrait.jpg    # Profile photo
+│   │   └── homelab.jpg     # Homelab photo
+│   └── icons/              # Locally hosted technology and service icons
 ├── robots.txt              # Crawler directives
 ├── sitemap.xml             # XML sitemap for SEO
 ├── .htaccess               # Apache configuration
@@ -86,10 +85,11 @@ kennyandries-site/
 
 > **Note:** Clean URLs require Apache with mod_rewrite. For local development, use `.html` extensions or configure your server.
 
-### HTML Validation
+### Validation
 
 ```bash
-npx html-validate "*.html" --config .htmlvalidate.json
+npm ci
+npm run validate
 ```
 
 ### Code Style
@@ -103,7 +103,7 @@ npx html-validate "*.html" --config .htmlvalidate.json
 Deployment is automated via GitHub Actions:
 
 1. Push to `main` branch triggers the workflow
-2. HTML validation runs first
+2. HTML, internal link, and sitemap consistency checks run first
 3. On success, files are deployed via FTPS to Hetzner
 
 ### Required Secrets
