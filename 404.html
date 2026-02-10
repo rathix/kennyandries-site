@@ -12,25 +12,55 @@
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Navigation -->
-    <div id="navbar-placeholder"></div>
+    <nav class="navbar" aria-label="Main">
+    <div class="inner">
+        <a href="/" class="navbar-brand" aria-label="Home">
+            <picture>
+                <source srcset="/assets/images/logo.webp" type="image/webp" />
+                <img src="/assets/images/logo.png" alt="Home" width="32" height="32" />
+            </picture>
+        </a>
+
+        <button type="button" class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu" aria-controls="navbarItems"
+            aria-expanded="false">
+            <span class="burger" aria-hidden="true">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+            <span class="sr-only">Menu</span>
+        </button>
+
+        <ul class="navbar-menu" id="navbarItems">
+            <li><a href="/" id="navbarHome">home</a></li>
+            <li><a href="/about" id="navbarAbout">about</a></li>
+            <li><a href="/projects" id="navbarProjects">projects</a></li>
+            <li><a href="/contact" id="navbarContact">contact</a></li>
+            <li><a href="/assets/blobs/kenny_andries_cv.pdf" download id="navbarCv">cv</a></li>
+        </ul>
+    </div>
+</nav>
 
     <main class="content-container" id="main-content">
         <h1>404 - Page Not Found</h1>
         <p>The page you're looking for doesn't exist or has been moved.</p>
 
-        <h2>Navigate</h2>
-        <ul class="home-links">
-            <li><a href="/">home</a></li>
-            <li><a href="/about">about</a></li>
-            <li><a href="/projects">projects</a></li>
-        </ul>
+        <section class="home-links" aria-labelledby="navigate-title">
+            <h2 id="navigate-title">Navigate</h2>
+            <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="/about">about</a></li>
+                <li><a href="/projects">projects</a></li>
+            </ul>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
+    <footer class="site-footer" aria-label="Footer">
+    <p>&copy; <span id="copyright-year">2026</span> Kenny Andries</p>
+    <p>Opinions expressed are my own.</p>
+</footer>
 
-    <script src="/js/components-loader.js"></script>
+    <script src="/js/site.js" defer></script>
 </body>
 
 </html>
