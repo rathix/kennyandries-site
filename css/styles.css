@@ -385,70 +385,96 @@ h2::before {
 }
 
 /* ===== Home Page ===== */
-.home-header {
-    margin-bottom: var(--space-2xl);
+.terminal-window--home {
+    margin-top: var(--space-xl);
 }
 
-.home-title {
-    font-size: var(--fs-3xl);
-    margin-bottom: var(--space-xs);
+.terminal-window--home .terminal-body {
+    min-height: 400px;
+    max-height: 70vh;
+    overflow-y: auto;
 }
 
-.home-subtitle {
-    color: var(--muted);
-    font-size: var(--fs-base);
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: var(--space-lg);
+/* Neofetch output */
+.neofetch {
+    display: flex;
+    gap: var(--space-xl);
+    margin: var(--space-md) 0 var(--space-lg);
 }
 
-.home-subtitle::before {
-    content: none;
-}
-
-.home-intro {
-    color: var(--subtext);
+.nf-left pre,
+.nf-right pre {
+    margin: 0;
     font-size: var(--fs-sm);
     line-height: var(--lh-normal);
-    border-left: 2px solid var(--surface);
-    padding-left: var(--space-md);
-    margin: var(--space-xl) 0;
 }
 
-.home-links {
-    margin-top: var(--space-2xl);
-}
+.nf-art { color: var(--accent); }
+.nf-header { color: var(--accent); font-weight: 600; }
+.nf-sep { color: var(--overlay); }
+.nf-key { color: var(--accent); font-weight: 500; }
+.nf-val { color: var(--text); }
 
-.home-links h2 {
-    margin-top: 0;
-}
-
-.home-links ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: var(--space-lg);
-}
-
-.home-links a {
-    color: var(--muted);
+/* Terminal prompt & input */
+.terminal-line {
     font-size: var(--fs-sm);
-    display: inline-flex;
+    line-height: var(--lh-normal);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.terminal-prompt {
+    color: var(--green);
+    font-weight: 500;
+    text-shadow: var(--glow-green);
+}
+
+.terminal-input-line {
+    display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-sm) 0;
-    border-bottom: 1px solid transparent;
-    transition: color 0.15s ease, border-color 0.15s ease;
+    font-size: var(--fs-sm);
+    line-height: var(--lh-normal);
+    margin-top: var(--space-sm);
 }
 
-.home-links a:hover {
-    color: var(--link);
-    border-bottom-color: var(--link);
+.terminal-input-field {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font: inherit;
+    font-size: var(--fs-sm);
+    padding: 0;
+    caret-color: var(--accent);
 }
 
-.home-links a::before {
-    content: '~';
+.terminal-output-block {
+    font-size: var(--fs-sm);
+    color: var(--subtext);
+    line-height: var(--lh-normal);
+    margin: var(--space-xs) 0 var(--space-sm);
+}
+
+.terminal-error { color: var(--red); }
+
+/* Social links below terminal */
+.home-social {
+    text-align: center;
+    margin-top: var(--space-lg);
+    font-size: var(--fs-sm);
+}
+
+.home-social a {
     color: var(--muted);
+    transition: color 0.15s ease;
+}
+
+.home-social a:hover { color: var(--link); }
+
+.home-social-sep {
+    color: var(--overlay);
+    margin: 0 var(--space-sm);
 }
 
 /* ===== About Page ===== */
@@ -996,13 +1022,9 @@ code {
         width: 160px;
     }
 
-    .home-links ul {
+    .neofetch {
         flex-direction: column;
-        gap: var(--space-sm);
-    }
-
-    .home-title {
-        font-size: var(--fs-2xl);
+        gap: var(--space-md);
     }
 }
 

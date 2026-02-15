@@ -28,7 +28,6 @@
     <meta name="twitter:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
 
     <link rel="stylesheet" href="/css/styles.css" />
-    <script src="/js/components-loader.js" defer></script>
 
     <!-- Structured Data: Person -->
     <script type="application/ld+json">
@@ -63,30 +62,45 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
-    <main class="content-container" id="main-content">
-        <header class="home-header">
-            <h1 class="home-title">Kenny Andries<span class="cursor" aria-hidden="true"></span></h1>
-            <p class="home-subtitle">Senior System Engineer &amp; IT Consultant</p>
-        </header>
+    <main id="main-content">
+        <div class="terminal-window terminal-window--home">
+            <div class="terminal-titlebar">
+                <div class="terminal-dots">
+                    <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--minimize" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--maximize" aria-hidden="true"></span>
+                </div>
+                <span class="terminal-title">kenny@homelab:~</span>
+            </div>
+            <div class="terminal-body">
+                <div id="terminal-output" role="log" aria-live="polite" aria-label="Terminal output"></div>
+                <div id="terminal-input-line" class="terminal-input-line" hidden>
+                    <span class="terminal-prompt" aria-hidden="true">kenny@homelab:~$ </span>
+                    <label for="terminal-input" class="sr-only">Enter a command</label>
+                    <input type="text" id="terminal-input" class="terminal-input-field" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command input" />
+                </div>
+            </div>
+        </div>
 
-        <p class="home-intro">
-            System engineer at Belgian National Railways, working on MDM, Exchange, and Entra ID.
-            I like automating things and spend too much time tinkering with Linux and Kubernetes.
-            Check out my <a href="/projects">projects</a>.
-        </p>
-
-        <section class="home-links" aria-labelledby="links-title">
-            <h2 id="links-title">Links</h2>
-            <ul>
-                <li><a href="https://github.com/rathix" rel="me">github</a></li>
-                <li><a href="https://www.linkedin.com/in/kenny-a-0a7055310/" rel="me">linkedin</a></li>
-                <li><a href="/contact">contact</a></li>
-            </ul>
-        </section>
+        <div class="home-social">
+            <a href="https://github.com/rathix" rel="me">github</a>
+            <span class="home-social-sep">&middot;</span>
+            <a href="https://www.linkedin.com/in/kenny-a-0a7055310/" rel="me">linkedin</a>
+            <span class="home-social-sep">&middot;</span>
+            <a href="/contact">contact</a>
+        </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
-    <noscript>This site uses JavaScript to load navigation.</noscript>
+    <script src="/js/components-loader.js" defer></script>
+    <script src="/js/terminal.js" defer></script>
+    <noscript>
+        <div style="max-width:720px;margin:2rem auto;padding:1rem;color:#cdd6f4;">
+            <h1>Kenny Andries</h1>
+            <p>System Engineer &amp; IT Consultant at NMBS/SNCB.</p>
+            <p><a href="/about">About</a> &middot; <a href="/projects">Projects</a> &middot; <a href="/contact">Contact</a></p>
+        </div>
+    </noscript>
 </body>
 
 </html>
