@@ -169,20 +169,6 @@ a:focus-visible {
     padding: var(--space-xl) var(--space-lg);
 }
 
-.terminal-divider {
-    border: none;
-    color: var(--surface);
-    font-size: var(--fs-sm);
-    text-align: left;
-    margin: var(--space-xl) 0;
-    overflow: hidden;
-}
-
-.terminal-divider::before {
-    content: '────────────────────────────────────────────────────';
-    color: var(--overlay);
-}
-
 /* ===== Typography ===== */
 h1 {
     font-size: var(--fs-2xl);
