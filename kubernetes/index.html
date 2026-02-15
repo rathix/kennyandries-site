@@ -54,7 +54,7 @@
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
     <main id="main-content">
-        <div class="terminal-window">
+        <div class="terminal-window terminal-window--wide">
             <div class="terminal-titlebar">
                 <div class="terminal-dots">
                     <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
@@ -63,15 +63,14 @@
                 </div>
                 <span class="terminal-title">kenny@homelab:~/projects/kubernetes</span>
             </div>
-            <div class="terminal-body">
-                <div class="content-container">
-                    <article itemscope itemtype="https://schema.org/Article">
+            <div class="terminal-body terminal-body--split">
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat kubernetes.md">
                         <header>
-                            <h1 itemprop="headline">Kubernetes Homelab</h1>
-                            <meta itemprop="datePublished" content="2026-01-30" />
+                            <h1>Kubernetes Homelab</h1>
                         </header>
 
-                        <section itemprop="articleBody">
+                        <section>
                             <p>
                                 After running everything on Proxmox for a while, I wanted to learn Kubernetes properly.
                                 Not managed Kubernetes where the hard parts are hidden, but the real thing on bare metal.
@@ -134,7 +133,13 @@
                                     </div>
                                 </div>
                             </div>
-
+                        </section>
+                </div>
+                </div>
+                <div class="tmux-divider" aria-hidden="true"></div>
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat deployment.md">
+                        <section>
                             <h2>Deployment flow</h2>
                             <p>
                                 Flux uses a layered dependency chain so things come up in the right order.
@@ -195,14 +200,19 @@
                                 Happy to share what worked and what didn't.
                             </p>
                         </section>
-                    </article>
                 </div>
+                </div>
+            </div>
+            <div class="tmux-statusbar" aria-hidden="true">
+                <span class="tmux-statusbar-left">[0] 0:zsh*</span>
+                <span class="tmux-statusbar-right">"kenny@homelab"</span>
             </div>
         </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
     <noscript>This site uses JavaScript to load navigation.</noscript>
+    <script src="/js/animations.js" defer></script>
 </body>
 
 </html>

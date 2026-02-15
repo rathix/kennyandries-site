@@ -55,7 +55,7 @@
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
     <main id="main-content">
-        <div class="terminal-window">
+        <div class="terminal-window terminal-window--wide">
             <div class="terminal-titlebar">
                 <div class="terminal-dots">
                     <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
@@ -64,15 +64,14 @@
                 </div>
                 <span class="terminal-title">kenny@homelab:~/projects/homelab</span>
             </div>
-            <div class="terminal-body">
-                <div class="content-container">
-                    <article itemscope itemtype="https://schema.org/Article">
+            <div class="terminal-body terminal-body--split">
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat homelab.md">
                         <header>
-                            <h1 itemprop="headline">Homelab</h1>
-                            <meta itemprop="datePublished" content="2025-07-11" />
+                            <h1>Homelab</h1>
                         </header>
 
-                        <section itemprop="articleBody">
+                        <section>
                             <div class="homelab-intro">
                                 <div class="homelab-text">
                                     <p>
@@ -134,7 +133,13 @@
                                     </div>
                                 </div>
                             </div>
-
+                        </section>
+                </div>
+                </div>
+                <div class="tmux-divider" aria-hidden="true"></div>
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat services.md">
+                        <section>
                             <h2>Infrastructure as Code</h2>
                             <p>
                                 The entire lab is managed as code. <strong>Terraform</strong> provisions VMs on Proxmox
@@ -197,14 +202,19 @@
                                 If you want to chat about any of this, <a href="/contact">reach out</a>.
                             </p>
                         </section>
-                    </article>
                 </div>
+                </div>
+            </div>
+            <div class="tmux-statusbar" aria-hidden="true">
+                <span class="tmux-statusbar-left">[0] 0:zsh*</span>
+                <span class="tmux-statusbar-right">"kenny@homelab"</span>
             </div>
         </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
     <noscript>This site uses JavaScript to load navigation.</noscript>
+    <script src="/js/animations.js" defer></script>
 </body>
 
 </html>

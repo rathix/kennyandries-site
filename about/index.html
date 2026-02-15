@@ -133,7 +133,7 @@
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
     <main id="main-content">
-        <div class="terminal-window">
+        <div class="terminal-window terminal-window--wide">
             <div class="terminal-titlebar">
                 <div class="terminal-dots">
                     <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
@@ -142,8 +142,9 @@
                 </div>
                 <span class="terminal-title">kenny@homelab:~/about</span>
             </div>
-            <div class="terminal-body">
-                <div class="content-container">
+            <div class="terminal-body terminal-body--split">
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat about.md">
                     <!-- About -->
         <section id="about" aria-labelledby="about-title">
             <div class="about-header">
@@ -223,7 +224,11 @@
                 organizations solve complex IT challenges through <a href="https://rathix.be">consulting</a>.
             </p>
         </section>
-
+                </div>
+                </div>
+                <div class="tmux-divider" aria-hidden="true"></div>
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat experience.md">
         <!-- Experience -->
         <section id="experience" aria-labelledby="experience-title">
             <h2 id="experience-title">Experience</h2>
@@ -419,12 +424,18 @@
             </details>
         </section>
                 </div>
+                </div>
+            </div>
+            <div class="tmux-statusbar" aria-hidden="true">
+                <span class="tmux-statusbar-left">[0] 0:zsh*</span>
+                <span class="tmux-statusbar-right">"kenny@homelab"</span>
             </div>
         </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
     <noscript>This site uses JavaScript to load navigation.</noscript>
+    <script src="/js/animations.js" defer></script>
 </body>
 
 </html>

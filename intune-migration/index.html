@@ -54,7 +54,7 @@
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
     <main id="main-content">
-        <div class="terminal-window">
+        <div class="terminal-window terminal-window--wide">
             <div class="terminal-titlebar">
                 <div class="terminal-dots">
                     <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
@@ -63,16 +63,15 @@
                 </div>
                 <span class="terminal-title">kenny@homelab:~/projects/intune-migration</span>
             </div>
-            <div class="terminal-body">
-                <div class="content-container">
-                    <article itemscope itemtype="https://schema.org/Article">
+            <div class="terminal-body terminal-body--split">
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat enrollment.md">
                         <header>
-                            <h1 itemprop="headline">Enterprise MDM Transformation</h1>
+                            <h1>Enterprise MDM Transformation</h1>
                             <p class="project-meta">20,000 devices &middot; 4 enrollment tracks &middot; NIS2 &amp; ISO 27001</p>
-                            <meta itemprop="datePublished" content="2026-02-08" />
                         </header>
 
-                        <section itemprop="articleBody">
+                        <section>
                             <p>
                                 The mobile fleet had grown into a patchwork of 20,000 COPE and BYOD devices
                                 spread across rail operations, dispatching centers, workshops, and corporate
@@ -141,7 +140,13 @@
                                     </div>
                                 </div>
                             </div>
-
+                        </section>
+                </div>
+                </div>
+                <div class="tmux-divider" aria-hidden="true"></div>
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat security.md">
+                        <section>
                             <h2>Security hardening</h2>
                             <p>
                                 We built a unified set of security baselines through Intune and Knox Service
@@ -236,14 +241,19 @@
                                 <a href="/contact/">let's talk</a>.
                             </p>
                         </section>
-                    </article>
                 </div>
+                </div>
+            </div>
+            <div class="tmux-statusbar" aria-hidden="true">
+                <span class="tmux-statusbar-left">[0] 0:zsh*</span>
+                <span class="tmux-statusbar-right">"kenny@homelab"</span>
             </div>
         </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
     <noscript>This site uses JavaScript to load navigation.</noscript>
+    <script src="/js/animations.js" defer></script>
 </body>
 
 </html>
