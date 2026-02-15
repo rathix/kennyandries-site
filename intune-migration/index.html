@@ -53,179 +53,193 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
-    <main class="content-container" id="main-content">
-        <article itemscope itemtype="https://schema.org/Article">
-            <header>
-                <h1 itemprop="headline">Enterprise MDM Transformation</h1>
-                <p class="project-meta">20,000 devices &middot; 4 enrollment tracks &middot; NIS2 &amp; ISO 27001</p>
-                <meta itemprop="datePublished" content="2026-02-08" />
-            </header>
-
-            <section itemprop="articleBody">
-                <p>
-                    The mobile fleet had grown into a patchwork of 20,000 COPE and BYOD devices
-                    spread across rail operations, dispatching centers, workshops, and corporate
-                    offices. Policies varied between teams, security baselines were inconsistent,
-                    and provisioning a single device took well over 40 minutes of hands-on work.
-                    With NIS2 and ISO 27001 compliance deadlines approaching, the organization
-                    needed a ground-up rethink of its mobile device strategy.
-                </p>
-                <p>
-                    I led the architecture and rollout, working closely with security, operations,
-                    and external vendors to land on enrollment models that actually fit each user
-                    group rather than forcing everyone into the same mold.
-                </p>
-
-                <h2>Enrollment strategy</h2>
-                <p>
-                    Different roles have fundamentally different needs, so we designed four
-                    enrollment tracks instead of one:
-                </p>
-
-                <div class="tech-grid">
-                    <div class="tech-card">
-                        <div class="tech-card-label" style="color: var(--accent)">COSU</div>
-                        <div class="tech-card-content">
-                            <h2>Single-purpose devices</h2>
-                            <p>
-                                Kiosk-style devices locked to a specific set of apps. Used in workshops
-                                for maintenance tooling, in realtime dispatching centers for traffic
-                                control, and as urgent swap devices that train managers and drivers can
-                                grab and go when their primary device fails.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-card-label" style="color: var(--green)">COBO</div>
-                        <div class="tech-card-content">
-                            <h2>Fully managed corporate</h2>
-                            <p>
-                                Fully managed corporate devices for operational staff. Complete control
-                                over the device, no personal use. Hardened baselines enforced from
-                                enrollment.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-card-label" style="color: var(--yellow)">COPE</div>
-                        <div class="tech-card-content">
-                            <h2>Corporate with personal</h2>
-                            <p>
-                                Corporate-owned devices with a personal profile for white collar workers.
-                                Work data stays containerized and policy-managed while users keep a
-                                personal side for their own apps.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-card-label" style="color: var(--link)">MAM</div>
-                        <div class="tech-card-content">
-                            <h2>App-level protection</h2>
-                            <p>
-                                App-level protection without device enrollment. Conditional access and
-                                data loss prevention policies applied directly to managed apps for users
-                                on personal devices who only need email, Teams, or a handful of
-                                corporate apps.
-                            </p>
-                        </div>
-                    </div>
+    <main id="main-content">
+        <div class="terminal-window">
+            <div class="terminal-titlebar">
+                <div class="terminal-dots">
+                    <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--minimize" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--maximize" aria-hidden="true"></span>
                 </div>
+                <span class="terminal-title">kenny@homelab:~/projects/intune-migration</span>
+            </div>
+            <div class="terminal-body">
+                <div class="content-container">
+                    <article itemscope itemtype="https://schema.org/Article">
+                        <header>
+                            <h1 itemprop="headline">Enterprise MDM Transformation</h1>
+                            <p class="project-meta">20,000 devices &middot; 4 enrollment tracks &middot; NIS2 &amp; ISO 27001</p>
+                            <meta itemprop="datePublished" content="2026-02-08" />
+                        </header>
 
-                <h2>Security hardening</h2>
-                <p>
-                    We built a unified set of security baselines through Intune and Knox Service
-                    Plugin, mapped to NIS2 and ISO 27001 controls. Device compliance policies,
-                    configuration profiles, conditional access rules, and app protection policies
-                    were standardized across the entire fleet. Devices that drifted out of
-                    compliance got flagged automatically and blocked from corporate resources
-                    until remediated. No more one-off exceptions or shadow configurations that
-                    quietly fell through the cracks.
-                </p>
+                        <section itemprop="articleBody">
+                            <p>
+                                The mobile fleet had grown into a patchwork of 20,000 COPE and BYOD devices
+                                spread across rail operations, dispatching centers, workshops, and corporate
+                                offices. Policies varied between teams, security baselines were inconsistent,
+                                and provisioning a single device took well over 40 minutes of hands-on work.
+                                With NIS2 and ISO 27001 compliance deadlines approaching, the organization
+                                needed a ground-up rethink of its mobile device strategy.
+                            </p>
+                            <p>
+                                I led the architecture and rollout, working closely with security, operations,
+                                and external vendors to land on enrollment models that actually fit each user
+                                group rather than forcing everyone into the same mold.
+                            </p>
 
-                <h2>Defender for Endpoint</h2>
-                <p>
-                    Rolled out Microsoft Defender for Endpoint across all managed devices.
-                    Threat detection, EDR capabilities, and vulnerability management all
-                    integrated into the Intune stack. Combined with risk-based conditional
-                    access, a device that picks up a threat gets its access revoked in near
-                    real-time without waiting on a helpdesk ticket.
-                </p>
+                            <h2>Enrollment strategy</h2>
+                            <p>
+                                Different roles have fundamentally different needs, so we designed four
+                                enrollment tracks instead of one:
+                            </p>
 
-                <h2>Provisioning &amp; delivery</h2>
-                <p>
-                    Onboarding was one of the biggest pain points. The old process involved
-                    manual configuration, multiple handoffs, and well over 40 minutes of
-                    hands-on time per device for the end user. We replaced it with fully
-                    automated provisioning through Intune staging profiles coordinated with
-                    external logistics vendors. Devices now ship pre-configured and ready to
-                    use out of the box. White glove delivery handles the edge cases. User
-                    setup time dropped to under 5 minutes.
-                </p>
+                            <div class="tech-grid">
+                                <div class="tech-card">
+                                    <div class="tech-card-label" style="color: var(--accent)">COSU</div>
+                                    <div class="tech-card-content">
+                                        <h2>Single-purpose devices</h2>
+                                        <p>
+                                            Kiosk-style devices locked to a specific set of apps. Used in workshops
+                                            for maintenance tooling, in realtime dispatching centers for traffic
+                                            control, and as urgent swap devices that train managers and drivers can
+                                            grab and go when their primary device fails.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tech-card">
+                                    <div class="tech-card-label" style="color: var(--green)">COBO</div>
+                                    <div class="tech-card-content">
+                                        <h2>Fully managed corporate</h2>
+                                        <p>
+                                            Fully managed corporate devices for operational staff. Complete control
+                                            over the device, no personal use. Hardened baselines enforced from
+                                            enrollment.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tech-card">
+                                    <div class="tech-card-label" style="color: var(--yellow)">COPE</div>
+                                    <div class="tech-card-content">
+                                        <h2>Corporate with personal</h2>
+                                        <p>
+                                            Corporate-owned devices with a personal profile for white collar workers.
+                                            Work data stays containerized and policy-managed while users keep a
+                                            personal side for their own apps.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tech-card">
+                                    <div class="tech-card-label" style="color: var(--link)">MAM</div>
+                                    <div class="tech-card-content">
+                                        <h2>App-level protection</h2>
+                                        <p>
+                                            App-level protection without device enrollment. Conditional access and
+                                            data loss prevention policies applied directly to managed apps for users
+                                            on personal devices who only need email, Teams, or a handful of
+                                            corporate apps.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-                <h2>Knox migration &amp; fleet intelligence</h2>
-                <p>
-                    The Samsung devices were managed through Knox Configure, which had its own
-                    licensing model and lifecycle separate from Intune. We migrated everything
-                    to Knox Service Plugin, consolidating Samsung-specific policies into the
-                    same Intune management plane as the rest of the fleet. On top of that, we
-                    rolled out E-FOTA (Enterprise Firmware Over The Air) for controlled OS
-                    updates across the Samsung fleet, and Knox Asset Intelligence (KAI) for
-                    real-time battery health monitoring, app usage analytics, and device
-                    lifecycle insights.
-                </p>
-                <p>
-                    Alongside the technical migration, we audited the full device lifecycle
-                    from procurement to retirement, cleaned up unused licenses, and eliminated
-                    redundant tooling. Net result: more than &euro;200k in annual savings.
-                </p>
+                            <h2>Security hardening</h2>
+                            <p>
+                                We built a unified set of security baselines through Intune and Knox Service
+                                Plugin, mapped to NIS2 and ISO 27001 controls. Device compliance policies,
+                                configuration profiles, conditional access rules, and app protection policies
+                                were standardized across the entire fleet. Devices that drifted out of
+                                compliance got flagged automatically and blocked from corporate resources
+                                until remediated. No more one-off exceptions or shadow configurations that
+                                quietly fell through the cracks.
+                            </p>
 
-                <h2>Process overhaul</h2>
-                <p>
-                    The technology changes only work if the processes around them change too.
-                    We reworked the end-to-end mobile device lifecycle: how devices get
-                    requested, approved, provisioned, shipped, swapped, repaired, and retired.
-                    Helpdesk workflows were redesigned, escalation paths clarified, and
-                    documentation rewritten so that frontline support could handle the most
-                    common scenarios without escalation. Vendor coordination for logistics,
-                    repairs, and returns was streamlined into defined SLAs with clear
-                    handoff points.
-                </p>
+                            <h2>Defender for Endpoint</h2>
+                            <p>
+                                Rolled out Microsoft Defender for Endpoint across all managed devices.
+                                Threat detection, EDR capabilities, and vulnerability management all
+                                integrated into the Intune stack. Combined with risk-based conditional
+                                access, a device that picks up a threat gets its access revoked in near
+                                real-time without waiting on a helpdesk ticket.
+                            </p>
 
-                <h2>Impact</h2>
+                            <h2>Provisioning &amp; delivery</h2>
+                            <p>
+                                Onboarding was one of the biggest pain points. The old process involved
+                                manual configuration, multiple handoffs, and well over 40 minutes of
+                                hands-on time per device for the end user. We replaced it with fully
+                                automated provisioning through Intune staging profiles coordinated with
+                                external logistics vendors. Devices now ship pre-configured and ready to
+                                use out of the box. White glove delivery handles the edge cases. User
+                                setup time dropped to under 5 minutes.
+                            </p>
 
-                <div class="stat-grid">
-                    <div class="stat-item">
-                        <span class="stat-value">20K</span>
-                        <span class="stat-label">devices migrated</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">&lt;5m</span>
-                        <span class="stat-label">user setup time</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">&euro;200K+</span>
-                        <span class="stat-label">annual savings</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">4</span>
-                        <span class="stat-label">enrollment tracks</span>
-                    </div>
+                            <h2>Knox migration &amp; fleet intelligence</h2>
+                            <p>
+                                The Samsung devices were managed through Knox Configure, which had its own
+                                licensing model and lifecycle separate from Intune. We migrated everything
+                                to Knox Service Plugin, consolidating Samsung-specific policies into the
+                                same Intune management plane as the rest of the fleet. On top of that, we
+                                rolled out E-FOTA (Enterprise Firmware Over The Air) for controlled OS
+                                updates across the Samsung fleet, and Knox Asset Intelligence (KAI) for
+                                real-time battery health monitoring, app usage analytics, and device
+                                lifecycle insights.
+                            </p>
+                            <p>
+                                Alongside the technical migration, we audited the full device lifecycle
+                                from procurement to retirement, cleaned up unused licenses, and eliminated
+                                redundant tooling. Net result: more than &euro;200k in annual savings.
+                            </p>
+
+                            <h2>Process overhaul</h2>
+                            <p>
+                                The technology changes only work if the processes around them change too.
+                                We reworked the end-to-end mobile device lifecycle: how devices get
+                                requested, approved, provisioned, shipped, swapped, repaired, and retired.
+                                Helpdesk workflows were redesigned, escalation paths clarified, and
+                                documentation rewritten so that frontline support could handle the most
+                                common scenarios without escalation. Vendor coordination for logistics,
+                                repairs, and returns was streamlined into defined SLAs with clear
+                                handoff points.
+                            </p>
+
+                            <h2>Impact</h2>
+
+                            <div class="stat-grid">
+                                <div class="stat-item">
+                                    <span class="stat-value">20K</span>
+                                    <span class="stat-label">devices migrated</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">&lt;5m</span>
+                                    <span class="stat-label">user setup time</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">&euro;200K+</span>
+                                    <span class="stat-label">annual savings</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4</span>
+                                    <span class="stat-label">enrollment tracks</span>
+                                </div>
+                            </div>
+
+                            <ul class="impact-list">
+                                <li>NIS2 and ISO 27001 compliance through enforced, auditable baselines</li>
+                                <li>Defender for Endpoint deployed fleet-wide with risk-based conditional access</li>
+                                <li>Zero-touch provisioning through staging profiles and vendor coordination</li>
+                                <li>Knox Configure to KSP migration with E-FOTA and KAI fleet-wide</li>
+                                <li>Lifecycle processes overhauled from request through retirement</li>
+                            </ul>
+
+                            <p>
+                                If you're tackling a similar migration or compliance challenge,
+                                <a href="/contact/">let's talk</a>.
+                            </p>
+                        </section>
+                    </article>
                 </div>
-
-                <ul class="impact-list">
-                    <li>NIS2 and ISO 27001 compliance through enforced, auditable baselines</li>
-                    <li>Defender for Endpoint deployed fleet-wide with risk-based conditional access</li>
-                    <li>Zero-touch provisioning through staging profiles and vendor coordination</li>
-                    <li>Knox Configure to KSP migration with E-FOTA and KAI fleet-wide</li>
-                    <li>Lifecycle processes overhauled from request through retirement</li>
-                </ul>
-
-                <p>
-                    If you're tackling a similar migration or compliance challenge,
-                    <a href="/contact/">let's talk</a>.
-                </p>
-            </section>
-        </article>
+            </div>
+        </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
