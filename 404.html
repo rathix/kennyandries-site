@@ -12,25 +12,38 @@
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Navigation -->
-    <div id="navbar-placeholder"></div>
+    <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
-    <main class="content-container" id="main-content">
-        <h1>404 - Page Not Found</h1>
-        <p>The page you're looking for doesn't exist or has been moved.</p>
-
-        <h2>Navigate</h2>
-        <ul class="home-links">
-            <li><a href="/">home</a></li>
-            <li><a href="/about">about</a></li>
-            <li><a href="/projects">projects</a></li>
-        </ul>
+    <main id="main-content">
+        <div class="terminal-window">
+            <div class="terminal-titlebar">
+                <div class="terminal-dots">
+                    <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--minimize" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--maximize" aria-hidden="true"></span>
+                </div>
+                <span class="terminal-title">kenny@homelab:~</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">kenny@homelab:~$ </span>cd <span id="four-oh-four-path"></span>
+                </div>
+                <div class="terminal-output-block terminal-error">
+                    bash: cd: No such file or directory
+                </div>
+                <div class="terminal-line" style="margin-top: var(--space-md);">
+                    <span class="terminal-prompt">kenny@homelab:~$ </span><a href="/" style="color: var(--text);">cd ~</a>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-    <script src="/js/components-loader.js"></script>
+    <footer id="footer-placeholder" aria-label="Footer"></footer>
+    <script src="/js/components-loader.js" defer></script>
+    <script>
+        var pathEl = document.getElementById('four-oh-four-path');
+        if (pathEl) pathEl.textContent = window.location.pathname;
+    </script>
 </body>
 
 </html>
