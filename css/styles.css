@@ -1142,4 +1142,19 @@ code {
     h2::before {
         content: none;
     }
+
+    .terminal-titlebar {
+        display: none;
+    }
+
+    .terminal-window {
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .terminal-input-line,
+    .home-social {
+        display: none;
+    }
 }
