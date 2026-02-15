@@ -68,6 +68,7 @@ html {
 body {
     margin: 0;
     padding: var(--space-xl) var(--space-lg);
+    padding-bottom: calc(var(--space-xl) + 28px);
     background: var(--bg-alt);
     color: var(--text);
     font: 400 var(--fs-base)/var(--lh-normal) var(--font-mono);
@@ -872,22 +873,41 @@ details p {
     padding: var(--space-sm) 0;
 }
 
-/* ===== Footer ===== */
-.site-footer {
+/* ===== Status Bar (Footer) ===== */
+.status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-top: 1px solid var(--overlay);
+    padding: 0 var(--space-lg);
+}
+
+.status-bar-inner {
     max-width: var(--max-w);
-    margin: var(--space-2xl) auto 0;
-    padding-top: var(--space-lg);
-    border-top: 1px solid var(--surface);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 28px;
+    gap: var(--space-sm);
 }
 
-.site-footer p {
-    font-size: var(--fs-xs);
+.status-bar-segment {
     color: var(--muted);
-    margin-bottom: var(--space-sm);
+    font-size: var(--fs-xs);
 }
 
-.site-footer hr {
-    display: none;
+.status-bar-sep {
+    color: var(--overlay);
+    font-size: var(--fs-xs);
+}
+
+.status-bar-right {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: var(--fs-xs);
 }
 
 /* ===== Utilities ===== */
@@ -919,6 +939,7 @@ code {
 @media (max-width: 768px) {
     body {
         padding: var(--space-lg) var(--space-md);
+        padding-bottom: calc(var(--space-lg) + 28px);
     }
 
     .tab-bar-toggle {
@@ -1038,7 +1059,7 @@ code {
     }
 
     .tab-bar,
-    .site-footer {
+    .status-bar {
         display: none !important;
     }
 
