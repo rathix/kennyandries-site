@@ -27,7 +27,6 @@
     <meta name="twitter:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
 
     <link rel="stylesheet" href="/css/styles.css" />
-    <script src="/js/components-loader.js" defer></script>
 
     <!-- Structured Data: ContactPage + Person with contactPoint -->
     <script type="application/ld+json">
@@ -73,23 +72,51 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
-    <main class="content-container" id="main-content">
-        <header>
-            <h1>Contact</h1>
-            <p>Tell me about your project and timeline. I focus on Intune, Microsoft 365, Entra ID, Exchange, automation, and Linux.</p>
-        </header>
+    <main id="main-content">
+        <div class="terminal-window">
+            <div class="terminal-titlebar">
+                <div class="terminal-dots">
+                    <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--minimize" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--maximize" aria-hidden="true"></span>
+                </div>
+                <span class="terminal-title">kenny@homelab:~/contact</span>
+            </div>
+            <div class="terminal-body">
+                <div class="content-container" data-cmd="cat contact.md">
+                    <header>
+                        <h1>Contact</h1>
+                        <p>Tell me about your project and timeline. I focus on Intune, Microsoft 365, Entra ID, Exchange, automation, and Linux.</p>
+                    </header>
 
-        <section aria-labelledby="email-title">
-            <h2 id="email-title">Email</h2>
-            <p>
-                <a class="contact-email" href="mailto:hello@kennyandries.com?subject=Project%20inquiry%20from%20website">hello@kennyandries.com</a>
-            </p>
-            <p class="muted text-sm">Typical reply time is one to two business days.</p>
-        </section>
+                    <section aria-labelledby="email-title">
+                        <h2 id="email-title">echo $EMAIL</h2>
+                        <div class="terminal-output-block">
+                            <a class="contact-email" href="mailto:hello@kennyandries.com?subject=Project%20inquiry%20from%20website">hello@kennyandries.com</a>
+                        </div>
+                        <p class="muted text-sm">Typical reply time is one to two business days.</p>
+                    </section>
+
+                    <section aria-labelledby="links-title">
+                        <h2 id="links-title">cat links.txt</h2>
+                        <div class="terminal-output-block">
+                            <div><a href="https://github.com/rathix" rel="me">https://github.com/rathix</a></div>
+                            <div><a href="https://www.linkedin.com/in/kenny-a-0a7055310/" rel="me">https://linkedin.com/in/kenny-a-0a7055310</a></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="tmux-statusbar" aria-hidden="true">
+                <span class="tmux-statusbar-left">[0] 0:zsh*</span>
+                <span class="tmux-statusbar-right">"kenny@homelab"</span>
+            </div>
+        </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
     <noscript>This site uses JavaScript to load navigation.</noscript>
+    <script src="/js/components-loader.js" defer></script>
+    <script src="/js/animations.js" defer></script>
 </body>
 
 </html>

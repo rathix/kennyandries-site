@@ -54,143 +54,167 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
-    <main class="content-container" id="main-content">
-        <article itemscope itemtype="https://schema.org/Article">
-            <header>
-                <h1 itemprop="headline">Homelab</h1>
-                <meta itemprop="datePublished" content="2025-07-11" />
-            </header>
-
-            <section itemprop="articleBody">
-                <div class="homelab-intro">
-                    <div class="homelab-text">
-                        <p>
-                            This is where I break things on purpose. I use my homelab to test ideas, try out
-                            tools before recommending them, and generally mess around with infrastructure in
-                            ways I can't do at work. It's overkill for home use, but that's the point.
-                        </p>
-                    </div>
-                    <div class="homelab-image">
-                        <picture>
-                            <source srcset="/assets/images/homelab.webp" type="image/webp" />
-                            <img src="/assets/images/homelab.jpg" alt="Homelab server rack" itemprop="image" />
-                        </picture>
-                    </div>
+    <main id="main-content">
+        <div class="terminal-window terminal-window--wide">
+            <div class="terminal-titlebar">
+                <div class="terminal-dots">
+                    <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--minimize" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--maximize" aria-hidden="true"></span>
                 </div>
+                <span class="terminal-title">kenny@homelab:~/projects/homelab</span>
+            </div>
+            <div class="terminal-body terminal-body--split">
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat homelab.md">
+                        <header>
+                            <h1>Homelab</h1>
+                        </header>
 
-                <div class="tech-grid">
-                    <div class="tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/proxmox.svg" alt="" class="tech-card-icon" />
-                        <div class="tech-card-content">
-                            <h2>Compute</h2>
-                            <p>
-                                <strong>Proxmox VE</strong> cluster with high availability and live migration.
-                                ZFS for storage. Take a node offline without anything going down.
-                            </p>
-                        </div>
-                    </div>
+                        <section>
+                            <div class="homelab-intro">
+                                <div class="homelab-text">
+                                    <p>
+                                        This is where I break things on purpose. I use my homelab to test ideas, try out
+                                        tools before recommending them, and generally mess around with infrastructure in
+                                        ways I can't do at work. It's overkill for home use, but that's the point.
+                                    </p>
+                                </div>
+                                <div class="homelab-image">
+                                    <picture>
+                                        <source srcset="/assets/images/homelab.webp" type="image/webp" />
+                                        <img src="/assets/images/homelab.jpg" alt="Homelab server rack" itemprop="image" />
+                                    </picture>
+                                </div>
+                            </div>
 
-                    <div class="tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/truenas.svg" alt="" class="tech-card-icon" />
-                        <div class="tech-card-content">
-                            <h2>Storage</h2>
-                            <p>
-                                Two <strong>TrueNAS SCALE</strong> boxes with ZFS. Snapshots, replication,
-                                separate pools. Shared storage for Proxmox.
-                            </p>
-                        </div>
-                    </div>
+                            <div class="tech-grid">
+                                <div class="tech-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/proxmox.svg" alt="" class="tech-card-icon" />
+                                    <div class="tech-card-content">
+                                        <h2>Compute</h2>
+                                        <p>
+                                            <strong>Proxmox VE</strong> cluster with high availability and live migration.
+                                            ZFS for storage. Take a node offline without anything going down.
+                                        </p>
+                                    </div>
+                                </div>
 
-                    <div class="tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/proxmox.svg" alt="" class="tech-card-icon" />
-                        <div class="tech-card-content">
-                            <h2>Backups</h2>
-                            <p>
-                                <strong>Proxmox Backup Server</strong> on-site and remote. Deduplicated,
-                                encrypted, incremental. Fast VM and container restores.
-                            </p>
-                        </div>
-                    </div>
+                                <div class="tech-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/truenas.svg" alt="" class="tech-card-icon" />
+                                    <div class="tech-card-content">
+                                        <h2>Storage</h2>
+                                        <p>
+                                            Two <strong>TrueNAS SCALE</strong> boxes with ZFS. Snapshots, replication,
+                                            separate pools. Shared storage for Proxmox.
+                                        </p>
+                                    </div>
+                                </div>
 
-                    <div class="tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/mikrotik.svg" alt="" class="tech-card-icon" />
-                        <div class="tech-card-content">
-                            <h2>Networking</h2>
-                            <p>
-                                <strong>MikroTik</strong> for routing and switching. VLANs, firewall rules,
-                                <strong>NetBird</strong> for Zero Trust access, site-to-site VPN.
-                            </p>
-                        </div>
-                    </div>
+                                <div class="tech-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/proxmox.svg" alt="" class="tech-card-icon" />
+                                    <div class="tech-card-content">
+                                        <h2>Backups</h2>
+                                        <p>
+                                            <strong>Proxmox Backup Server</strong> on-site and remote. Deduplicated,
+                                            encrypted, incremental. Fast VM and container restores.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="tech-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/mikrotik.svg" alt="" class="tech-card-icon" />
+                                    <div class="tech-card-content">
+                                        <h2>Networking</h2>
+                                        <p>
+                                            <strong>MikroTik</strong> for routing and switching. VLANs, firewall rules,
+                                            <strong>NetBird</strong> for Zero Trust access, site-to-site VPN.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                 </div>
+                </div>
+                <div class="tmux-divider" aria-hidden="true"></div>
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat services.md">
+                        <section>
+                            <h2>Infrastructure as Code</h2>
+                            <p>
+                                The entire lab is managed as code. <strong>Terraform</strong> provisions VMs on Proxmox
+                                from Ubuntu cloud images with Cloud-Init. <strong>Ansible</strong> handles everything
+                                after that: initial setup, application deployment, security hardening, and automated
+                                daily upgrades with pre-upgrade snapshots for rollback.
+                            </p>
+                            <p>
+                                There's a full production and test environment with identical tooling, so I can
+                                validate changes before they hit anything I depend on.
+                            </p>
 
-                <h2>Infrastructure as Code</h2>
-                <p>
-                    The entire lab is managed as code. <strong>Terraform</strong> provisions VMs on Proxmox
-                    from Ubuntu cloud images with Cloud-Init. <strong>Ansible</strong> handles everything
-                    after that: initial setup, application deployment, security hardening, and automated
-                    daily upgrades with pre-upgrade snapshots for rollback.
-                </p>
-                <p>
-                    There's a full production and test environment with identical tooling, so I can
-                    validate changes before they hit anything I depend on.
-                </p>
+                            <h2>Kubernetes</h2>
+                            <p>
+                                A 6-node <strong>K3s</strong> cluster runs on Proxmox VMs: 3 server nodes for the
+                                control plane and 3 agent nodes for workloads. The cluster is managed through
+                                <strong>FluxCD</strong> GitOps. More detail on the
+                                <a href="/kubernetes">Kubernetes page</a>.
+                            </p>
 
-                <h2>Kubernetes</h2>
-                <p>
-                    A 6-node <strong>K3s</strong> cluster runs on Proxmox VMs: 3 server nodes for the
-                    control plane and 3 agent nodes for workloads. The cluster is managed through
-                    <strong>FluxCD</strong> GitOps. More detail on the
-                    <a href="/kubernetes">Kubernetes page</a>.
-                </p>
+                            <h2>Security</h2>
+                            <p>
+                                All hosts get <strong>DevSec hardening</strong> via Ansible (OS and SSH hardening,
+                                kernel tuning). <strong>CrowdSec</strong> handles intrusion detection across Caddy,
+                                SSH, and application logs. <strong>Netbird</strong> provides zero-trust overlay
+                                networking with OIDC authentication, so nothing is exposed directly.
+                            </p>
 
-                <h2>Security</h2>
-                <p>
-                    All hosts get <strong>DevSec hardening</strong> via Ansible (OS and SSH hardening,
-                    kernel tuning). <strong>CrowdSec</strong> handles intrusion detection across Caddy,
-                    SSH, and application logs. <strong>Netbird</strong> provides zero-trust overlay
-                    networking with OIDC authentication, so nothing is exposed directly.
-                </p>
+                            <h2>CI/CD</h2>
+                            <p>
+                                <strong>Forgejo</strong> (self-hosted Git) runs the deployment pipeline. A manual
+                                deploy workflow runs Terraform then Ansible playbooks in sequence (upgrade, init,
+                                applications, harden). A daily cron job handles automated upgrades with Proxmox
+                                snapshots taken beforehand.
+                            </p>
 
-                <h2>CI/CD</h2>
-                <p>
-                    <strong>Forgejo</strong> (self-hosted Git) runs the deployment pipeline. A manual
-                    deploy workflow runs Terraform then Ansible playbooks in sequence (upgrade, init,
-                    applications, harden). A daily cron job handles automated upgrades with Proxmox
-                    snapshots taken beforehand.
-                </p>
+                            <h2>Services</h2>
+                            <p>Some of the stuff I run:</p>
+                            <ul class="service-list">
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nextcloud.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Nextcloud</strong> for files, calendar, contacts</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyfin.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Jellyfin</strong> for media</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/vaultwarden.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Vaultwarden</strong> for passwords</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/authentik.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Pocket ID</strong> for SSO</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/home-assistant.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Home Assistant</strong> for home automation</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Immich</strong> for photo backups</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Servarr stack</strong> for media management</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/forgejo.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Forgejo</strong> for Git and CI/CD</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/beszel.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Beszel</strong> for monitoring</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ntfy.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Ntfy</strong> for push notifications</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/actual-budget.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Actual Budget</strong> for personal finance</li>
+                            </ul>
 
-                <h2>Services</h2>
-                <p>Some of the stuff I run:</p>
-                <ul class="service-list">
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nextcloud.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Nextcloud</strong> for files, calendar, contacts</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyfin.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Jellyfin</strong> for media</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/vaultwarden.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Vaultwarden</strong> for passwords</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/authentik.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Pocket ID</strong> for SSO</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/home-assistant.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Home Assistant</strong> for home automation</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Immich</strong> for photo backups</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Servarr stack</strong> for media management</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/forgejo.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Forgejo</strong> for Git and CI/CD</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/beszel.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Beszel</strong> for monitoring</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ntfy.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Ntfy</strong> for push notifications</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/actual-budget.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Actual Budget</strong> for personal finance</li>
-                </ul>
-
-                <h2>Why bother</h2>
-                <p>
-                    Mostly because I enjoy it. But it's also useful. I get to test things before suggesting
-                    them to clients, practice disaster recovery when nothing is actually on fire, and figure
-                    out what works and what doesn't without any pressure.
-                </p>
-                <p>
-                    If you want to chat about any of this, <a href="/contact">reach out</a>.
-                </p>
-            </section>
-        </article>
+                            <h2>Why bother</h2>
+                            <p>
+                                Mostly because I enjoy it. But it's also useful. I get to test things before suggesting
+                                them to clients, practice disaster recovery when nothing is actually on fire, and figure
+                                out what works and what doesn't without any pressure.
+                            </p>
+                            <p>
+                                If you want to chat about any of this, <a href="/contact">reach out</a>.
+                            </p>
+                        </section>
+                </div>
+                </div>
+            </div>
+            <div class="tmux-statusbar" aria-hidden="true">
+                <span class="tmux-statusbar-left">[0] 0:zsh*</span>
+                <span class="tmux-statusbar-right">"kenny@homelab"</span>
+            </div>
+        </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
     <noscript>This site uses JavaScript to load navigation.</noscript>
+    <script src="/js/animations.js" defer></script>
 </body>
 
 </html>

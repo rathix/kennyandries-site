@@ -53,142 +53,166 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
-    <main class="content-container" id="main-content">
-        <article itemscope itemtype="https://schema.org/Article">
-            <header>
-                <h1 itemprop="headline">Kubernetes Homelab</h1>
-                <meta itemprop="datePublished" content="2026-01-30" />
-            </header>
-
-            <section itemprop="articleBody">
-                <p>
-                    After running everything on Proxmox for a while, I wanted to learn Kubernetes properly.
-                    Not managed Kubernetes where the hard parts are hidden, but the real thing on bare metal.
-                    So I built a cluster from scratch using Talos OS.
-                </p>
-
-                <div class="tech-grid">
-                    <div class="tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/talos.svg" alt="" class="tech-card-icon" />
-                        <div class="tech-card-content">
-                            <h2>Talos OS</h2>
-                            <p>
-                                Minimal, immutable Linux built for Kubernetes. No SSH, no shell, no package manager.
-                                Everything managed through an API. Declarative and versioned, just like the workloads.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/traefik.svg" alt="" class="tech-card-icon" />
-                        <div class="tech-card-content">
-                            <h2>Networking</h2>
-                            <p>
-                                <strong>kube-vip</strong> for control plane VIP and load balancing.
-                                <strong>Traefik</strong> as ingress controller for routing and TLS termination.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/longhorn.svg" alt="" class="tech-card-icon" />
-                        <div class="tech-card-content">
-                            <h2>Storage</h2>
-                            <p>
-                                <strong>Longhorn</strong> for distributed block storage. Replicates across nodes,
-                                handles snapshots and backups. Reliable and easy to manage.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cert-manager.svg" alt="" class="tech-card-icon" />
-                        <div class="tech-card-content">
-                            <h2>Certificates</h2>
-                            <p>
-                                <strong>cert-manager</strong> handles TLS automatically. Point it at Let's Encrypt,
-                                define issuers, and forget about manual renewal.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="tech-card">
-                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/flux-cd.svg" alt="" class="tech-card-icon" />
-                        <div class="tech-card-content">
-                            <h2>GitOps</h2>
-                            <p>
-                                Everything deployed through <strong>FluxCD</strong>. Cluster state lives in Git.
-                                Push a change, Flux applies it. Easy rollbacks when things go wrong.
-                            </p>
-                        </div>
-                    </div>
+    <main id="main-content">
+        <div class="terminal-window terminal-window--wide">
+            <div class="terminal-titlebar">
+                <div class="terminal-dots">
+                    <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--minimize" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--maximize" aria-hidden="true"></span>
                 </div>
+                <span class="terminal-title">kenny@homelab:~/projects/kubernetes</span>
+            </div>
+            <div class="terminal-body terminal-body--split">
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat kubernetes.md">
+                        <header>
+                            <h1>Kubernetes Homelab</h1>
+                        </header>
 
-                <h2>Deployment flow</h2>
-                <p>
-                    Flux uses a layered dependency chain so things come up in the right order.
-                    <strong>Repositories</strong> register Helm chart sources first. Then
-                    <strong>infrastructure controllers</strong> (cert-manager, Traefik, Longhorn,
-                    Sealed Secrets, kube-vip, Reloader, Metrics Server) deploy with health checks.
-                    <strong>Infrastructure configs</strong> (ClusterIssuers, middlewares, network
-                    policies) come next. Finally, <strong>applications</strong> deploy once everything
-                    they depend on is healthy.
-                </p>
+                        <section>
+                            <p>
+                                After running everything on Proxmox for a while, I wanted to learn Kubernetes properly.
+                                Not managed Kubernetes where the hard parts are hidden, but the real thing on bare metal.
+                                So I built a cluster from scratch using Talos OS.
+                            </p>
 
-                <h2>Security</h2>
-                <p>
-                    <strong>Sealed Secrets</strong> encrypts all credentials at rest in Git with
-                    asymmetric cryptography. <strong>Traefik OIDC middleware</strong> protects ingresses
-                    with Pocket ID as the identity provider. Per-namespace <strong>network policies</strong>
-                    restrict traffic to Traefik ingress and DNS only. Containers run as non-root with
-                    read-only filesystems where possible.
-                </p>
+                            <div class="tech-grid">
+                                <div class="tech-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/talos.svg" alt="" class="tech-card-icon" />
+                                    <div class="tech-card-content">
+                                        <h2>Talos OS</h2>
+                                        <p>
+                                            Minimal, immutable Linux built for Kubernetes. No SSH, no shell, no package manager.
+                                            Everything managed through an API. Declarative and versioned, just like the workloads.
+                                        </p>
+                                    </div>
+                                </div>
 
-                <h2>Storage strategy</h2>
-                <p>
-                    <strong>Longhorn</strong> distributes replicas across nodes for durability.
-                    Automated backups go to a TrueNAS NFS target. Some workloads like the Servarr
-                    stack share existing PVCs for media volumes instead of provisioning new storage.
-                </p>
+                                <div class="tech-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/traefik.svg" alt="" class="tech-card-icon" />
+                                    <div class="tech-card-content">
+                                        <h2>Networking</h2>
+                                        <p>
+                                            <strong>kube-vip</strong> for control plane VIP and load balancing.
+                                            <strong>Traefik</strong> as ingress controller for routing and TLS termination.
+                                        </p>
+                                    </div>
+                                </div>
 
-                <h2>Services</h2>
-                <p>What's running on the cluster:</p>
-                <ul class="service-list">
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyfin.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Jellyfin</strong> for media</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Servarr stack</strong> (Sonarr, Radarr, Lidarr, Prowlarr, Bazarr, Jellyseerr, qBittorrent, SABnzbd)</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/authentik.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Pocket ID</strong> for OIDC / SSO</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Uptime Kuma</strong> for status monitoring</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/beszel.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Beszel</strong> for system monitoring (hub + DaemonSet agents)</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/homepage.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Homepage</strong> for dashboard with Kubernetes service discovery</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/trilium.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Trilium</strong> for notes</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/actual-budget.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Actual Budget</strong> for personal finance</li>
-                </ul>
+                                <div class="tech-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/longhorn.svg" alt="" class="tech-card-icon" />
+                                    <div class="tech-card-content">
+                                        <h2>Storage</h2>
+                                        <p>
+                                            <strong>Longhorn</strong> for distributed block storage. Replicates across nodes,
+                                            handles snapshots and backups. Reliable and easy to manage.
+                                        </p>
+                                    </div>
+                                </div>
 
-                <h2>Automation</h2>
-                <p>
-                    <strong>Renovate</strong> keeps Helm chart versions up to date. Minor and patch
-                    updates auto-merge; major updates create PRs for review. <strong>Reloader</strong>
-                    watches for ConfigMap and Secret changes and restarts the affected pods
-                    automatically. Flux has drift detection on all HelmReleases with automatic
-                    remediation and retries.
-                </p>
+                                <div class="tech-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cert-manager.svg" alt="" class="tech-card-icon" />
+                                    <div class="tech-card-content">
+                                        <h2>Certificates</h2>
+                                        <p>
+                                            <strong>cert-manager</strong> handles TLS automatically. Point it at Let's Encrypt,
+                                            define issuers, and forget about manual renewal.
+                                        </p>
+                                    </div>
+                                </div>
 
-                <h2>What I learned</h2>
-                <p>
-                    Running Kubernetes at home is a lot of work upfront. But once it's set up, the GitOps
-                    workflow is hard to beat. I can rebuild the entire cluster from the repo if I need to.
-                    Upgrades are less scary when you can just spin up a new node and drain the old one.
-                </p>
-                <p>
-                    If you're thinking about doing something similar, <a href="/contact">reach out</a>.
-                    Happy to share what worked and what didn't.
-                </p>
-            </section>
-        </article>
+                                <div class="tech-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/flux-cd.svg" alt="" class="tech-card-icon" />
+                                    <div class="tech-card-content">
+                                        <h2>GitOps</h2>
+                                        <p>
+                                            Everything deployed through <strong>FluxCD</strong>. Cluster state lives in Git.
+                                            Push a change, Flux applies it. Easy rollbacks when things go wrong.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                </div>
+                </div>
+                <div class="tmux-divider" aria-hidden="true"></div>
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat deployment.md">
+                        <section>
+                            <h2>Deployment flow</h2>
+                            <p>
+                                Flux uses a layered dependency chain so things come up in the right order.
+                                <strong>Repositories</strong> register Helm chart sources first. Then
+                                <strong>infrastructure controllers</strong> (cert-manager, Traefik, Longhorn,
+                                Sealed Secrets, kube-vip, Reloader, Metrics Server) deploy with health checks.
+                                <strong>Infrastructure configs</strong> (ClusterIssuers, middlewares, network
+                                policies) come next. Finally, <strong>applications</strong> deploy once everything
+                                they depend on is healthy.
+                            </p>
+
+                            <h2>Security</h2>
+                            <p>
+                                <strong>Sealed Secrets</strong> encrypts all credentials at rest in Git with
+                                asymmetric cryptography. <strong>Traefik OIDC middleware</strong> protects ingresses
+                                with Pocket ID as the identity provider. Per-namespace <strong>network policies</strong>
+                                restrict traffic to Traefik ingress and DNS only. Containers run as non-root with
+                                read-only filesystems where possible.
+                            </p>
+
+                            <h2>Storage strategy</h2>
+                            <p>
+                                <strong>Longhorn</strong> distributes replicas across nodes for durability.
+                                Automated backups go to a TrueNAS NFS target. Some workloads like the Servarr
+                                stack share existing PVCs for media volumes instead of provisioning new storage.
+                            </p>
+
+                            <h2>Services</h2>
+                            <p>What's running on the cluster:</p>
+                            <ul class="service-list">
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyfin.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Jellyfin</strong> for media</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Servarr stack</strong> (Sonarr, Radarr, Lidarr, Prowlarr, Bazarr, Jellyseerr, qBittorrent, SABnzbd)</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/authentik.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Pocket ID</strong> for OIDC / SSO</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Uptime Kuma</strong> for status monitoring</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/beszel.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Beszel</strong> for system monitoring (hub + DaemonSet agents)</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/homepage.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Homepage</strong> for dashboard with Kubernetes service discovery</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/trilium.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Trilium</strong> for notes</li>
+                                <li><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/actual-budget.svg" alt="" width="20" height="20" class="service-icon" /> <strong>Actual Budget</strong> for personal finance</li>
+                            </ul>
+
+                            <h2>Automation</h2>
+                            <p>
+                                <strong>Renovate</strong> keeps Helm chart versions up to date. Minor and patch
+                                updates auto-merge; major updates create PRs for review. <strong>Reloader</strong>
+                                watches for ConfigMap and Secret changes and restarts the affected pods
+                                automatically. Flux has drift detection on all HelmReleases with automatic
+                                remediation and retries.
+                            </p>
+
+                            <h2>What I learned</h2>
+                            <p>
+                                Running Kubernetes at home is a lot of work upfront. But once it's set up, the GitOps
+                                workflow is hard to beat. I can rebuild the entire cluster from the repo if I need to.
+                                Upgrades are less scary when you can just spin up a new node and drain the old one.
+                            </p>
+                            <p>
+                                If you're thinking about doing something similar, <a href="/contact">reach out</a>.
+                                Happy to share what worked and what didn't.
+                            </p>
+                        </section>
+                </div>
+                </div>
+            </div>
+            <div class="tmux-statusbar" aria-hidden="true">
+                <span class="tmux-statusbar-left">[0] 0:zsh*</span>
+                <span class="tmux-statusbar-right">"kenny@homelab"</span>
+            </div>
+        </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
     <noscript>This site uses JavaScript to load navigation.</noscript>
+    <script src="/js/animations.js" defer></script>
 </body>
 
 </html>

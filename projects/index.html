@@ -28,7 +28,6 @@
     <meta name="twitter:image" content="https://kennyandries.com/assets/images/portrait.jpg" />
 
     <link rel="stylesheet" href="/css/styles.css" />
-    <script src="/js/components-loader.js" defer></script>
 
     <!-- Structured Data: CollectionPage + ItemList of Projects + Breadcrumbs -->
     <script type="application/ld+json">
@@ -113,69 +112,61 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
-    <main class="content-container" id="main-content">
-        <header>
-            <h1>Projects</h1>
-            <p>Hands-on work across Microsoft and Linux. Focus on automation, reliability, and security.</p>
-        </header>
+    <main id="main-content">
+        <div class="terminal-window">
+            <div class="terminal-titlebar">
+                <div class="terminal-dots">
+                    <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--minimize" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--maximize" aria-hidden="true"></span>
+                </div>
+                <span class="terminal-title">kenny@homelab:~/projects</span>
+            </div>
+            <div class="terminal-body">
+                <div class="content-container" data-cmd="ls -la projects/">
+                    <header>
+                        <h1>Projects</h1>
+                        <p>Hands-on work across Microsoft and Linux. Focus on automation, reliability, and security.</p>
+                    </header>
 
-        <section aria-labelledby="project-list-title">
-            <h2 id="project-list-title">Selected work</h2>
-
-            <ul class="project-list">
-                <li class="project-item">
-                    <article itemscope itemtype="https://schema.org/Project">
-                        <h3 itemprop="name">
-                            <a href="/kubernetes" itemprop="url">Kubernetes Homelab</a>
-                        </h3>
-                        <p itemprop="description">
-                            Bare metal Kubernetes running on Talos OS. GitOps-driven with FluxCD, using
-                            kube-vip for load balancing, Longhorn for storage, Traefik for ingress, and
-                            cert-manager for TLS. Self-hosted services without the managed Kubernetes training wheels.
-                        </p>
-                        <p class="project-tags">
-                            Kubernetes &middot; Talos OS &middot; FluxCD &middot; Longhorn &middot;
-                            Traefik &middot; kube-vip
-                        </p>
-                    </article>
-                </li>
-                <li class="project-item">
-                    <article itemscope itemtype="https://schema.org/Project">
-                        <h3 itemprop="name">
-                            <a href="/intune-migration" itemprop="url">Enterprise MDM Transformation</a>
-                        </h3>
-                        <p itemprop="description">
-                            Transformed the mobile device strategy for 20k devices across COSU, COBO, COPE,
-                            and MAM. NIS2 and ISO 27001 security hardening, Defender for Endpoint, E-FOTA,
-                            Knox Asset Intelligence, zero-touch provisioning, full process overhaul, and
-                            &euro;200k+ annual savings.
-                        </p>
-                        <p class="project-tags">
-                            Intune &middot; COBO &middot; COSU &middot; COPE &middot; MAM &middot;
-                            NIS2 &middot; ISO 27001 &middot; Defender &middot; Knox &middot; E-FOTA &middot; KAI
-                        </p>
-                    </article>
-                </li>
-                <li class="project-item">
-                    <article itemscope itemtype="https://schema.org/Project">
-                        <h3 itemprop="name">
-                            <a href="/homelab" itemprop="url">Homelab</a>
-                        </h3>
-                        <p itemprop="description">
-                            Self-hosted Proxmox-based homelab. TrueNAS for storage, MikroTik networking,
-                            and services like Nextcloud, Jellyfin, Vaultwarden, Immich, and Home Assistant.
-                        </p>
-                        <p class="project-tags">
-                            Proxmox &middot; TrueNAS &middot; MikroTik &middot; Docker &middot; Podman
-                        </p>
-                    </article>
-                </li>
-            </ul>
-        </section>
+                    <section aria-labelledby="project-list-title">
+                        <h2 id="project-list-title">ls -la projects/</h2>
+                        <div class="project-ls">
+                            <div class="project-ls-header">
+                                <span class="project-ls-col">permissions</span>
+                                <span class="project-ls-name">name</span>
+                                <span class="project-ls-desc">description</span>
+                            </div>
+                            <a href="/kubernetes" class="project-ls-row">
+                                <span class="project-ls-col">drwxr-xr-x</span>
+                                <span class="project-ls-name">kubernetes/</span>
+                                <span class="project-ls-desc">Bare metal K8s on Talos OS with FluxCD, kube-vip, Longhorn, Traefik</span>
+                            </a>
+                            <a href="/intune-migration" class="project-ls-row">
+                                <span class="project-ls-col">drwxr-xr-x</span>
+                                <span class="project-ls-name">intune-migration/</span>
+                                <span class="project-ls-desc">Enterprise MDM transformation — 20K devices, 4 enrollment tracks, NIS2</span>
+                            </a>
+                            <a href="/homelab" class="project-ls-row">
+                                <span class="project-ls-col">drwxr-xr-x</span>
+                                <span class="project-ls-name">homelab/</span>
+                                <span class="project-ls-desc">Proxmox, TrueNAS, MikroTik, Docker, self-hosted everything</span>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="tmux-statusbar" aria-hidden="true">
+                <span class="tmux-statusbar-left">[0] 0:zsh*</span>
+                <span class="tmux-statusbar-right">"kenny@homelab"</span>
+            </div>
+        </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
     <noscript>This site uses JavaScript to load navigation.</noscript>
+    <script src="/js/components-loader.js" defer></script>
+    <script src="/js/animations.js" defer></script>
 </body>
 
 </html>

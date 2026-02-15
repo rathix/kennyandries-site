@@ -65,4 +65,10 @@ function initNavbar() {
 function initFooter() {
     const yearEl = document.getElementById('copyright-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const pathEl = document.getElementById('status-bar-path');
+    if (pathEl) {
+        const path = window.location.pathname.replace(/\/$/, '') || '~';
+        pathEl.textContent = path === '~' ? '~' : '~' + path;
+    }
 }

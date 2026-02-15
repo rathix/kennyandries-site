@@ -132,8 +132,20 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav id="navbar-placeholder" aria-label="Primary"></nav>
 
-    <main class="content-container" id="main-content">
-        <!-- About -->
+    <main id="main-content">
+        <div class="terminal-window terminal-window--wide">
+            <div class="terminal-titlebar">
+                <div class="terminal-dots">
+                    <span class="terminal-dot terminal-dot--close" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--minimize" aria-hidden="true"></span>
+                    <span class="terminal-dot terminal-dot--maximize" aria-hidden="true"></span>
+                </div>
+                <span class="terminal-title">kenny@homelab:~/about</span>
+            </div>
+            <div class="terminal-body terminal-body--split">
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat about.md">
+                    <!-- About -->
         <section id="about" aria-labelledby="about-title">
             <div class="about-header">
                 <div class="about-image">
@@ -212,7 +224,11 @@
                 organizations solve complex IT challenges through <a href="https://rathix.be">consulting</a>.
             </p>
         </section>
-
+                </div>
+                </div>
+                <div class="tmux-divider" aria-hidden="true"></div>
+                <div class="tmux-pane">
+                <div class="content-container" data-cmd="cat experience.md">
         <!-- Experience -->
         <section id="experience" aria-labelledby="experience-title">
             <h2 id="experience-title">Experience</h2>
@@ -407,10 +423,19 @@
                 <p>Yes for select projects. Reach out on the contact page with scope and timeline.</p>
             </details>
         </section>
+                </div>
+                </div>
+            </div>
+            <div class="tmux-statusbar" aria-hidden="true">
+                <span class="tmux-statusbar-left">[0] 0:zsh*</span>
+                <span class="tmux-statusbar-right">"kenny@homelab"</span>
+            </div>
+        </div>
     </main>
 
     <footer id="footer-placeholder" aria-label="Footer"></footer>
     <noscript>This site uses JavaScript to load navigation.</noscript>
+    <script src="/js/animations.js" defer></script>
 </body>
 
 </html>
