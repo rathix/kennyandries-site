@@ -23,7 +23,7 @@
         // Derive prompt from terminal title
         var terminalWindow = containers[0].closest('.terminal-window');
         var titleEl = terminalWindow ? terminalWindow.querySelector('.terminal-title') : null;
-        var prompt = titleEl ? titleEl.textContent.trim() + '$ ' : 'kenny@homelab:~$ ';
+        var prompt = titleEl ? titleEl.textContent.trim() + '$ ' : 'kenny@arch-btw:~$ ';
 
         // Build pane data: store children, create prompt lines
         var panes = [];

@@ -68,18 +68,27 @@
             border-bottom: 1px solid var(--overlay);
         }
 
-        .dots { display: flex; gap: 6px; }
-        .dot { width: 10px; height: 10px; border-radius: 50%; }
-        .dot--close { background: var(--red); }
-        .dot--min { background: var(--yellow); }
-        .dot--max { background: var(--green); }
+        .dots { display: flex; gap: 2px; }
+        .dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dot::after { color: var(--muted); }
+        .dot--close::after { content: "×"; font-size: 13px; }
+        .dot--min::after { content: "−"; font-size: 12px; }
+        .dot--max::after { content: "□"; font-size: 9px; }
 
         .titlebar-text {
             flex: 1;
             text-align: center;
             color: var(--muted);
             font-size: 11px;
-            margin-right: 42px;
+            margin-right: 50px;
         }
 
         /* Body */
@@ -214,7 +223,10 @@
             }
 
             .titlebar { height: 22px; }
-            .dot { width: 7px; height: 7px; }
+            .dot { width: 12px; height: 12px; }
+            .dot--close::after { font-size: 9px; }
+            .dot--min::after { font-size: 8px; }
+            .dot--max::after { font-size: 6px; }
             .titlebar-text { font-size: 8px; }
 
             .body {
@@ -261,12 +273,12 @@
                 <span class="dot dot--min"></span>
                 <span class="dot dot--max"></span>
             </div>
-            <span class="titlebar-text">kenny@arch:~</span>
+            <span class="titlebar-text">kenny@arch-btw:~</span>
         </div>
 
         <div class="body">
             <div class="prompt">
-                <span class="prompt-user">kenny@arch:~$</span>
+                <span class="prompt-user">kenny@arch-btw:~$</span>
                 <span class="prompt-cmd"> neofetch</span>
             </div>
 
@@ -279,7 +291,7 @@
  ╚═╝  ╚═╝╚═╝  ╚═╝</pre>
 
                 <div class="info">
-                    <div><span class="info-header">kenny@arch</span></div>
+                    <div><span class="info-header">kenny@arch-btw</span></div>
                     <div><span class="info-sep">─────────────</span></div>
                     <div><span class="info-key">Name</span> <span class="info-val">Kenny Andries</span></div>
                     <div><span class="info-key">Role</span> <span class="info-val">System Engineer &amp; IT Consultant</span></div>
@@ -294,7 +306,7 @@
 
         <div class="statusbar">
             <span>[0] 0:zsh*</span>
-            <span class="statusbar-right">"kenny@arch"</span>
+            <span class="statusbar-right">"kenny@arch-btw"</span>
         </div>
     </div>
 
@@ -305,13 +317,13 @@
                 <span class="dot dot--min"></span>
                 <span class="dot dot--max"></span>
             </div>
-            <span class="titlebar-text">kenny@arch:~/skills</span>
+            <span class="titlebar-text">kenny@arch-btw:~/skills</span>
         </div>
 
         <div class="back-body">
             <div class="back-left">
                 <div class="prompt">
-                    <span class="prompt-user">kenny@arch:~$</span>
+                    <span class="prompt-user">kenny@arch-btw:~$</span>
                     <span class="prompt-cmd"> pacman -Q</span>
                 </div>
                 <div class="skill-list">
@@ -332,7 +344,7 @@
 
         <div class="statusbar">
             <span>[0] 0:zsh*</span>
-            <span class="statusbar-right">"kenny@arch"</span>
+            <span class="statusbar-right">"kenny@arch-btw"</span>
         </div>
     </div>
 </body>

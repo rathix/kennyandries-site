@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    var PROMPT = 'kenny@homelab:~$ ';
+    var PROMPT = 'kenny@arch-btw:~$ ';
     var TYPING_SPEED = 30;
 
     var ASCII_ART = [
@@ -15,7 +15,7 @@
     ];
 
     var SYSINFO = [
-        { key: null,      val: 'kenny@homelab', header: true },
+        { key: null,      val: 'kenny@arch-btw', header: true },
         { key: null,      val: '\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500', sep: true },
         { key: 'Name',    val: 'Kenny Andries' },
         { key: 'Role',    val: 'System Engineer & IT Consultant' },
